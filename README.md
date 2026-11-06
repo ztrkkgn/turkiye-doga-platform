@@ -86,19 +86,27 @@ npm run serve
 
 Statik önizleme: `http://localhost:3000`. Üç sayfa `/`, `/bolge/mugla-marmaris-2021/` ve `/metodoloji/` adreslerindedir. Harita altlığı internet ister; analiz görselleri yerel çıktılardır. `web/out/` yeniden üretilebilir ve Git dışında tutulur. CI aynı kontrolleri yapar; büyük uydu indirme/analizi CI'da çalıştırılmaz. Yerel test sonuçları [geliştirme raporunda](docs/development-report.md) kayıtlıdır; GitHub üzerinde workflow henüz çalıştırılmadı.
 
-## GitHub'a aktarım
+## GitHub deposu
 
-Yerel `main` deposu ve commit'ler hazırdır. Bu ortamda GitHub CLI kurulu ve uzak depo tanımlı değildir. Kendi bilgisayarınızda proje kökünde:
-
-Kaynak ZIP'i başka klasöre açarsanız Git geçmişi taşınmaz. Bu durumda önce kendi Git kimliğinizi ayarlayıp `git init -b main`, `git add .` ve `git commit -m "feat: initialize real Sentinel-2 pilot"` ile yeni bir yerel depo oluşturun. Mevcut çalışma klasöründeki depo bu adıma ihtiyaç duymaz.
+Kaynak kodu ve gerçek pilot çıktıları [ztrkkgn/turkiye-doga-platform](https://github.com/ztrkkgn/turkiye-doga-platform) deposunda yönetilir.
 
 ```sh
-brew install gh
-gh auth login
-gh repo create turkiye-doga-platform --public --source=. --remote=origin --push
+git clone https://github.com/ztrkkgn/turkiye-doga-platform.git
+cd turkiye-doga-platform
 ```
 
-Mevcut boş bir depoya göndermek için `git remote add origin https://github.com/KULLANICI/turkiye-doga-platform.git` ve `git push -u origin main` kullanılabilir. Kimlik doğrulamayı GitHub'ın kendi ekranında yapın; anahtarları sohbete veya dosyalara koymayın. Uzak depo oluşturma ve push burada gerçekleştirilmedi.
+Yeni değişiklikleri göndermek için kendi GitHub kimliğinizle oturum açın ve proje kökünden `git push origin main` kullanın. GitHub CLI tercih ederseniz `gh auth login` ile GitHub'ın kendi ekranında giriş yapabilirsiniz. Anahtarları sohbete veya kaynak dosyalarına koymayın. ZIP arşivi Git geçmişini içermez; Git ile devam etmek için depoyu klonlamak tercih edilir.
+
+## Yerel önizleme
+
+```sh
+cd web
+npm ci
+npm run build -- --webpack
+npm run serve
+```
+
+Sayfayı [localhost:3000](http://localhost:3000/) adresinden açın. Önizleme sunucusunun çalıştığı terminal açık kalmalıdır; sunucu durursa bu adres erişilemez olur. `npm run serve` yalnız kendi bilgisayarınızın yerel bağlantısını dinler. Bu komut siteyi internette yayımlamaz. Geliştirme sırasında otomatik yenileme için `npm run dev` kullanılabilir.
 
 ## Vercel yayını
 
