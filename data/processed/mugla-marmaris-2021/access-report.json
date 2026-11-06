@@ -1,0 +1,30 @@
+{
+  "catalogs": [
+    {
+      "endpoint": "https://stac.dataspace.copernicus.eu/v1",
+      "httpStatus": 200,
+      "returnedItems": 5,
+      "sampleIds": [
+        "S2A_MSIL2A_20210817T084601_N0500_R107_T35SPA_20230216T095126",
+        "S2A_MSIL2A_20210817T084601_N0500_R107_T35SNA_20230216T095126",
+        "S2B_MSIL2A_20210812T084559_N0500_R107_T35SPA_20230212T113343",
+        "S2B_MSIL2A_20210812T084559_N0500_R107_T35SNA_20230212T113343",
+        "S2A_MSIL2A_20210807T084601_N0500_R107_T35SPA_20230211T141103"
+      ]
+    },
+    {
+      "endpoint": "https://earth-search.aws.element84.com/v1",
+      "httpStatus": 200,
+      "returnedItems": 5,
+      "sampleIds": [
+        "S2A_T35SNA_20210817T085325_L2A",
+        "S2A_T35SPA_20210817T085325_L2A",
+        "S2B_T35SNA_20210812T085015_L2A",
+        "S2B_T35SPA_20210812T085015_L2A",
+        "S2A_T35SNA_20210807T085325_L2A"
+      ]
+    }
+  ],
+  "note": "Katalog erişimi piksel okuması değildir.",
+  "checkedAt": "2026-11-06T23:43:32.481491+03:00"
+}

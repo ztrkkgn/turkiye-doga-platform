@@ -7,6 +7,10 @@ penceremizin istatistikleriyle doğrudan karşılaştırılamaz.
 
 ## Olay ve çalışma alanı
 
+- [AFAD, 30 Temmuz 2021 tarihli resmi basın bülteni](https://mersin.afad.gov.tr/ulke-genelinde-devam-eden-orman-yanginlari-hk-2):
+  Marmaris'in Armutalan ve İçmeler mahallelerindeki yangınların başlangıcı
+  29 Temmuz 2021 olarak bildirilir. İçmeler'in olayla ve tarihle ilişkisi
+  için esas alınan birincil resmi kayıttır.
 - [ESA, *Smoke billows from fires in Turkey*, 2 Ağustos 2021](https://www.esa.int/ESA_Multimedia/Images/2021/08/Smoke_billows_from_fires_in_Turkey):
   30 Temmuz 2021 tarihli Sentinel-3 gözlemi güney kıyılarındaki yangınları
   belgeler; metinde Marmaris de anılır. Bu bölgesel görüntü yangın sınırı
@@ -27,6 +31,42 @@ içerebilir. Sonuçların kapsamı yalnızca bu penceredir. Kaynak incelemesinde
 yetkili bir kurumdan indirilebilir, doğrulanmış 2021 Marmaris yangın
 poligonu elde edilmedi; böyle bir sınır varmış gibi davranılmamalıdır.
 
+### İçmeler çalışma penceresinin coğrafi dayanağı
+
+[Zengin ve Acar (2025), *Spatial analysis of wildfire burn severity and urban exposure assessment in Southwestern Türkiye*](https://link.springer.com/article/10.1007/s41207-025-00850-x),
+DOI **10.1007/s41207-025-00850-x**, 2021 yangınları için incelediği
+İçmeler sahası A'nın yaklaşık yangın merkezini **36.77° kuzey,
+28.21° doğu** olarak verir. Koordinatlar, yazar Enes Zengin'in yüklediği
+[erişilebilir tam metnin “Study area” bölümünde](https://www.researchgate.net/publication/393323254_Spatial_analysis_of_wildfire_burn_severity_and_urban_exposure_assessment_in_Southwestern_Turkiye)
+kontrol edilmiştir. Bu nokta bir yaklaşık merkezdir; sınır poligonu veya
+yerleşimin resmi merkezi değildir. Yayının hesaplama yöntemi ve alan
+toplamları platforma aktarılmaz; burada yalnızca olayın coğrafi konumunu
+belirlemek için kullanılır.
+
+MVP çalışma penceresi (GeoJSON sırası boylam, enlem): batı **28.15**,
+güney **36.74**, doğu **28.32**, kuzey **36.86**. Bu sınırlı dikdörtgen,
+referanstaki yangın merkezini ve İçmeler çevresindeki farklı arazi
+örtülerini birlikte kapsamak için seçilmiştir. Köşeleri yayın tarafından
+verilmiş bir yangın sınırı değildir. Kutunun tamamının yandığı, yangının
+tamamını kapsadığı veya tüm Marmaris'i temsil ettiği iddia edilmez.
+Çalışma gridi **EPSG:32635 (UTM 35N), 20 m**; hedef Sentinel-2 karesi
+**35SPA**.
+
+İlk veri erişim denemesinde kullanılan `[28.20, 36.85, 28.32, 36.95]`
+penceresi Marmaris'in kuzeyinde kalıyordu. Coğrafi kaynak kontrolünden
+sonra yukarıdaki İçmeler penceresine geçildi. Eski pencere yangının
+etkisi veya iyileşmesi hakkında bir sonuç olarak kullanılmadı. Yeni
+çerçeve bir dNBR/NDVI eşiğini ya da istenen büyüklükte bir sonucu
+yakalamak için seçilmedi; dış kaynakta belgelenen konuma göre düzeltildi.
+
+AFAD'ın 29 Temmuz başlangıç kaydı, **28 Temmuz 2021** gözleminin olay
+öncesi olarak kullanılmasını destekler. **17 Ağustos 2021** gözlemi
+sonraki durumun incelenmesi için seçilmiştir; gerçek STAC çekim zamanları
+ürün kayıtlarında saklanır. TÜBA kitabının Marmaris bölümünde başlangıç
+için 28 Temmuz yazılması AFAD ve KTÜ kayıtlarıyla çelişir; olay tarihi
+için AFAD kaydı esas alınır. Yayınlardan tarihler ayrım gözetmeden
+birleştirilmez.
+
 ## Sentinel-2 çözünürlük ve radyometri
 
 - [Copernicus Data Space, Sentinel-2 L2A bantları ve birimleri](https://documentation.dataspace.copernicus.eu/APIs/SentinelHub/Data/S2L2A.html):
@@ -43,11 +83,40 @@ poligonu elde edilmedi; böyle bir sınır varmış gibi davranılmamalıdır.
   tarihsel arşiv yeniden işlendiği için 2021 çekimleri de yeni baseline
   ile bulunabilir. Çekim tarihi ve işleme baseline'ı ayrı saklanmalıdır.
 - [Element 84, Earth Search Sentinel-2 koleksiyon notları](https://github.com/Element84/earth-search/blob/main/docs/collections/sentinel-2-l2a.md):
-  bazı COG dosyalarında ofset dönüşüm sırasında uygulanmıştır. Asset
-  `raster:bands` içindeki `scale` ve `offset` kullanılır:
-  `reflectance = DN * scale + offset`. Aynı ofset ikinci kez uygulanmaz.
-  Özgün ESA ürün kimliği, STAC kimliği, kaynak asset URL'leri, scale ve
-  offset değerleri analiz provenance kaydında tutulmalıdır.
+  bazı COG dosyalarında ofset dönüşüm sırasında uygulanmıştır. Bununla
+  birlikte aşağıdaki sağlayıcı hata kayıtları nedeniyle eski koleksiyonda
+  yalnız `raster:bands` metadatasına güvenilmez.
+- [Element 84, sağlayıcının koleksiyon ayrımı açıklaması, #41](https://github.com/Element84/earth-search/issues/41):
+  katkıcı açıklamasına göre eski `sentinel-2-l2a` koleksiyonunda
+  `earthsearch:boa_offset_applied=true` ise COG için yalnız ölçek uygulanır.
+  `sentinel-2-c1-l2a` koleksiyonunda ise `DN*scale+offset` uygulanır.
+  JPEG2000 kaynak varlıklarıyla COG varlıklarının aynı kodlamada olduğu
+  varsayılmaz. Bu ayrım dosya uzantısı ve koleksiyonla birlikte ele alınır.
+- [Element 84, ofset metadata hatası, #9](https://github.com/Element84/earth-search/issues/9)
+  sağlayıcı katkıcısı eski COG'larda uygulanmış ofsetin asset metadata
+  alanında yine de `-0.1` kalabildiğini doğrular.
+  [#66 hata kaydı](https://github.com/Element84/earth-search/issues/66)
+  bazı eski koleksiyon ürünlerinde `false` bayrağının da hatalı olabildiğini
+  gösterir. Bu nedenle fiziksel kontrolü geçmeyen ürünlerde ofset tahmin
+  edilmez; işleme durdurulur veya doğrulanmış başka koleksiyona geçilir.
+
+Özgün ESA ürün kimliği, STAC kimliği, koleksiyon, kaynak asset URL'leri,
+bildirilen ve gerçekten uygulanan scale/offset değerleri ile dönüşüm
+kararının dayanağı provenance kaydında tutulmalıdır. Geçerli kara
+piksellerinde negatif yansıtım ya da `[-1,1]` dışında normalize indeksler
+görülmesi kalibrasyon incelemesi gerektirir. Yanlış radyometriyi maskelemek
+için sonuçlar bu aralığa kırpılmaz. Dosya boyutu/okuma başarısı tek başına
+bilimsel doğrulama sayılmaz.
+
+**MVP kararı:** Analiz için sağlayıcının yeni **`sentinel-2-c1-l2a`**
+koleksiyonu kullanılır. Eski `sentinel-2-l2a` koleksiyonu katalog erişim
+denemesinde görülebilir, ancak analiz girdisi olarak kabul edilmez. İlk
+gerçek veri kontrolünde eski koleksiyonun uygulanmış ofset ile çelişen
+asset metadatası normalize indislerde fiziksel aralık dışında değerler
+üretti; bu çıktı bilimsel sonuç olarak kullanılmadı. Çözüm, indeksi
+kırpmak veya tahmini ofset seçmek yerine koleksiyonu değiştirmektir.
+Eski koleksiyona ait kayıtlı ürün seçimi yeni analiz için yeniden
+kullanılmamalıdır.
 
 ## Bulut, gölge ve veri yeterliliği
 
@@ -58,6 +127,30 @@ tasarım seçimidir; resmi bir evrensel maske standardı değildir. Böylece
 `0,1,2,3,6,7,8,9,10,11` elenir. Yanmış piksellerin yanlış SCL etiketi
 alması ölçüm kapsamını azaltabilir; geçerli piksel oranı açıkça verilir.
 SCL kusursuz değildir ve dumanın tamamını yakalama garantisi vermez.
+
+SCL `3,8,9,10,11` sınıfları çevresine 20 m gridde **60 m yarıçaplı
+disk tamponu** uygulanır. Pencere dışında kalan yakın bulut ve gölgeleri
+de hesaba katmak için SCL, çalışma penceresinin çevresinde üç piksellik
+ek şeritle okunur; tampon uygulandıktan sonra pencereye kırpılır.
+
+### Gerçek renk görüntüsü ile analiz maskesinin farkı
+
+Önce/sonra gerçek renk görüntüleri B04, B03 ve B02 yansıtımlarından
+üretilir. Görsel bağlam için SCL `2,4,5,6,7` sınıfları kabul edilir:
+karanlık yüzey, bitki örtüsü, çıplak toprak, su ve belirsiz sınıf. Böylece
+su ve koyu görünen yüzeyler de gözlem görüntüsünde incelenebilir.
+SCL 2 veya 7 görülmesi tek başına yanmış alan tespiti değildir.
+
+NDVI, NBR ve değişim istatistikleri ise yalnızca **SCL 4/5** koşulunu ve
+radyometri kontrollerini geçen pikselleri kullanır. Dolayısıyla renkli
+görüntüde görünen bir su veya karanlık yüzey, metrik hesabına katılmış
+olmayabilir. İki maske de aynı bulut/gölge/kar tamponunu kullanır. Görsel
+için geçersiz ya da kaynaktan okunamayan pikseller şeffaf bırakılır.
+
+İki tarihe aynı sabit `0–0.30` yansıtım aralığı ve `1.8` gamma değeriyle
+görsel dönüşüm uygulanır; her görüntüye ayrı otomatik kontrast ayarı
+yapılmaz. Ekran renkleri görselleştirme içindir; sayısal metrikler bu
+renklerden değil, yansıtım bantlarından hesaplanır.
 
 [Copernicus mozaik algoritması](https://documentation.dataspace.copernicus.eu/Data/Others/Sentinel2_Mosaic_Algorithm.html)
 bulut ve gölge sınıflarının elenmesini ve piksel bazında gözlem sayısının

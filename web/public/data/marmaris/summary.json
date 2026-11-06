@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "id": "mugla-marmaris-2021",
+  "name": "Marmaris · İçmeler çevresi",
+  "province": "Muğla",
+  "status": "preliminary",
+  "description": "2021 Marmaris yangını bağlamında, İçmeler çevresinde özgün araştırmanın yaklaşık 36.77°N, 28.21°E merkezini kapsayacak şekilde seçilen karma arazi örtülü araştırma kesiti. Resmî yangın çevresi değildir; bütün Marmaris’i temsil etmez.",
+  "bbox": [
+    28.15,
+    36.74,
+    28.32,
+    36.86
+  ],
+  "areaKm2": 201.93,
+  "generatedAt": "2026-11-06T20:41:00.284680+00:00",
+  "methodVersion": "0.1.0",
+  "configSha256": "6fcaae674c274fab041f0e828d51adfd55f71970259f6c81d729e9e305bae200",
+  "grid": {
+    "crs": "EPSG:32635",
+    "resolutionM": 20,
+    "width": 768,
+    "height": 676,
+    "transform": [
+      20.0,
+      0.0,
+      602500.0,
+      0.0,
+      -20.0,
+      4080160.0
+    ],
+    "displayCrs": "EPSG:3857"
+  },
+  "periods": [
+    {
+      "id": "before",
+      "label": "Yangın öncesi",
+      "start": "2021-07-20",
+      "end": "2021-07-28",
+      "target": "2021-07-28",
+      "status": "available",
+      "observation": {
+        "datetime": "2021-07-28T09:00:15.517000Z",
+        "itemId": "S2A_T35SPA_20210728T084602_L2A",
+        "productId": "S2A_MSIL2A_20210728T084601_N0500_R107_T35SPA_20230221T004352.SAFE",
+        "cloudCover": 0.00142,
+        "baseline": "05.00",
+        "boaOffsetApplied": null,
+        "validFraction": 0.7174268310800772,
+        "validPixelCount": 362175,
+        "ndviMean": 0.587882936000824,
+        "nbrMean": 0.39420485496520996,
+        "rgbUrl": "/data/marmaris/before-rgb.png",
+        "ndviUrl": "/data/marmaris/before-ndvi.png",
+        "nbrUrl": "/data/marmaris/before-nbr.png",
+        "stacUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T35SPA_20210728T084602_L2A"
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "id": "after",
+      "label": "Yangın sonrası",
+      "start": "2021-08-10",
+      "end": "2021-08-20",
+      "target": "2021-08-17",
+      "status": "available",
+      "observation": {
+        "datetime": "2021-08-17T09:00:14.580000Z",
+        "itemId": "S2A_T35SPA_20210817T085325_L2A",
+        "productId": "S2A_MSIL2A_20210817T084601_N0500_R107_T35SPA_20230216T095126.SAFE",
+        "cloudCover": 0.01435,
+        "baseline": "05.00",
+        "boaOffsetApplied": null,
+        "validFraction": 0.5794780369434953,
+        "validPixelCount": 292535,
+        "ndviMean": 0.4140881896018982,
+        "nbrMean": 0.1763882339000702,
+        "rgbUrl": "/data/marmaris/after-rgb.png",
+        "ndviUrl": "/data/marmaris/after-ndvi.png",
+        "nbrUrl": "/data/marmaris/after-nbr.png",
+        "stacUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T35SPA_20210817T085325_L2A"
+      },
+      "rejectedCandidates": []
+    }
+  ],
+  "comparisons": {
+    "fire": {
+      "before": "before",
+      "after": "after",
+      "pixelCount": 292072,
+      "commonValidFraction": 0.5785608874362402,
+      "commonAreaKm2": 116.8288,
+      "ndviDeltaMean": -0.14161981642246246,
+      "dnbrMean": 0.19315780699253082,
+      "dnbrMedian": 0.023391060531139374,
+      "beforeNdviCommonMean": 0.5562117099761963,
+      "afterNdviCommonMean": 0.4145919382572174,
+      "dnbrUrl": "/data/marmaris/dnbr.png",
+      "ndviDeltaUrl": "/data/marmaris/ndvi_delta.png",
+      "displayRange": [
+        -0.5,
+        1.0
+      ],
+      "displayClippingOnly": true
+    }
+  },
+  "sources": [
+    {
+      "title": "Copernicus Data Space STAC",
+      "url": "https://documentation.dataspace.copernicus.eu/APIs/STAC.html"
+    },
+    {
+      "title": "Sentinel-2 açık COG arşivi",
+      "url": "https://registry.opendata.aws/sentinel-2-l2a-cogs/"
+    },
+    {
+      "title": "ESA · Türkiye yangınları, 30 Temmuz 2021",
+      "url": "https://www.esa.int/ESA_Multimedia/Images/2021/08/Smoke_billows_from_fires_in_Turkey"
+    },
+    {
+      "title": "KTÜ · 2021 Marmaris-Armutalan yangını özgün araştırması",
+      "url": "https://avesis.ktu.edu.tr/yayin/e2d42803-409b-48bb-af96-7d2835c9e919/orman-yanginlarinin-uzaktan-algilama-teknikleri-ve-karar-destek-sistemleri-ile-analizi-2021-yili-buyuk-marmaris-armutalan-yangini-ornegi"
+    },
+    {
+      "title": "Zengin ve Acar (2025) · İçmeler yangın çalışma sahası",
+      "url": "https://doi.org/10.1007/s41207-025-00850-x"
+    },
+    {
+      "title": "Earth Search · Sentinel-2 Collection 1 arşivi",
+      "url": "https://github.com/Element84/earth-search/blob/main/docs/collections/sentinel-2-l2a.md"
+    },
+    {
+      "title": "AFAD · 30 Temmuz 2021 resmî yangın bülteni",
+      "url": "https://mersin.afad.gov.tr/ulke-genelinde-devam-eden-orman-yanginlari-hk-2"
+    }
+  ],
+  "limitations": [
+    "Çalışma penceresi resmî yangın sınırı değildir; karma arazi örtüsü içerir ve bütün Marmaris’i temsil etmez.",
+    "İlk çıktı iki tekil gözleme dayanır; medyan kompozit ve 2022–2026 toparlanma serisi henüz üretilmedi.",
+    "NDVI bitki örtüsünün spektral göstergesidir; ağaç sayısı, hayatta kalma oranı veya biyolojik çeşitlilik değildir.",
+    "dNBR sürekli değişimi gösterir; yerel saha kalibrasyonu olmadan hasar sınıfı veya yanan alan toplamı verilmez.",
+    "SCL maskesi ve 60 m tampon tüm dumanı, ince bulutları ve topografik gölgeyi gideremeyebilir.",
+    "Tarihler yakın mevsimlerden seçildi; kuraklık, fenoloji ve atmosfer değişimleri yangın etkisinden tam ayrılamaz.",
+    "Değişim tek başına nedenini veya herhangi bir faaliyetin yasallığını kanıtlamaz. Bağımsız piksel düzeyinde saha doğrulaması yapılmadı.",
+    "Yalnızca iki tarihte de geçerli ortak kara pikselleri fark hesabına katılır; maskelenen alanlarda yorum yapılmaz.",
+    "SCL 2 karanlık piksel ve SCL 7 belirsiz sınıf dışlanır; koyu yanık yüzeylerin bir kısmı da dışlanabilir. Sonuç, kabul edilen piksellerle sınırlıdır.",
+    "İndeks bantlarında negatif yüzey yansıtımı bulunan pikseller hesaplamadan çıkarılır."
+  ],
+  "assets": {
+    "aoiUrl": "/data/marmaris/aoi.geojson",
+    "imageCoordinates": [
+      [
+        28.15,
+        36.86
+      ],
+      [
+        28.32,
+        36.86
+      ],
+      [
+        28.32,
+        36.74
+      ],
+      [
+        28.15,
+        36.74
+      ]
+    ],
+    "provenanceUrl": "/data/marmaris/provenance.json"
+  },
+  "quality": {
+    "minValidFraction": 0.5,
+    "acceptedSclClasses": [
+      4,
+      5
+    ],
+    "cloudBufferM": 60,
+    "observationType": "single-scene",
+    "fieldValidated": false
+  },
+  "assetSha256": {
+    "after-ndvi.png": "43d2a86ad36a674c496c8b58230c2eba2b7f8c10f5c3a8b9fa61f81826073c1d",
+    "after-rgb.png": "28b67c5a6169494f395b5dc8616a9d3bc1260704c98554abe8e7c38bcad0b887",
+    "provenance.json": "d00e39b90bfcce095905b17f7a42fadeb377ca42d25095ecbe0bdc8be40fd6a7",
+    "before-nbr.png": "9bdce6770ef9112af74bcd4245ef97f28ff3dd2df913a1b006ee3e03bacda940",
+    "aoi.geojson": "86dc14311c1c70a280f9c79586d158e0ff8adf0aecde23172fc30346349ee64b",
+    "ndvi_delta.png": "18564d01f236decff4fd1ad03a78c20270061570b06ecb9d5588e49398c0a388",
+    "before-ndvi.png": "828efdafe0943debba1d09d93b11bd5f455fd73b638745c15f41dfcb86cc0bfb",
+    "before-rgb.png": "f90d5313e6ebf5a23d7226f73b7b4bae730924c4035f961b333cd9f712b7beff",
+    "dnbr.png": "49e58f4437fd915c4092cc0e3155323d333be7034ed8660f2f7c709ee72a4707",
+    "after-nbr.png": "cab948fcf6e276cd67cb6a866ea6ff1160360952d4967f7f335d621fd16cd845"
+  }
+}
