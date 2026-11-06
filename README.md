@@ -31,7 +31,92 @@ npm ci
 npm run dev
 ```
 
-İlk gerçek çalıştırma ve yayın talimatları geliştirme tamamlandığında aşağıda güncellenecektir.
+İnternet yalnız bağımlılık kurulumu, katalog sorgusu ve gerçek piksel okuması için gerekir. API anahtarı gerekmez. İlk analiz birkaç dakika sürebilir. `requirements-lock.txt` Python paketlerini, `web/package-lock.json` web paketlerini sabitler. `npm ci` için Node.js 22 kullanın. İlk geliştirmede Python 3.11.6 ve Node.js 23.5.0 ortamında doğrulama yapıldı.
+
+Üretilmiş gerçek veri de repoya eklenmiştir; analizi tekrar çalıştırmadan `web/` içinden `npm ci` ve `npm run dev` ile incelenebilir. Dosya izleme sınırına takılan ortamlarda aşağıdaki statik önizlemeyi kullanın.
+
+## İlk gerçek gözlem
+
+İçmeler çevresindeki çalışma penceresi `[28.15,36.74,28.32,36.86]` (boylam/enlem) ve `EPSG:32635` üzerinde 20 m ortak grid kullanılır. Referans olay ve pencere gerekçesi [bilimsel kaynaklarda](docs/scientific-sources.md) açıklanır. Dikdörtgen resmî yangın sınırı değildir.
+
+- Önce: **28 Temmuz 2021**, `S2A_T35SPA_20210728T084602_L2A`.
+- Sonra: **17 Ağustos 2021**, `S2A_T35SPA_20210817T085325_L2A`.
+- Ortak geçerli piksellerde ortalama ΔNDVI yaklaşık **−0.142**, dNBR yaklaşık **0.193**.
+- Ortak geçerli çalışma penceresi payı yaklaşık **%57.9**. Deniz ve diğer dışlanan pikseller de paydanın içindedir; bu sayı doğruluk veya yangın hasar yüzdesi değildir.
+
+Bu sonuçlar platform tarafından gerçek bantlardan hesaplanmıştır. Ölçümlerin saha verileriyle bağımsız doğruluk değerlendirmesi yapılmadı. Yıllık iyileşme eğilimi çıkarılamaz.
+
+## Tekrar üretim
+
+`doga run`, repodaki `data/processed/.../selection.json` içindeki tam STAC kayıtlarını kullanır. Aynı ürünler, bant URL'leri ve radyometrik katsayılar yeniden okunur. Yapılandırma değişirse otomatik olarak eski seçimle devam etmez.
+
+```sh
+# Proje kökünde, etkin Python ortamıyla:
+doga probe --config data/regions/mugla-marmaris-2021.json
+doga run --config data/regions/mugla-marmaris-2021.json
+python tools/validate_outputs.py
+
+# Bilinçli olarak yeni ürün araması yapmak için:
+doga run --config data/regions/mugla-marmaris-2021.json --refresh
+```
+
+`--refresh` iki tekil tarih penceresinde yeniden ürün seçer; yıllık güncelleme veya zamanlanmış izleme değildir. İlk sürüm yalnız `before` / `after` çifti destekler. Kalite alt sınırı sağlanamazsa yeni web çıktısı yayımlanmaz; mevcut geçerli çıktı korunur.
+
+Çıktılar:
+
+| Konum | İçerik |
+| --- | --- |
+| `web/public/data/marmaris/` | Gerçek RGB, NDVI, NBR, dNBR ve ΔNDVI PNG'leri; AOI GeoJSON; JSON ölçüm ve provenance kaydı |
+| `data/processed/mugla-marmaris-2021/` | Katalog erişim raporu, sürümlü özet ve sabit ürün seçimi |
+| `data/cache/mugla-marmaris-2021/` | Yerel 20 m indis/fark GeoTIFF'leri; Git dışında |
+
+NDVI `(B08−B04)/(B08+B04)`, NBR `(B8A−B12)/(B8A+B12)`, dNBR `önce−sonra` ve ΔNDVI `sonra−önce` hesaplanır. Sentinel-2 Collection 1 L2A, Earth Search üzerinden okunur; Copernicus Data Space katalog erişimi ayrıca test edilir. Eski Earth Search koleksiyonunda saptanan ofset çelişkisi nedeniyle yalnız `sentinel-2-c1-l2a` analiz edilir. Ayrıntılar [analiz kılavuzunda](analysis/README.md).
+
+## Web ve doğrulama
+
+```sh
+python -m pytest analysis/tests -q
+python tools/validate_outputs.py
+cd web
+npm test
+npm run typecheck
+npm run build -- --webpack
+npm run serve
+```
+
+Statik önizleme: `http://localhost:3000`. Üç sayfa `/`, `/bolge/mugla-marmaris-2021/` ve `/metodoloji/` adreslerindedir. Harita altlığı internet ister; analiz görselleri yerel çıktılardır. `web/out/` yeniden üretilebilir ve Git dışında tutulur. CI aynı kontrolleri yapar; büyük uydu indirme/analizi CI'da çalıştırılmaz. Yerel test sonuçları [geliştirme raporunda](docs/development-report.md) kayıtlıdır; GitHub üzerinde workflow henüz çalıştırılmadı.
+
+## GitHub'a aktarım
+
+Yerel `main` deposu ve commit'ler hazırdır. Bu ortamda GitHub CLI kurulu ve uzak depo tanımlı değildir. Kendi bilgisayarınızda proje kökünde:
+
+Kaynak ZIP'i başka klasöre açarsanız Git geçmişi taşınmaz. Bu durumda önce kendi Git kimliğinizi ayarlayıp `git init -b main`, `git add .` ve `git commit -m "feat: initialize real Sentinel-2 pilot"` ile yeni bir yerel depo oluşturun. Mevcut çalışma klasöründeki depo bu adıma ihtiyaç duymaz.
+
+```sh
+brew install gh
+gh auth login
+gh repo create turkiye-doga-platform --public --source=. --remote=origin --push
+```
+
+Mevcut boş bir depoya göndermek için `git remote add origin https://github.com/KULLANICI/turkiye-doga-platform.git` ve `git push -u origin main` kullanılabilir. Kimlik doğrulamayı GitHub'ın kendi ekranında yapın; anahtarları sohbete veya dosyalara koymayın. Uzak depo oluşturma ve push burada gerçekleştirilmedi.
+
+## Vercel yayını
+
+GitHub deposunu Vercel'e içe aktarın. Root Directory `web`, Framework Next.js, Build Command `npm run build -- --webpack`, statik çıktı `out` olacak şekilde yapılandırın. Bu sürüm API sunucusu veya veritabanı istemez. Analiz yeniden çalıştırıldıktan sonra doğrulanmış küçük çıktıları commit edip frontend'i yeniden derleyin.
+
+Vercel hesabı ve gerçek alan adı bu geliştirmede bağlanmadı; yayın yapılmadı. Anahtar zorunlu değildir. `.env.example` yalnız güvenli ve isteğe bağlı site URL'sini içerir. Son kullanıcıdan uydu anahtarı istenmez.
+
+İsteğe bağlı genel site URL'si için proje kökünde `cp .env.example web/.env.local` kullanıp `NEXT_PUBLIC_SITE_URL` değerini ayarlayın. Bu değer Next.js metadata tabanı içindir; bir sır değildir. Varsayılanı yerel geliştirme adresidir.
+
+## Maliyet ve işletim
+
+Analiz yerel CPU'da çalışır; GPU, ticari AI API'si veya ücretli uydu verisi gerekmez. Veritabanı ve sürekli worker maliyeti yoktur. [Vercel Hobby](https://vercel.com/docs/plans/hobby) kişisel, ticari olmayan kullanım koşullarına ve kota sınırlarına tabidir; sınırsız trafik vaat edilmez. Açık depolardaki standart GitHub runner'ları [Actions koşullarına](https://docs.github.com/en/billing/concepts/product-billing/github-actions) göre ücretsizdir; büyük analizler bunun dışında yerel olarak yapılır.
+
+OSM altlığı [karo kullanım politikasına](https://operations.osmfoundation.org/policies/tiles/) tabidir. Görünür atıf korunur; toplu indirme/offline paketleme yapılmaz. İlk düşük trafikli pilot için kullanılır; trafik büyürse uygun bir karo sağlayıcısı seçilir. Earth Search açık arşivi hizmet garantisi olan özel bir altyapı değildir. Servis kesilirse mevcut işlenmiş sonuçlar incelenebilir.
+
+## Katkı
+
+[CONTRIBUTING.md](CONTRIBUTING.md) kurulum, test ve bilimsel değişiklik kurallarını açıklar. Üyelik, ödeme, bildirim, kullanıcı arazisi seçimi ve yeni pilotlar bu ilk adımda geliştirilmedi. Sonraki öncelik aynı mevsim medyan kompozitleri ve sabit ortak maskede 2022–2026 toparlanma serisidir.
 
 ## Bilimsel yorum
 
