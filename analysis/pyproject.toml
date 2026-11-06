@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "turkiye-doga-analysis"
+version = "0.1.0"
+description = "Tekrarlanabilir Sentinel-2 L2A pilot analizi"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2,<3", "rasterio>=1.4,<2", "pystac-client>=0.8,<1", "requests>=2.32,<3", "Pillow>=11,<13", "scipy>=1.14,<2"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+doga = "doga.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

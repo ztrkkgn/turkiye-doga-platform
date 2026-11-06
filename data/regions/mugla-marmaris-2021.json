@@ -1,0 +1,22 @@
+{
+  "id": "mugla-marmaris-2021",
+  "name": "Marmaris · Armutalan çevresi",
+  "province": "Muğla",
+  "bbox": [28.20, 36.85, 28.32, 36.95],
+  "crs": "EPSG:32635",
+  "resolutionM": 20,
+  "tile": "35SPA",
+  "description": "2021 Marmaris yangını bağlamında seçilen küçük, karma arazi örtülü araştırma kesiti. Resmî yangın çevresi değildir; bütün Marmaris'i temsil etmez.",
+  "periods": [
+    {"id": "before", "label": "Yangın öncesi", "start": "2021-07-20", "end": "2021-07-28", "target": "2021-07-28"},
+    {"id": "after", "label": "Yangın sonrası", "start": "2021-08-10", "end": "2021-08-20", "target": "2021-08-17"}
+  ],
+  "maxSceneCloudCover": 30,
+  "minValidFraction": 0.5,
+  "sources": [
+    {"title": "Copernicus Data Space STAC", "url": "https://documentation.dataspace.copernicus.eu/APIs/STAC.html"},
+    {"title": "Sentinel-2 açık COG arşivi", "url": "https://registry.opendata.aws/sentinel-2-l2a-cogs/"},
+    {"title": "ESA · Türkiye yangınları, 30 Temmuz 2021", "url": "https://www.esa.int/ESA_Multimedia/Images/2021/08/Smoke_billows_from_fires_in_Turkey"},
+    {"title": "KTÜ · 2021 Marmaris-Armutalan yangını özgün araştırması", "url": "https://avesis.ktu.edu.tr/yayin/e2d42803-409b-48bb-af96-7d2835c9e919/orman-yanginlarinin-uzaktan-algilama-teknikleri-ve-karar-destek-sistemleri-ile-analizi-2021-yili-buyuk-marmaris-armutalan-yangini-ornegi"}
+  ]
+}
