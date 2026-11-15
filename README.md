@@ -106,7 +106,7 @@ NDVI farkındaki değiştirilmiş Z puanı `|M| > 3.5`, aynı yönde gerçek NDV
 
 [monitor.yml](.github/workflows/monitor.yml) her gün **03:17 UTC / 06:17 İstanbul** için hazırlanmıştır; `workflow_dispatch` ile elle de başlatılabilir. Her denemede kontrol zamanını kaydeder; uygun yeni ürün çifti varsa analizi yeniler. Çıktı doğrulama, test ve web build adımlarından sonra değişen küçük veri dosyalarını `main` dalına gönderir.
 
-**Workflow GitHub’a gönderildi. İlk gerçek çalıştırma yayın kapısında bir tutarlılık hatasını yakaladı; düzeltme sonrası tekrar çalıştırmanın doğrulaması sürüyor.** Yerelde tamamlanan izleme, zamanlanmış işin gerçekten çalıştığını tek başına kanıtlamaz.
+**15 Kasım 2026’da gerçek güncelleme işi başarıyla çalıştı ve doğrulanmış kayıtları otomatik olarak depoya yazdı.** [Başarılı uçtan uca çalıştırma](https://github.com/ztrkkgn/turkiye-doga-platform/actions/runs/43695321567), katalog kontrolü, çıktı doğrulama, 57 Python testi, web kontrolleri ve yayın adımını kapsar. Otomatik veri commit’i `1883a19` oldu.
 
 GitHub zamanlaması hizmet garantisi değildir: işler gecikebilir veya yoğunlukta düşebilir; public repolarda 60 gün etkinlik olmadığında schedule devre dışı kalabilir. [Resmî zamanlama koşulları](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule) geçerlidir. Günlük kontrol, her gün yeni veya bulutsuz uydu görüntüsü bulunacağı anlamına gelmez.
 
