@@ -105,13 +105,13 @@ export function TurkeyExplorer() {
             <p className="event-summary">{selected.summary}</p>
             <span className={`analysis-status ${selected.analysis.status}`}>{analysisLabel(selected)}</span>
             <p className="selected-date">{eventDateLabel(selected)}</p>
-            <p className="selected-evidence">{selected.analysis.status==='available'?'Gerçek önce/sonra görüntüleri ve indeks sonuçları ayrıntı sayfasında.':'Bu olay için henüz uydu analizi yayımlanmadı. Belgelenmiş olay ve kaynaklarını inceleyebilirsiniz.'}</p>
+            <p className="selected-evidence">{selected.analysis.status==='available'?'Gerçek önce/sonra görüntüleri ve indeks sonuçları ayrıntı sayfasında.':'Olayın yaşandığı dönem için henüz uydu analizi yayımlanmadı. Belgelenmiş olayı, kaynaklarını ve varsa güncel gözlemlerini inceleyebilirsiniz.'}</p>
             <Link className="primary-link" href={`/bolge/${selected.slug}/`}>Bu olayı incele <span>→</span></Link>
             <p className="location-disclaimer">Haritadaki işaret yaklaşık konumdur; olayın etki sınırı değildir.</p>
           </> : <>
             <span className="eyebrow">DOĞAYI YAKINDAN OKUYUN</span><h2>Türkiye’yi <br/>keşfedin.</h2>
             <p className="event-summary">Haritadan bir olayı seçin. Ne olduğunu, nerede yaşandığını ve elimizde hangi verilerin bulunduğunu birlikte görün.</p>
-            <div className="country-counts"><div><strong>{EVENTS.length}</strong><span>kaynaklı olay kaydı</span></div><div><strong>{analysisCount}</strong><span>uydu analizi</span></div></div>
+            <div className="country-counts"><div><strong>{EVENTS.length}</strong><span>kaynaklı olay kaydı</span></div><div><strong>{analysisCount}</strong><span>olay dönemi analizi</span></div></div>
             <div className="scope-note"><span>KAPSAM BİLGİSİ</span><p>Harita tüm Türkiye’yi gösterir. Uydu analizleri yalnız işlenmiş çalışma alanlarında bulunur.</p></div>
             <a className="text-link" href="#olaylar">Olay listesine geç ↓</a>
           </>}
@@ -126,7 +126,7 @@ export function TurkeyExplorer() {
 
     <section className="events-section" id="olaylar" aria-labelledby="events-heading">
       <div className="section-top"><div><span className="eyebrow">OLAYLAR / YAKINDAN BAKIŞ</span><h2 id="events-heading">Her yerin bir hikâyesi var.</h2></div>
-        <label className="analyzed-filter"><input type="checkbox" checked={analyzedOnly} onChange={event=>{setAnalyzedOnly(event.target.checked);setSelectedId(null)}}/>Yalnız uydu analizi olanlar</label></div>
+        <label className="analyzed-filter"><input type="checkbox" checked={analyzedOnly} onChange={event=>{setAnalyzedOnly(event.target.checked);setSelectedId(null)}}/>Yalnız olay dönemi analizi olanlar</label></div>
       <p className="event-result-count" role="status">{EVENTS.length} olaydan {shown.length} tanesi gösteriliyor.</p>
       <div className="event-rows">{shown.map((event,index)=><article key={event.id} className={`event-row ${event.category}`}>
         <span className="event-row-number">{String(index+1).padStart(2,'0')}</span>

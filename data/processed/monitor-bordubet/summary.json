@@ -13,9 +13,9 @@
     36.91
   ],
   "areaKm2": 118.6864,
-  "generatedAt": "2026-11-13T17:48:40.841763+00:00",
+  "generatedAt": "2026-11-15T08:32:06.672024+00:00",
   "methodVersion": "0.1.0",
-  "configSha256": "4eefeeed1d154e2d00578e1cb0a628cd189f481095e546722b800c3c892ec19d",
+  "configSha256": "e50e5516e5bc77de9f8e3df477f45b6727bfcbe1e01b28d784bda8fdfe9b9cbb",
   "grid": {
     "crs": "EPSG:32635",
     "resolutionM": 20,
@@ -35,9 +35,9 @@
     {
       "id": "before",
       "label": "Referans gözlem",
-      "start": "2026-10-02",
-      "end": "2026-10-29",
-      "target": "2026-10-29",
+      "start": "2026-10-04",
+      "end": "2026-10-31",
+      "target": "2026-10-31",
       "status": "available",
       "observation": {
         "datetime": "2026-10-22T09:00:24.081000Z",
@@ -50,9 +50,9 @@
         "validPixelCount": 276318,
         "ndviMean": 0.5888919234275818,
         "nbrMean": 0.3344346880912781,
-        "rgbUrl": "/data/monitor-bordubet/20261022-20261112-aed763096d2a__before-rgb.png",
-        "ndviUrl": "/data/monitor-bordubet/20261022-20261112-aed763096d2a__before-ndvi.png",
-        "nbrUrl": "/data/monitor-bordubet/20261022-20261112-aed763096d2a__before-nbr.png",
+        "rgbUrl": "/data/monitor-bordubet/20261022-20261112-a75434531137__before-rgb.png",
+        "ndviUrl": "/data/monitor-bordubet/20261022-20261112-a75434531137__before-ndvi.png",
+        "nbrUrl": "/data/monitor-bordubet/20261022-20261112-a75434531137__before-nbr.png",
         "stacUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T35SNA_20261022T085809_L2A"
       },
       "rejectedCandidates": []
@@ -60,9 +60,9 @@
     {
       "id": "after",
       "label": "Güncel gözlem",
-      "start": "2026-10-30",
-      "end": "2026-11-13",
-      "target": "2026-11-13",
+      "start": "2026-11-01",
+      "end": "2026-11-15",
+      "target": "2026-11-15",
       "status": "available",
       "observation": {
         "datetime": "2026-11-12T09:10:08.520000Z",
@@ -75,9 +75,9 @@
         "validPixelCount": 149416,
         "ndviMean": 0.6322067975997925,
         "nbrMean": 0.4134533703327179,
-        "rgbUrl": "/data/monitor-bordubet/20261022-20261112-aed763096d2a__after-rgb.png",
-        "ndviUrl": "/data/monitor-bordubet/20261022-20261112-aed763096d2a__after-ndvi.png",
-        "nbrUrl": "/data/monitor-bordubet/20261022-20261112-aed763096d2a__after-nbr.png",
+        "rgbUrl": "/data/monitor-bordubet/20261022-20261112-a75434531137__after-rgb.png",
+        "ndviUrl": "/data/monitor-bordubet/20261022-20261112-a75434531137__after-ndvi.png",
+        "nbrUrl": "/data/monitor-bordubet/20261022-20261112-a75434531137__after-nbr.png",
         "stacUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2C_T35SNA_20261112T090215_L2A"
       },
       "rejectedCandidates": []
@@ -95,8 +95,8 @@
       "dnbrMedian": -0.08074668049812317,
       "beforeNdviCommonMean": 0.5939793586730957,
       "afterNdviCommonMean": 0.6322634816169739,
-      "dnbrUrl": "/data/monitor-bordubet/20261022-20261112-aed763096d2a__dnbr.png",
-      "ndviDeltaUrl": "/data/monitor-bordubet/20261022-20261112-aed763096d2a__ndvi_delta.png",
+      "dnbrUrl": "/data/monitor-bordubet/20261022-20261112-a75434531137__dnbr.png",
+      "ndviDeltaUrl": "/data/monitor-bordubet/20261022-20261112-a75434531137__ndvi_delta.png",
       "displayRange": [
         -0.5,
         1.0
@@ -159,16 +159,16 @@
     "fieldValidated": false
   },
   "assetSha256": {
-    "20261022-20261112-aed763096d2a__after-ndvi.png": "71d5bdf591ae5aab1d44e52240b60a13e127082028f8e4a18db1ba7f2c581288",
-    "20261022-20261112-aed763096d2a__after-rgb.png": "deff9d502498e55968947bebd9b49bb990c7ef90da6a7e090a0b1e885c28821e",
-    "provenance.json": "bbf6d7a79ea2aaf93419cb31c4f0a387b9c9a1a5a359830c772bb63a194a0d4d",
-    "20261022-20261112-aed763096d2a__before-nbr.png": "c323bc1d2c73e459a08bb2f2c8c52f8d654f75381525f292cf07998218a7b471",
+    "20261022-20261112-a75434531137__after-ndvi.png": "71d5bdf591ae5aab1d44e52240b60a13e127082028f8e4a18db1ba7f2c581288",
+    "20261022-20261112-a75434531137__after-rgb.png": "deff9d502498e55968947bebd9b49bb990c7ef90da6a7e090a0b1e885c28821e",
+    "provenance.json": "30ef95c5a9e8ae9ed1dd875aec400c836d7ae7320c06083e7f4027923187adf1",
+    "20261022-20261112-a75434531137__before-nbr.png": "c323bc1d2c73e459a08bb2f2c8c52f8d654f75381525f292cf07998218a7b471",
     "aoi.geojson": "bfc8205c4e0eb2896dd4576f419a9f0807a5559ee312a0b7cebeec21b70f093c",
-    "20261022-20261112-aed763096d2a__ndvi_delta.png": "4f6020dbe46958e85b7fd6e5c221bdab42d9aa351360699ec959b754bc6ea4f0",
-    "20261022-20261112-aed763096d2a__before-ndvi.png": "c80d64040ee7a62c9ad4143f19fd0243802f135b4d9a53e4de2e2f224f229f6b",
-    "20261022-20261112-aed763096d2a__before-rgb.png": "6f823485dfa0ccabc5420a9e4ea863badb9f61fdc19850afe6e011c09f44c629",
-    "20261022-20261112-aed763096d2a__dnbr.png": "d68b1ad221855b0111ab669e14f37bd4b8ae0be0a609b7027851f5688f956c38",
-    "20261022-20261112-aed763096d2a__after-nbr.png": "eab2df658a2b41b44e1952e4d0cd9141c71b7a0e7a67236781ff61914f9e63aa"
+    "20261022-20261112-a75434531137__ndvi_delta.png": "4f6020dbe46958e85b7fd6e5c221bdab42d9aa351360699ec959b754bc6ea4f0",
+    "20261022-20261112-a75434531137__before-ndvi.png": "c80d64040ee7a62c9ad4143f19fd0243802f135b4d9a53e4de2e2f224f229f6b",
+    "20261022-20261112-a75434531137__before-rgb.png": "6f823485dfa0ccabc5420a9e4ea863badb9f61fdc19850afe6e011c09f44c629",
+    "20261022-20261112-a75434531137__dnbr.png": "d68b1ad221855b0111ab669e14f37bd4b8ae0be0a609b7027851f5688f956c38",
+    "20261022-20261112-a75434531137__after-nbr.png": "eab2df658a2b41b44e1952e4d0cd9141c71b7a0e7a67236781ff61914f9e63aa"
   },
-  "imageFilePrefix": "20261022-20261112-aed763096d2a__"
+  "imageFilePrefix": "20261022-20261112-a75434531137__"
 }

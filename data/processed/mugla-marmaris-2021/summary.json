@@ -13,7 +13,7 @@
     36.86
   ],
   "areaKm2": 201.93,
-  "generatedAt": "2026-11-13T17:49:57.438198+00:00",
+  "generatedAt": "2026-11-15T08:31:28.866966+00:00",
   "methodVersion": "0.1.0",
   "configSha256": "6fcaae674c274fab041f0e828d51adfd55f71970259f6c81d729e9e305bae200",
   "grid": {
@@ -181,7 +181,7 @@
   "assetSha256": {
     "after-ndvi.png": "43d2a86ad36a674c496c8b58230c2eba2b7f8c10f5c3a8b9fa61f81826073c1d",
     "after-rgb.png": "28b67c5a6169494f395b5dc8616a9d3bc1260704c98554abe8e7c38bcad0b887",
-    "provenance.json": "a03e158af922b3d4a8c807b56f0ea0c64b576b2b2f6a6bfd6322ac78ff8fb59c",
+    "provenance.json": "ac0712ac5e9139e5a01eb54795467764181c61c821600c4389454bdb7fdd82de",
     "before-nbr.png": "9bdce6770ef9112af74bcd4245ef97f28ff3dd2df913a1b006ee3e03bacda940",
     "aoi.geojson": "86dc14311c1c70a280f9c79586d158e0ff8adf0aecde23172fc30346349ee64b",
     "ndvi_delta.png": "18564d01f236decff4fd1ad03a78c20270061570b06ecb9d5588e49398c0a388",

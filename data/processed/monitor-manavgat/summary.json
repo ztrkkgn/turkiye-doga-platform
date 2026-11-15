@@ -13,9 +13,9 @@
     36.96
   ],
   "areaKm2": 118.636,
-  "generatedAt": "2026-11-13T17:48:11.239800+00:00",
+  "generatedAt": "2026-11-15T08:32:00.494939+00:00",
   "methodVersion": "0.1.0",
-  "configSha256": "75b9e63dc8836da61c2966901f2f9f73584fe38961f258d8e06886625ef9e6cb",
+  "configSha256": "64237577281e88697ff7f1c3b239814f39d74336aa1802c445e2f519979da54d",
   "grid": {
     "crs": "EPSG:32636",
     "resolutionM": 20,
@@ -35,9 +35,9 @@
     {
       "id": "before",
       "label": "Referans gözlem",
-      "start": "2026-10-02",
-      "end": "2026-10-29",
-      "target": "2026-10-29",
+      "start": "2026-10-04",
+      "end": "2026-10-31",
+      "target": "2026-10-31",
       "status": "available",
       "observation": {
         "datetime": "2026-10-19T08:50:17.317000Z",
@@ -50,9 +50,9 @@
         "validPixelCount": 290133,
         "ndviMean": 0.5708121657371521,
         "nbrMean": 0.32762572169303894,
-        "rgbUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__before-rgb.png",
-        "ndviUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__before-ndvi.png",
-        "nbrUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__before-nbr.png",
+        "rgbUrl": "/data/monitor-manavgat/20261019-20261108-12c00943bc90__before-rgb.png",
+        "ndviUrl": "/data/monitor-manavgat/20261019-20261108-12c00943bc90__before-ndvi.png",
+        "nbrUrl": "/data/monitor-manavgat/20261019-20261108-12c00943bc90__before-nbr.png",
         "stacUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T36SUF_20261019T084736_L2A"
       },
       "rejectedCandidates": []
@@ -60,9 +60,9 @@
     {
       "id": "after",
       "label": "Güncel gözlem",
-      "start": "2026-10-30",
-      "end": "2026-11-13",
-      "target": "2026-11-13",
+      "start": "2026-11-01",
+      "end": "2026-11-15",
+      "target": "2026-11-15",
       "status": "available",
       "observation": {
         "datetime": "2026-11-08T08:50:13.192000Z",
@@ -75,9 +75,9 @@
         "validPixelCount": 288448,
         "ndviMean": 0.6074444055557251,
         "nbrMean": 0.3534203767776489,
-        "rgbUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__after-rgb.png",
-        "ndviUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__after-ndvi.png",
-        "nbrUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__after-nbr.png",
+        "rgbUrl": "/data/monitor-manavgat/20261019-20261108-12c00943bc90__after-rgb.png",
+        "ndviUrl": "/data/monitor-manavgat/20261019-20261108-12c00943bc90__after-ndvi.png",
+        "nbrUrl": "/data/monitor-manavgat/20261019-20261108-12c00943bc90__after-nbr.png",
         "stacUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T36SUF_20261108T084725_L2A"
       },
       "rejectedCandidates": []
@@ -95,8 +95,8 @@
       "dnbrMedian": -0.02897283434867859,
       "beforeNdviCommonMean": 0.5715539455413818,
       "afterNdviCommonMean": 0.6102599501609802,
-      "dnbrUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__dnbr.png",
-      "ndviDeltaUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__ndvi_delta.png",
+      "dnbrUrl": "/data/monitor-manavgat/20261019-20261108-12c00943bc90__dnbr.png",
+      "ndviDeltaUrl": "/data/monitor-manavgat/20261019-20261108-12c00943bc90__ndvi_delta.png",
       "displayRange": [
         -0.5,
         1.0
@@ -155,16 +155,16 @@
     "fieldValidated": false
   },
   "assetSha256": {
-    "20261019-20261108-2041420a5a9d__after-ndvi.png": "99599b98896182aa023d2b21afbeafd3d992597f71d2b95a628e3f3f6ae7fb79",
-    "20261019-20261108-2041420a5a9d__after-rgb.png": "4703e6204ffa33e37bee72e09147247d2eea0693262b6870f1a3c777dcc2b023",
-    "provenance.json": "5ed4831b93a3ca75d9baec7649e332b7189d91c3910feefa8f8a1d3b33f6408e",
-    "20261019-20261108-2041420a5a9d__before-nbr.png": "630299cd243481658b01a6fbec5f4c1cdf18c6e9cf745b3046d0aef7db1761f6",
+    "20261019-20261108-12c00943bc90__after-ndvi.png": "99599b98896182aa023d2b21afbeafd3d992597f71d2b95a628e3f3f6ae7fb79",
+    "20261019-20261108-12c00943bc90__after-rgb.png": "4703e6204ffa33e37bee72e09147247d2eea0693262b6870f1a3c777dcc2b023",
+    "provenance.json": "0af00f3938211e23ea6092556ba3b5e0cd013d92cec6b0333b6aac27e5a50c28",
+    "20261019-20261108-12c00943bc90__before-nbr.png": "630299cd243481658b01a6fbec5f4c1cdf18c6e9cf745b3046d0aef7db1761f6",
     "aoi.geojson": "23cdf6e87c1301958d01882b00e2d454bcf84f0ad40e12cbfabfb0e285821c4f",
-    "20261019-20261108-2041420a5a9d__ndvi_delta.png": "300647ded0746e36bc93661e2dc44faa678da18912744a4228f12f14f4ded720",
-    "20261019-20261108-2041420a5a9d__before-ndvi.png": "a4689931972f123d089c6dd95abf0ec4bbdf36b5874d53309db8475570b96b44",
-    "20261019-20261108-2041420a5a9d__before-rgb.png": "18abcb35a09f8c8713820ea9167c5c9ab7b97f76a88e2c6bd146bdf71bc8543a",
-    "20261019-20261108-2041420a5a9d__dnbr.png": "d95e157829586904f1d664dc6d022a619d325e845fde02afe2d47051b15ed779",
-    "20261019-20261108-2041420a5a9d__after-nbr.png": "eb061709ff52ec16047ba1176255f5a799719df9e5c46e15b194fe8c2ee898c3"
+    "20261019-20261108-12c00943bc90__ndvi_delta.png": "300647ded0746e36bc93661e2dc44faa678da18912744a4228f12f14f4ded720",
+    "20261019-20261108-12c00943bc90__before-ndvi.png": "a4689931972f123d089c6dd95abf0ec4bbdf36b5874d53309db8475570b96b44",
+    "20261019-20261108-12c00943bc90__before-rgb.png": "18abcb35a09f8c8713820ea9167c5c9ab7b97f76a88e2c6bd146bdf71bc8543a",
+    "20261019-20261108-12c00943bc90__dnbr.png": "d95e157829586904f1d664dc6d022a619d325e845fde02afe2d47051b15ed779",
+    "20261019-20261108-12c00943bc90__after-nbr.png": "eb061709ff52ec16047ba1176255f5a799719df9e5c46e15b194fe8c2ee898c3"
   },
-  "imageFilePrefix": "20261019-20261108-2041420a5a9d__"
+  "imageFilePrefix": "20261019-20261108-12c00943bc90__"
 }

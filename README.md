@@ -17,14 +17,16 @@ Ana harita Türkiye'nin tamamını gösterir. **Ülke genelinde sürekli piksel 
 
 Her olayın ayrı `/bolge/<slug>/` sayfası vardır. Kaynaklı bir olay kaydı, platform tarafından uydu analizi yapılmış olması anlamına gelmez. Çalışma pencereleri resmî yangın veya göl kıyısı sınırı değildir. Bördübet'in tarihsel veri eksikliği ile aynı alandaki güncel gözlemler ayrı gösterilir.
 
-**13 Kasım 2026 tarihli yerel izleme kaydı:** dört alanda gerçek gözlem çiftlerinden toplam **55 incelenmemiş spektral değişim adayı** üretildi. Bu sayı doğrulanmış tahribat veya iyileşme sayısı değildir ve sonraki çalıştırmalarda değişebilir.
+**15 Kasım 2026 tarihli izleme kaydı:** dört alan kontrol edildi; üç alandaki uygun gerçek gözlem çiftlerinden toplam **43 incelenmemiş spektral değişim adayı** üretildi. Bu sayı doğrulanmış tahribat veya iyileşme sayısı değildir ve sonraki çalıştırmalarda değişebilir.
 
 | Çalışma alanı | Referans çekimi | Son kullanılan çekim | İncelenmemiş aday |
 | --- | --- | --- | ---: |
-| Marmaris / İçmeler | 22 Ekim 2026 | 30 Ekim 2026 | 9 |
+| Marmaris / İçmeler | 22 Ekim 2026 | 30 Ekim 2026 (önceki ürün) | 0 · yeni uygun gözlem yok |
 | Manavgat | 19 Ekim 2026 | 8 Kasım 2026 | 22 |
 | Bördübet | 22 Ekim 2026 | 12 Kasım 2026 | 20 |
-| Yamanlar | 23 Ekim 2026 | 7 Kasım 2026 | 4 |
+| Yamanlar | 23 Ekim 2026 | 14 Kasım 2026 | 1 |
+
+Marmaris’te son 0–14 günlük aramada kalite kapısını geçen yeni çekim bulunmadı. Önceki ürün korunur; bu denemede güncel aday katmanına alınmaz.
 
 Son veri kontrolü, analiz üretimi ve uydu çekimi farklı zamanlardır; arayüz bu ayrımı korur. Çekimi **21 günden eski** kayıtlar güncel işaret katmanına alınmaz. Kaynak veriye erişilemiyor veya kalite yetersizse bu durum açıkça gösterilir.
 
@@ -104,7 +106,7 @@ NDVI farkındaki değiştirilmiş Z puanı `|M| > 3.5`, aynı yönde gerçek NDV
 
 [monitor.yml](.github/workflows/monitor.yml) her gün **03:17 UTC / 06:17 İstanbul** için hazırlanmıştır; `workflow_dispatch` ile elle de başlatılabilir. Her denemede kontrol zamanını kaydeder; uygun yeni ürün çifti varsa analizi yeniler. Çıktı doğrulama, test ve web build adımlarından sonra değişen küçük veri dosyalarını `main` dalına gönderir.
 
-**Bu sürümde workflow dosyası hazırlanmıştır; yeni günlük zamanlamanın GitHub üzerinde yayımlandığı ve başarıyla çalıştığı henüz doğrulanmamıştır.** Depoya gönderim, Actions'ın etkin olması ve veri güncelleme işinin yazma izni gerekir. Yerelde tamamlanan izleme, zamanlanmış işin gerçekten çalıştığını kanıtlamaz.
+**Workflow GitHub’a gönderildi. İlk gerçek çalıştırma yayın kapısında bir tutarlılık hatasını yakaladı; düzeltme sonrası tekrar çalıştırmanın doğrulaması sürüyor.** Yerelde tamamlanan izleme, zamanlanmış işin gerçekten çalıştığını tek başına kanıtlamaz.
 
 GitHub zamanlaması hizmet garantisi değildir: işler gecikebilir veya yoğunlukta düşebilir; public repolarda 60 gün etkinlik olmadığında schedule devre dışı kalabilir. [Resmî zamanlama koşulları](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule) geçerlidir. Günlük kontrol, her gün yeni veya bulutsuz uydu görüntüsü bulunacağı anlamına gelmez.
 

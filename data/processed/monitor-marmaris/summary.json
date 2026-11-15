@@ -13,7 +13,7 @@
     36.86
   ],
   "areaKm2": 118.7704,
-  "generatedAt": "2026-11-13T17:52:46.803753+00:00",
+  "generatedAt": "2026-11-15T08:34:35.832805+00:00",
   "methodVersion": "0.1.0",
   "configSha256": "7bd028128f1f9c7067361efef36341b0080c64c365910082804b4489208c8bc5",
   "grid": {
@@ -50,9 +50,9 @@
         "validPixelCount": 231094,
         "ndviMean": 0.5444673895835876,
         "nbrMean": 0.34280794858932495,
-        "rgbUrl": "/data/monitor-marmaris/20261022-20261030-a91a2154c59e__before-rgb.png",
-        "ndviUrl": "/data/monitor-marmaris/20261022-20261030-a91a2154c59e__before-ndvi.png",
-        "nbrUrl": "/data/monitor-marmaris/20261022-20261030-a91a2154c59e__before-nbr.png",
+        "rgbUrl": "/data/monitor-marmaris/20261022-20261030-81643adfee01__before-rgb.png",
+        "ndviUrl": "/data/monitor-marmaris/20261022-20261030-81643adfee01__before-ndvi.png",
+        "nbrUrl": "/data/monitor-marmaris/20261022-20261030-81643adfee01__before-nbr.png",
         "stacUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T35SPA_20261022T085809_L2A"
       },
       "rejectedCandidates": []
@@ -75,9 +75,9 @@
         "validPixelCount": 213822,
         "ndviMean": 0.5691907405853271,
         "nbrMean": 0.3786013424396515,
-        "rgbUrl": "/data/monitor-marmaris/20261022-20261030-a91a2154c59e__after-rgb.png",
-        "ndviUrl": "/data/monitor-marmaris/20261022-20261030-a91a2154c59e__after-ndvi.png",
-        "nbrUrl": "/data/monitor-marmaris/20261022-20261030-a91a2154c59e__after-nbr.png",
+        "rgbUrl": "/data/monitor-marmaris/20261022-20261030-81643adfee01__after-rgb.png",
+        "ndviUrl": "/data/monitor-marmaris/20261022-20261030-81643adfee01__after-ndvi.png",
+        "nbrUrl": "/data/monitor-marmaris/20261022-20261030-81643adfee01__after-nbr.png",
         "stacUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2C_T35SPA_20261030T085758_L2A"
       },
       "rejectedCandidates": []
@@ -95,8 +95,8 @@
       "dnbrMedian": -0.038459643721580505,
       "beforeNdviCommonMean": 0.5382309556007385,
       "afterNdviCommonMean": 0.5697062015533447,
-      "dnbrUrl": "/data/monitor-marmaris/20261022-20261030-a91a2154c59e__dnbr.png",
-      "ndviDeltaUrl": "/data/monitor-marmaris/20261022-20261030-a91a2154c59e__ndvi_delta.png",
+      "dnbrUrl": "/data/monitor-marmaris/20261022-20261030-81643adfee01__dnbr.png",
+      "ndviDeltaUrl": "/data/monitor-marmaris/20261022-20261030-81643adfee01__ndvi_delta.png",
       "displayRange": [
         -0.5,
         1.0
@@ -155,16 +155,16 @@
     "fieldValidated": false
   },
   "assetSha256": {
-    "20261022-20261030-a91a2154c59e__after-ndvi.png": "2d2449b7aa90a6ea568331d548574b2cf4bb0abb32ab9aab9ba18a16f7c49f7a",
-    "20261022-20261030-a91a2154c59e__after-rgb.png": "06ac4650c47539a4593c710d18d75844cb93ed4bb4f9feab82a1681b9ec9c72f",
-    "provenance.json": "e4601f4bfd5db3a3f2a8b6b1354cea485143da42a9e6657476312e892b586602",
-    "20261022-20261030-a91a2154c59e__before-nbr.png": "84c7a39479b64dde5612aca56b5ba0b543b986d66644817706fa27d959bd19d5",
+    "20261022-20261030-81643adfee01__after-ndvi.png": "2d2449b7aa90a6ea568331d548574b2cf4bb0abb32ab9aab9ba18a16f7c49f7a",
+    "20261022-20261030-81643adfee01__after-rgb.png": "06ac4650c47539a4593c710d18d75844cb93ed4bb4f9feab82a1681b9ec9c72f",
+    "provenance.json": "c8364eeb4e203b2c511e9a5a4083a44f9af3bd4de7636440e2607715d1bf2f50",
+    "20261022-20261030-81643adfee01__before-nbr.png": "84c7a39479b64dde5612aca56b5ba0b543b986d66644817706fa27d959bd19d5",
     "aoi.geojson": "069dc7c66ea63bd41b15530cc7750f5912e5c8ed5309d95afd7599dadcd1a5fe",
-    "20261022-20261030-a91a2154c59e__ndvi_delta.png": "09c35c06d88882c0fb7dd76b00e0d4884115dc19ce63ce7fd6bf05ff56be056f",
-    "20261022-20261030-a91a2154c59e__before-ndvi.png": "7168c22924ff5b39dea59c48c852037b2c51a40d6de9c3fbb07941775f4183c5",
-    "20261022-20261030-a91a2154c59e__before-rgb.png": "b131f9a75727c338283e7bcd461b00657bf7bc1a67dfbf0f961eb91752b27b62",
-    "20261022-20261030-a91a2154c59e__dnbr.png": "6872972b879ddc33f7225431cede4cea07c8cc0f4ef8c4b6cd17b1c35467663e",
-    "20261022-20261030-a91a2154c59e__after-nbr.png": "bc4039756eb43bd41b7aeb93d3f59fb309626bb6e1f8ac9fcc60df0b2c669be6"
+    "20261022-20261030-81643adfee01__ndvi_delta.png": "09c35c06d88882c0fb7dd76b00e0d4884115dc19ce63ce7fd6bf05ff56be056f",
+    "20261022-20261030-81643adfee01__before-ndvi.png": "7168c22924ff5b39dea59c48c852037b2c51a40d6de9c3fbb07941775f4183c5",
+    "20261022-20261030-81643adfee01__before-rgb.png": "b131f9a75727c338283e7bcd461b00657bf7bc1a67dfbf0f961eb91752b27b62",
+    "20261022-20261030-81643adfee01__dnbr.png": "6872972b879ddc33f7225431cede4cea07c8cc0f4ef8c4b6cd17b1c35467663e",
+    "20261022-20261030-81643adfee01__after-nbr.png": "bc4039756eb43bd41b7aeb93d3f59fb309626bb6e1f8ac9fcc60df0b2c669be6"
   },
-  "imageFilePrefix": "20261022-20261030-a91a2154c59e__"
+  "imageFilePrefix": "20261022-20261030-81643adfee01__"
 }

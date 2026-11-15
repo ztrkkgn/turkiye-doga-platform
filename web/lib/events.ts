@@ -22,7 +22,7 @@ export const EVENTS = catalog.events as NatureEvent[];
 export const CATALOG_UPDATED_AT = catalog.updatedAt;
 export const eventBySlug = (slug: string) => EVENTS.find(event => event.slug === slug);
 export const categoryLabel = (category: EventCategory) => category === 'fire' ? 'Orman yangını' : 'Su ve sulak alan';
-export const analysisLabel = (event: NatureEvent) => event.analysis.status === 'available' ? 'Uydu analizi var' : 'Kaynaklı olay kaydı';
+export const analysisLabel = (event: NatureEvent) => event.analysis.status === 'available' ? 'Olay dönemi analizi var' : 'Kaynaklı olay kaydı';
 export function eventDateLabel(event: NatureEvent) {
   if (/^\d{4}$/.test(event.date)) return `${event.year} · yıl düzeyinde kayıt`;
   return new Intl.DateTimeFormat('tr-TR', {day:'numeric', month:'long', year:'numeric', timeZone:'UTC'}).format(new Date(event.date));

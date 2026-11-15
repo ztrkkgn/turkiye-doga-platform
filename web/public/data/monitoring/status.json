@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-13T17:51:53.912692+00:00",
-  "generatedAt": "2026-11-13T17:52:46.803753+00:00",
+  "checkedAt": "2026-11-15T08:30:40.110661+00:00",
+  "generatedAt": "2026-11-15T08:32:50.368017+00:00",
   "mode": "regional",
   "freshnessMaxAgeDays": 21,
   "featuresUrl": "/data/monitoring/changes.geojson",
@@ -35,9 +35,9 @@
         28.28,
         36.86
       ],
-      "candidateCount": 9,
-      "latestSceneAt": "2026-11-11T09:00:17.314000Z",
-      "status": "available",
+      "candidateCount": 0,
+      "latestSceneAt": "2026-11-14T09:00:11.405000Z",
+      "status": "insufficient-data",
       "latestObservationAt": "2026-10-30T09:00:09.532000Z",
       "referenceObservationAt": "2026-10-22T09:00:20.773000Z",
       "summaryUrl": "/data/monitor-marmaris/summary.json",
@@ -54,7 +54,8 @@
         "totalCandidates": 9,
         "publishedCandidates": 9,
         "maximumPublishedCandidates": 50
-      }
+      },
+      "reason": "Tarih penceresinde yerel bulut/gölge ve kara kapsamı kontrolünü geçen gözlem bulunamadı."
     },
     {
       "id": "monitor-manavgat",
@@ -76,8 +77,8 @@
       "latestObservationAt": "2026-11-08T08:50:13.192000Z",
       "referenceObservationAt": "2026-10-19T08:50:17.317000Z",
       "summaryUrl": "/data/monitor-manavgat/summary.json",
-      "generatedAt": "2026-11-13T17:48:11.239800+00:00",
-      "fingerprint": "c2f646641b9cf206f8c236736314c28d3cde23ffa32e1fc2c7b4dedd64c0e99d",
+      "generatedAt": "2026-11-15T08:32:00.494939+00:00",
+      "fingerprint": "2b0d2ad38b01397d82509e7c17ba722259574658f3e07f8f8677be19c41f6852",
       "detector": {
         "medianDelta": 0.037700146436691284,
         "mad": 0.016443341970443726,
@@ -106,13 +107,13 @@
         36.91
       ],
       "candidateCount": 20,
-      "latestSceneAt": "2026-11-12T09:10:08.520000Z",
+      "latestSceneAt": "2026-11-14T09:10:16.585000Z",
       "status": "available",
       "latestObservationAt": "2026-11-12T09:10:08.520000Z",
       "referenceObservationAt": "2026-10-22T09:00:24.081000Z",
       "summaryUrl": "/data/monitor-bordubet/summary.json",
-      "generatedAt": "2026-11-13T17:48:40.841763+00:00",
-      "fingerprint": "dbaf9e405287e9507fb1caf4531a082a9f77843696a127ce3be36f15ccf7df2f",
+      "generatedAt": "2026-11-15T08:32:06.672024+00:00",
+      "fingerprint": "ea5b6d0f9fdde376d1161b8dbd9ddc2619b6056981b6b0ab1d4b1c61ab1d7842",
       "detector": {
         "medianDelta": 0.04467087984085083,
         "mad": 0.03868117928504944,
@@ -140,24 +141,24 @@
         27.22,
         38.6
       ],
-      "candidateCount": 4,
-      "latestSceneAt": "2026-11-12T09:09:40.080000Z",
+      "candidateCount": 1,
+      "latestSceneAt": "2026-11-14T09:09:48.136000Z",
       "status": "available",
-      "latestObservationAt": "2026-11-07T09:09:43.378000Z",
+      "latestObservationAt": "2026-11-14T09:09:48.136000Z",
       "referenceObservationAt": "2026-10-23T09:09:42.227000Z",
       "summaryUrl": "/data/monitor-yamanlar/summary.json",
-      "generatedAt": "2026-11-13T17:49:30.054475+00:00",
-      "fingerprint": "f0425f0e68ea4b18fb06a36279b1b30e01fa0519d4d2e9c49ad96ee7921ec28d",
+      "generatedAt": "2026-11-15T08:32:50.368017+00:00",
+      "fingerprint": "8b420490d94789fcf9a7ba7f61b687f2b9ba3b802c2f8be151ab117192495b0d",
       "detector": {
-        "medianDelta": 0.08167243003845215,
-        "mad": 0.05048838257789612,
+        "medianDelta": 0.01642531156539917,
+        "mad": 0.08456563949584961,
         "modifiedZThreshold": 3.5,
         "madTolerance": 1e-06,
         "minimumAreaHa": 1.0,
         "formula": "0.6745 * (deltaNDVI - median(deltaNDVI)) / MAD",
         "status": "available",
-        "totalCandidates": 4,
-        "publishedCandidates": 4,
+        "totalCandidates": 1,
+        "publishedCandidates": 1,
         "maximumPublishedCandidates": 50
       }
     }

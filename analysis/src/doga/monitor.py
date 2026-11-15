@@ -1,10 +1,13 @@
 """Bounded public C1 monitoring with cheap metadata checks and explicit freshness."""
 from concurrent.futures import ThreadPoolExecutor
+from contextlib import contextmanager, ExitStack
 from datetime import datetime, timedelta, timezone
 import hashlib
 import json
 from pathlib import Path
 import os
+import shutil
+import tempfile
 
 import numpy as np
 import rasterio
@@ -54,13 +57,52 @@ def atomic_json(path, value):
     os.replace(temp, path)
 
 
+@contextmanager
+def publication_transaction(root, identifier):
+    """Keep config, public assets and processed pins as one recoverable bundle.
+
+    The analysis pipeline publishes its pair before candidate detection runs.
+    A later failure must restore that pair together with its exact config/pins;
+    retaining only the previous summary would make offline validation fail.
+    Analytical caches may be retried and are deliberately not publication state.
+    """
+    paths = [root / 'data/monitoring/configs' / f'{identifier}.json',
+             root / 'web/public/data' / identifier,
+             root / 'data/processed' / identifier]
+    cache = root / 'data/cache' / identifier
+    cache.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix='publication-backup-', dir=cache) as directory:
+        snapshots = []
+        for index, path in enumerate(paths):
+            saved = Path(directory) / str(index)
+            exists = path.exists()
+            if exists:
+                if path.is_dir():
+                    shutil.copytree(path, saved)
+                else:
+                    shutil.copy2(path, saved)
+            snapshots.append((path, saved if exists else None))
+        try:
+            yield
+        except BaseException:
+            for path, saved in snapshots:
+                if path.is_dir():
+                    shutil.rmtree(path)
+                elif path.exists():
+                    path.unlink()
+                if saved is not None:
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    saved.rename(path)
+            raise
+
+
 def fresh_status(observed_at, now, max_age_days=21):
     age = (now - datetime.fromisoformat(observed_at.replace('Z', '+00:00'))).total_seconds() / 86400
     return 'available' if 0 <= age <= max_age_days else 'stale'
 
 
-def choose_usable(options, config, root):
-    """Only SCL is read until one candidate passes the local coverage gate."""
+def choose_usable(options, config, root, common_with=None):
+    """Check local SCL coverage, and common support with a selected latest scene."""
     grid = make_grid(config)
     halo = 3
     expanded = Grid(grid.crs, grid.transform * Affine.translation(-halo, -halo),
@@ -70,19 +112,38 @@ def choose_usable(options, config, root):
     grid_key = hashlib.sha256(json.dumps([config['bbox'], config['crs'], config['resolutionM']]).encode()).hexdigest()
     env = dict(GDAL_DISABLE_READDIR_ON_OPEN='EMPTY_DIR', CPL_VSIL_CURL_ALLOWED_EXTENSIONS='.tif',
                GDAL_HTTP_TIMEOUT='35', GDAL_HTTP_MAX_RETRY='2', AWS_NO_SIGN_REQUEST='YES')
+    def valid_mask(item):
+        # A small on-disk SCL mask also avoids rereading the selected latest
+        # scene when testing several older references or an unchanged pair.
+        key = hashlib.sha256(f'{grid_key}:{item["id"]}'.encode()).hexdigest()
+        path = cache_path.parent / f'scl-mask-{key}.npy'
+        if path.exists():
+            mask = np.load(path, allow_pickle=False)
+            if mask.shape == grid.mask.shape and mask.dtype == np.bool_:
+                return mask
+        print(f'SCL quality check {config["id"]}: {item["id"]}', flush=True)
+        scl = read_band(item['assets']['scl'], expanded, categorical=True)
+        mask = grid.mask & valid_land_mask(scl, halo)[halo:-halo, halo:-halo]
+        path.parent.mkdir(parents=True, exist_ok=True)
+        np.save(path, mask, allow_pickle=False)
+        return mask
+
     with rasterio.Env(**env):
+        common_mask = valid_mask(common_with) if common_with is not None else None
         for item in options[:12]:
             key = f'{grid_key}:{item["id"]}'
             fraction = cache.get(key)
-            if fraction is None:
-                print(f'SCL quality check {config["id"]}: {item["id"]}', flush=True)
-                scl = read_band(item['assets']['scl'], expanded, categorical=True)
-                valid = grid.mask & valid_land_mask(scl, halo)[halo:-halo, halo:-halo]
+            valid = None
+            if fraction is None or common_mask is not None:
+                valid = valid_mask(item)
                 fraction = float(valid.sum() / grid.mask.sum())
                 cache[key] = fraction
                 atomic_json(cache_path, cache)
             if fraction >= config['minValidFraction']:
-                return item
+                if common_mask is None or float((valid & common_mask).sum() / grid.mask.sum()) >= config['minValidFraction']:
+                    return item
+    if common_with is not None:
+        raise InsufficientData('Güncel gözlemle yeterli ortak geçerli SCL kapsamı sağlayan referans bulunamadı.')
     raise InsufficientData('Tarih penceresinde yerel bulut/gölge ve kara kapsamı kontrolünü geçen gözlem bulunamadı.')
 
 
@@ -95,62 +156,66 @@ def process_region(region, settings, root, now, previous):
     summary_path = output / 'summary.json'
     features_path = output / 'candidates.geojson'
     try:
-        end = now.date()
-        config = {'id': identifier, 'publicSlug': identifier, 'name': region['title'],
-            'province': region['province'], 'bbox': region['bbox'], 'crs': region['crs'],
-            'tile': region['tile'], 'resolutionM': 20, 'description': 'Seçili bölgede güncel spektral değişim taraması; tarihsel olayın yeni etkisi veya doğrulanmış hasar olarak yorumlanamaz.',
-            'maxSceneCloudCover': 100, 'minValidFraction': settings.get('minValidFraction', 0.5),
-            'sources': region['sources'], 'periods': [
-                {'id': 'before', 'label': 'Referans gözlem', 'start': str(end-timedelta(days=42)),
-                 'end': str(end-timedelta(days=15)), 'target': str(end-timedelta(days=15))},
-                {'id': 'after', 'label': 'Güncel gözlem', 'start': str(end-timedelta(days=14)),
-                 'end': str(end), 'target': str(end)}]}
-        # Actual acquisitions, not today's analysis timestamp, determine freshness.
-        options = {p['id']: candidates(config, p) for p in config['periods']}
-        if not options['before'] or not options['after']:
-            raise InsufficientData('Referans veya güncel tarih penceresinde C1 katalog kaydı bulunamadı.')
-        base['latestSceneAt'] = options['after'][0]['properties']['datetime']
-        selected = {p['id']: choose_usable(options[p['id']], config, root) for p in config['periods']}
-        detection_settings = settings.get('detector', {})
-        source_files = [Path(__file__), Path(__file__).with_name('detection.py'), Path(__file__).with_name('pipeline.py')]
-        fingerprint = hashlib.sha256(json.dumps({'items': [selected[k]['id'] for k in ['before','after']],
-            'bbox': config['bbox'], 'detector': detection_settings,
-            'source': [hashlib.sha256(p.read_bytes()).hexdigest() for p in source_files]}, sort_keys=True).encode()).hexdigest()
-        if previous.get('fingerprint') == fingerprint and summary_path.exists() and features_path.exists():
-            summary = read_json(summary_path, {})
-            features = read_json(features_path, {'features': []})['features']
-            detector = previous.get('detector', {})
-            print(f'Unchanged usable acquisitions: {identifier}; no band reprocessing', flush=True)
-        else:
-            config_path = root / 'data/monitoring/configs' / f'{identifier}.json'
-            config_path.parent.mkdir(parents=True, exist_ok=True)
-            dump(config_path, config)
-            print(f'New usable pair: {identifier}', flush=True)
-            summary = analyze(config_path, root, selected_items=selected)
-            grid = make_grid(config)
-            indices = []
-            for period_id in ['before', 'after']:
-                path = root / 'data/cache' / identifier / f'{period_id}-indices.tif'
-                with rasterio.open(path) as src:
-                    indices.append(src.read(1, masked=True).filled(np.nan))
+        with ExitStack() as transactions:
+            end = now.date()
+            config = {'id': identifier, 'publicSlug': identifier, 'name': region['title'],
+                'province': region['province'], 'bbox': region['bbox'], 'crs': region['crs'],
+                'tile': region['tile'], 'resolutionM': 20, 'description': 'Seçili bölgede güncel spektral değişim taraması; tarihsel olayın yeni etkisi veya doğrulanmış hasar olarak yorumlanamaz.',
+                'maxSceneCloudCover': 100, 'minValidFraction': settings.get('minValidFraction', 0.5),
+                'sources': region['sources'], 'periods': [
+                    {'id': 'before', 'label': 'Referans gözlem', 'start': str(end-timedelta(days=42)),
+                     'end': str(end-timedelta(days=15)), 'target': str(end-timedelta(days=15))},
+                    {'id': 'after', 'label': 'Güncel gözlem', 'start': str(end-timedelta(days=14)),
+                     'end': str(end), 'target': str(end)}]}
+            # Actual acquisitions, not today's analysis timestamp, determine freshness.
+            options = {p['id']: candidates(config, p) for p in config['periods']}
+            if not options['before'] or not options['after']:
+                raise InsufficientData('Referans veya güncel tarih penceresinde C1 katalog kaydı bulunamadı.')
+            base['latestSceneAt'] = options['after'][0]['properties']['datetime']
+            selected = {'after': choose_usable(options['after'], config, root)}
+            selected['before'] = choose_usable(options['before'], config, root, common_with=selected['after'])
+            detection_settings = settings.get('detector', {})
+            source_files = [Path(__file__), Path(__file__).with_name('detection.py'), Path(__file__).with_name('pipeline.py')]
+            fingerprint = hashlib.sha256(json.dumps({'items': [selected[k]['id'] for k in ['before','after']],
+                'analysis': {key: config[key] for key in ['bbox', 'crs', 'tile', 'resolutionM', 'minValidFraction']},
+                'detector': detection_settings,
+                'source': [hashlib.sha256(p.read_bytes()).hexdigest() for p in source_files]}, sort_keys=True).encode()).hexdigest()
+            if previous.get('fingerprint') == fingerprint and summary_path.exists() and features_path.exists():
+                summary = read_json(summary_path, {})
+                features = read_json(features_path, {'features': []})['features']
+                detector = previous.get('detector', {})
+                print(f'Unchanged usable acquisitions: {identifier}; no band reprocessing', flush=True)
+            else:
+                transactions.enter_context(publication_transaction(root, identifier))
+                config_path = root / 'data/monitoring/configs' / f'{identifier}.json'
+                config_path.parent.mkdir(parents=True, exist_ok=True)
+                dump(config_path, config)
+                print(f'New usable pair: {identifier}', flush=True)
+                summary = analyze(config_path, root, selected_items=selected)
+                grid = make_grid(config)
+                indices = []
+                for period_id in ['before', 'after']:
+                    path = root / 'data/cache' / identifier / f'{period_id}-indices.tif'
+                    with rasterio.open(path) as src:
+                        indices.append(src.read(1, masked=True).filled(np.nan))
+                observations = {p['id']: p['observation'] for p in summary['periods']}
+                features, detector = detect_changes(*indices, grid, region_id=identifier,
+                    event_id=region['eventId'], before_date=observations['before']['datetime'],
+                    after_date=observations['after']['datetime'], **detection_settings)
+                atomic_json(features_path, {'type': 'FeatureCollection', 'features': features})
             observations = {p['id']: p['observation'] for p in summary['periods']}
-            features, detector = detect_changes(*indices, grid, region_id=identifier,
-                event_id=region['eventId'], before_date=observations['before']['datetime'],
-                after_date=observations['after']['datetime'], **detection_settings)
-            atomic_json(features_path, {'type': 'FeatureCollection', 'features': features})
-        observations = {p['id']: p['observation'] for p in summary['periods']}
-        latest = observations['after']['datetime']
-        state = fresh_status(latest, now, settings.get('freshnessMaxAgeDays', 21))
-        if detector.get('status') != 'available' and state == 'available':
-            state = 'insufficient-data'
-        record = {**base, 'status': state, 'latestObservationAt': latest,
-            'referenceObservationAt': observations['before']['datetime'],
-            'summaryUrl': f'/data/{identifier}/summary.json', 'generatedAt': summary['generatedAt'],
-            'candidateCount': len(features) if state == 'available' else 0,
-            'fingerprint': fingerprint, 'detector': detector}
-        if state == 'stale': record['reason'] = 'Kullanılabilir son gözlem 21 günden eski; güncel katmana alınmadı.'
-        elif state == 'insufficient-data': record['reason'] = detector.get('reason', 'Aday puanlaması için veri yetersiz.')
-        return record, features if state == 'available' else []
+            latest = observations['after']['datetime']
+            state = fresh_status(latest, now, settings.get('freshnessMaxAgeDays', 21))
+            if detector.get('status') != 'available' and state == 'available':
+                state = 'insufficient-data'
+            record = {**base, 'status': state, 'latestObservationAt': latest,
+                'referenceObservationAt': observations['before']['datetime'],
+                'summaryUrl': f'/data/{identifier}/summary.json', 'generatedAt': summary['generatedAt'],
+                'candidateCount': len(features) if state == 'available' else 0,
+                'fingerprint': fingerprint, 'detector': detector}
+            if state == 'stale': record['reason'] = 'Kullanılabilir son gözlem 21 günden eski; güncel katmana alınmadı.'
+            elif state == 'insufficient-data': record['reason'] = detector.get('reason', 'Aday puanlaması için veri yetersiz.')
+            return record, features if state == 'available' else []
     except Exception as error:
         # A failed check does not replace or remove an earlier valid regional analysis.
         record = {**previous, **base, 'status': 'insufficient-data' if isinstance(error, InsufficientData) else 'error',

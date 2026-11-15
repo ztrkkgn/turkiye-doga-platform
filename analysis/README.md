@@ -59,7 +59,11 @@ python tools/validate_outputs.py --version-monitor-assets
 İzleme seçili Marmaris, Manavgat, Bördübet ve Yamanlar pencereleri içindir.
 Türkiye geneli tarama değildir. Son 0–14 takvim gününün kullanılabilir son
 gözlemi, 15–42 gün önceki kullanılabilir son referans gözlemle karşılaştırılır.
-Önce yalnız katalog ve önbellekli SCL kapsamı kontrol edilir. Kullanılabilir
+Önce yalnız katalog ve önbellekli SCL kapsamı kontrol edilir. Son uygun
+çekim seçilir; referansın bu çekimle en az %50 ortak geçerli SCL desteği
+sağlaması gerekir. Tekil olarak açık görünen fakat farklı yerleri
+maskelenmiş iki çekim, yeterli ortak kapsama varmış gibi kabul edilmez.
+SCL ön kontrolünden sonra gerçek indislerin ortak kapsama kapısı da korunur. Kullanılabilir
 aynı çekim çifti değişmemişse yansıtım bantları tekrar işlenmez ve analiz
 üretim tarihi yenilenmez. Kontrol zamanı ayrıca `checkedAt` olarak saklanır.
 
@@ -73,7 +77,9 @@ Mevsim, toprak nemi, tarım ve atmosfer etkileri sınırlamalar arasındadır.
 `web/public/data/monitoring/status.json` kontrol/çekim zamanlarını ve her
 bölgenin ayrı durumunu; `changes.geojson` incelenmemiş aday noktalarını içerir.
 Her noktanın alanı bağlı piksellerin alanıdır, zarar görmüş hektar değildir.
-Hata yeni bölgesel rasterı yayımlamaz; önceki geçerli dosyalar korunur.
+Hata yeni bölgesel rasterı yayımlamaz; önceki geçerli yapılandırma,
+görseller, özet ve sabit ürün seçimi birlikte korunur. Aday üretimi analizden
+sonra başarısız olsa da bu dosya grubunun önceki hâli geri yüklenir.
 
 Yayın öncesi `--version-monitor-assets`, PNG dosyalarına gerçek çekim çifti
 ve kaynak sürümüyle bağlı isimler verir, URL/hash kayıtlarını günceller ve
