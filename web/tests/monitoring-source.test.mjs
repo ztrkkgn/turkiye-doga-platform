@@ -10,6 +10,7 @@ function pair(ageDays=1) {
  const changes={type:'FeatureCollection',features:[{type:'Feature',geometry:{type:'Point',coordinates:[28.21,36.77]},properties:{id:'candidate-test',regionId:'monitor-marmaris',eventId:'mugla-marmaris-2021',direction:'decrease',metric:'NDVI',delta:-.25,areaHa:2,beforeDate:before,afterDate:latest,reviewStatus:'unreviewed'}}]};
  return {status,changes};
 }
+const isStatus=url=>new URL(String(url),'http://local.test').pathname.endsWith('/status.json');
 const response=(data,status=200)=>new Response(JSON.stringify(data),{status,headers:{'Content-Type':'application/json'}});
 function setup(t,handler,override) {
  const originalFetch=globalThis.fetch;const originalEnv=process.env.NEXT_PUBLIC_MONITORING_BASE_URL;
@@ -19,19 +20,28 @@ function setup(t,handler,override) {
  return calls;
 }
 test('loads the complete repository snapshot and resolves images from that same root',async t=>{
- const data=pair();const calls=setup(t,url=>response(url.endsWith('status.json')?data.status:data.changes));
+ const data=pair();const calls=setup(t,url=>response(isStatus(url)?data.status:data.changes));
  const result=await loadMonitoringSnapshot();assert.equal(result.origin,'repository');assert.equal(result.baseUrl,DEFAULT_MONITORING_BASE_URL);assert.equal(result.changes.features.length,1);
- assert.deepEqual(calls,[`${DEFAULT_MONITORING_BASE_URL}/data/monitoring/status.json`,`${DEFAULT_MONITORING_BASE_URL}/data/monitoring/changes.geojson`]);
+ assert.deepEqual(calls.map(url=>url.split('?')[0]),[`${DEFAULT_MONITORING_BASE_URL}/data/monitoring/status.json`,`${DEFAULT_MONITORING_BASE_URL}/data/monitoring/changes.geojson`]);
+ const keys=calls.map(url=>new URL(url).searchParams.get('snapshot'));assert.ok(keys[0]);assert.equal(keys[0],keys[1]);
  assert.equal(monitoringAssetUrl('/data/monitor-marmaris/latest.png',result.baseUrl),`${DEFAULT_MONITORING_BASE_URL}/data/monitor-marmaris/latest.png`);
+});
+test('each remote refresh bypasses cached mutable records even within the same millisecond',async t=>{
+ const data=pair();const calls=setup(t,url=>response(isStatus(url)?data.status:data.changes));
+ t.mock.method(Date,'now',()=>1763222400000);
+ await loadMonitoringSnapshot();await loadMonitoringSnapshot();
+ assert.equal(calls.length,4);
+ const keys=calls.map(url=>new URL(url).searchParams.get('snapshot'));
+ assert.ok(keys.every(Boolean));assert.equal(keys[0],keys[1]);assert.equal(keys[2],keys[3]);assert.notEqual(keys[0],keys[2]);
 });
 test('a missing remote file falls back to a complete local pair without combining sources',async t=>{
  const remote=pair();const local=pair();local.status.method.name='Local snapshot';
- const calls=setup(t,url=>url.startsWith('https:')?(url.endsWith('status.json')?response(remote.status):response({},404)):response(url.endsWith('status.json')?local.status:local.changes));
+ const calls=setup(t,url=>url.startsWith('https:')?(isStatus(url)?response(remote.status):response({},404)):response(isStatus(url)?local.status:local.changes));
  const result=await loadMonitoringSnapshot();assert.equal(result.origin,'local');assert.equal(result.baseUrl,'');assert.equal(result.status.method.name,'Local snapshot');
  assert.deepEqual(calls.slice(-2),['/data/monitoring/status.json','/data/monitoring/changes.geojson']);assert.equal(monitoringAssetUrl('/data/monitor-marmaris/latest.png',result.baseUrl),'/data/monitor-marmaris/latest.png');
 });
 test('network failure falls back locally and never fabricates an empty successful snapshot',async t=>{
- const local=pair();setup(t,url=>{if(url.startsWith('https:'))throw new TypeError('Network unavailable');return response(url.endsWith('status.json')?local.status:local.changes)});
+ const local=pair();setup(t,url=>{if(url.startsWith('https:'))throw new TypeError('Network unavailable');return response(isStatus(url)?local.status:local.changes)});
  assert.equal((await loadMonitoringSnapshot()).origin,'local');
  globalThis.fetch=async()=>response({},404);await assert.rejects(loadMonitoringSnapshot());
 });
@@ -43,21 +53,21 @@ test('mismatched candidate region, date or count invalidates the entire remote s
   if(change==='count')remote.status.regions[0].candidateCount=2;
   const restoreFetch=globalThis.fetch;const restoreEnv=process.env.NEXT_PUBLIC_MONITORING_BASE_URL;
   delete process.env.NEXT_PUBLIC_MONITORING_BASE_URL;
-  globalThis.fetch=async url=>{const source=String(url).startsWith('https:')?remote:local;return response(String(url).endsWith('status.json')?source.status:source.changes)};
+  globalThis.fetch=async url=>{const source=String(url).startsWith('https:')?remote:local;return response(isStatus(url)?source.status:source.changes)};
   try{assert.equal((await loadMonitoringSnapshot()).origin,'local')}finally{globalThis.fetch=restoreFetch;if(restoreEnv===undefined)delete process.env.NEXT_PUBLIC_MONITORING_BASE_URL;else process.env.NEXT_PUBLIC_MONITORING_BASE_URL=restoreEnv}
  }
 });
 test('old acquisition data cannot produce current map candidates',async t=>{
- const data=pair(40);setup(t,url=>response(url.endsWith('status.json')?data.status:data.changes));
+ const data=pair(40);setup(t,url=>response(isStatus(url)?data.status:data.changes));
  const result=await loadMonitoringSnapshot();assert.equal(result.origin,'repository');assert.equal(result.changes.features.length,0);assert.equal(result.status.regions[0].latestObservationAt,data.status.regions[0].latestObservationAt);
 });
 test('HTTPS override is used consistently and arbitrary hosts cannot come from asset data',async t=>{
- const data=pair();const calls=setup(t,url=>response(url.endsWith('status.json')?data.status:data.changes),'https://cdn.example.org/nature/');
+ const data=pair();const calls=setup(t,url=>response(isStatus(url)?data.status:data.changes),'https://cdn.example.org/nature/');
  const result=await loadMonitoringSnapshot();assert.equal(result.baseUrl,'https://cdn.example.org/nature');assert.ok(calls.every(url=>url.startsWith(result.baseUrl+'/data/')));
  for(const path of ['https://evil.example/a.png','//evil.example/a.png','/data/monitor-marmaris/../a.png','/data/monitor-marmaris/%2e%2e.png','/data/monitor-marmaris/a.png?redirect=https://evil.example'])assert.throws(()=>monitoringAssetUrl(path,result.baseUrl));
 });
 test('invalid override can only use local data and cancellation does not start fallback requests',async t=>{
- const data=pair();const calls=setup(t,url=>response(url.endsWith('status.json')?data.status:data.changes),'http://localhost:8000');
+ const data=pair();const calls=setup(t,url=>response(isStatus(url)?data.status:data.changes),'http://localhost:8000');
  assert.equal((await loadMonitoringSnapshot()).origin,'local');assert.ok(calls.every(url=>url.startsWith('/data/')));
  const controller=new AbortController();controller.abort();const count=calls.length;
  await assert.rejects(loadMonitoringSnapshot(controller.signal));assert.equal(calls.length,count);

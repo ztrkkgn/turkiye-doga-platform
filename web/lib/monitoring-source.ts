@@ -7,6 +7,7 @@ export interface MonitoringSnapshot {
   origin: 'repository' | 'local';
 }
 export const DEFAULT_MONITORING_BASE_URL='https://raw.githubusercontent.com/ztrkkgn/turkiye-doga-platform/main/web/public';
+let snapshotReadSequence=0;
 
 function publicBase(value:string):string {
  const url=new URL(value);
@@ -29,8 +30,10 @@ async function readSnapshot(baseUrl:string,origin:MonitoringSnapshot['origin'],s
  const cancel=()=>controller.abort(signal?.reason);
  if(signal?.aborted)cancel();else signal?.addEventListener('abort',cancel,{once:true});
  const timeout=setTimeout(()=>controller.abort(),origin==='repository'?8000:4000);
+ const nonce=origin==='repository'?`${Date.now()}-${++snapshotReadSequence}`:undefined;
  async function json(path:string):Promise<unknown> {
-  const response=await fetch(monitoringAssetUrl(path,baseUrl),{signal:controller.signal,cache:'no-store'});
+  const assetUrl=monitoringAssetUrl(path,baseUrl);
+  const response=await fetch(nonce?`${assetUrl}?snapshot=${encodeURIComponent(nonce)}`:assetUrl,{signal:controller.signal,cache:'no-store'});
   if(!response.ok)throw new Error('Monitoring asset unavailable');
   return response.json();
  }

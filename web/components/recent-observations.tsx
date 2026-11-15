@@ -30,7 +30,8 @@ export function RecentObservations({event}:{event:NatureEvent}) {
     setStatus(value);setSnapshot(loaded);
     const selected=value.regions.find(item=>item.eventId===event.id);setRegion(selected);
     if(!selected||monitoringState(selected,value.freshnessMaxAgeDays)!=='available'||!selected.summaryUrl)return;
-    const result=await fetch(monitoringAssetUrl(selected.summaryUrl,loaded.baseUrl),{signal:controller.signal,cache:'no-store'});
+    const summaryUrl=monitoringAssetUrl(selected.summaryUrl,loaded.baseUrl);
+    const result=await fetch(loaded.origin==='repository'?`${summaryUrl}?snapshot=${encodeURIComponent(value.checkedAt)}`:summaryUrl,{signal:controller.signal,cache:'no-store'});
     if(!result.ok)throw new Error('summary-unavailable');
     const data:unknown=await result.json();
     const prefix=selected.summaryUrl.slice(0,selected.summaryUrl.lastIndexOf('/')+1);
