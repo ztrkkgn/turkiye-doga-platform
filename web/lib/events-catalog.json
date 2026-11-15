@@ -1,0 +1,243 @@
+{
+  "updatedAt": "2026-11-13",
+  "events": [
+    {
+      "id": "mugla-marmaris-2021",
+      "slug": "mugla-marmaris-2021",
+      "title": "Marmaris · 2021 yangını",
+      "location": "İçmeler çevresi · Marmaris",
+      "province": "Muğla",
+      "year": 2021,
+      "date": "2021-07-29",
+      "category": "fire",
+      "coordinates": [
+        28.21,
+        36.77
+      ],
+      "summary": "İçmeler çevresinde yangın öncesi ve sonrasındaki bitki örtüsü değişimi gerçek Sentinel-2 gözlemleriyle inceleniyor.",
+      "story": [
+        "AFAD'ın 30 Temmuz 2021 tarihli bülteni, Armutalan ve İçmeler mahallelerinde yangınların 29 Temmuz'da başladığını kaydediyor. Bu olay, platformun ilk uydu analizi için seçilen Marmaris pilotunun tarihsel dayanağı.",
+        "Pilot çalışma, İçmeler çevresindeki sınırlı bir araştırma penceresinde 28 Temmuz ve 17 Ağustos 2021 Sentinel-2 gözlemlerini karşılaştırıyor. NDVI ve NBR değişimleri yalnızca iki tarihte de geçerli olan ortak kara piksellerinde hesaplanıyor.",
+        "İncelenen pencere yangının resmî çevresi değildir. Ölçülen spektral değişim ağaç sayısı, kesin hasar sınıfı veya yangının bütününe ait kayıp alan hesabı olarak yorumlanamaz."
+      ],
+      "analysis": {
+        "status": "available",
+        "summaryUrl": "/data/marmaris/summary.json"
+      },
+      "sources": [
+        {
+          "title": "30 Temmuz 2021 resmî yangın bülteni",
+          "url": "https://mersin.afad.gov.tr/ulke-genelinde-devam-eden-orman-yanginlari-hk-2",
+          "publisher": "AFAD"
+        },
+        {
+          "title": "İçmeler yangın sahasının coğrafi konumu · Zengin ve Acar (2025)",
+          "url": "https://doi.org/10.1007/s41207-025-00850-x",
+          "publisher": "Euro-Mediterranean Journal for Environmental Integration"
+        }
+      ],
+      "coordinateNote": "Yaklaşık konum, Zengin ve Acar'ın İçmeler yangın sahası için verdiği 36.77°N, 28.21°E referans merkezidir; resmî yangın sınırı veya tutuşma noktası değildir."
+    },
+    {
+      "id": "mugla-bordubet-2022",
+      "slug": "mugla-bordubet-2022",
+      "title": "Bördübet · 2022 yangını",
+      "location": "Bördübet ve Değirmenyanı çevresi · Marmaris",
+      "province": "Muğla",
+      "year": 2022,
+      "date": "2022-06-21",
+      "category": "fire",
+      "coordinates": [
+        28.04,
+        36.82
+      ],
+      "summary": "21 Haziran 2022'de başlayan yangın ve sonrasındaki çalışmalar, resmî ormancılık kayıtları ile özgün uydu araştırmalarında belgeleniyor.",
+      "story": [
+        "Muğla Orman Bölge Müdürlüğü, Bördübet'teki yangının 21 Haziran 2022'de başladığını ve Bördübet ile Değirmenyanı çevresindeki sahaları etkilediğini kaydediyor. Kurumun 2023 tarihli kaydı, yangın sonrasındaki tohum, fidan ve gençleştirme çalışmalarını da anlatıyor.",
+        "Harita Dergisi'ndeki özgün araştırma, Haziran 2022 olayını yangın öncesi ve sonrası Sentinel-2 görüntüleriyle inceliyor. Bu yayın, olayın uydu kayıtlarıyla araştırılabildiğini gösteren bir kaynak; yayındaki sonuçlar platformun kendi ölçümü olarak sunulmuyor.",
+        "2022 yangınının öncesi ve sonrasını karşılaştıran tarihsel analiz kaydı platformda henüz yayımlanmadı. Kaynaklarda anlatılan yeniden yeşillenme, burada ölçülmüş bir toparlanma oranı veya ağaçların hayatta kalma oranı değildir. Güncel izleme gözlemleri, tarihsel olay analizinden ayrı değerlendirilir."
+      ],
+      "analysis": {
+        "status": "pending"
+      },
+      "sources": [
+        {
+          "title": "Marmaris Bördübet Tekrar Yeşeriyor · 21 Haziran 2023",
+          "url": "https://www.ogm.gov.tr/muglaobm/haber-sitesi/Sayfalar/bordubet-kullerinden-doguyor.aspx",
+          "publisher": "OGM · Muğla Orman Bölge Müdürlüğü"
+        },
+        {
+          "title": "Yangın şiddetinde farklı indekslerin karşılaştırılması · Gürbüz (2023)",
+          "url": "https://www.harita.gov.tr/uploads/files/articles/uzaktan-algilama-ile-yangin-siddeti-belirlenmesinde-farkli-indekslerin-karsilastirilmasi-1673.pdf",
+          "publisher": "Harita Dergisi · Harita Genel Müdürlüğü"
+        },
+        {
+          "title": "Bördübet Limanı coğrafi referans koordinatları",
+          "url": "https://sanliurfa.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=518",
+          "publisher": "Tarım ve Orman Bakanlığı"
+        }
+      ],
+      "coordinateNote": "Bördübet Limanı için resmî yayında verilen koordinatlardan yuvarlanan yaklaşık bölge işaretidir; yangının çıkış noktası, merkezi veya yanmış alan sınırı değildir."
+    },
+    {
+      "id": "antalya-manavgat-2021",
+      "slug": "antalya-manavgat-2021",
+      "title": "Manavgat · 2021 yangını",
+      "location": "Manavgat ve çevresi",
+      "province": "Antalya",
+      "year": 2021,
+      "date": "2021-07-28",
+      "category": "fire",
+      "coordinates": [
+        31.495,
+        36.965
+      ],
+      "summary": "Manavgat çevresinde 2021 yangını öncesi ve sonrasındaki spektral değişim, gerçek Sentinel-2 görüntüleriyle inceleniyor.",
+      "story": [
+        "AFAD'ın olay sırasında yayımladığı bülten, 28 Temmuz 2021'de Manavgat'ta birden fazla noktada orman yangını çıktığını bildiriyor. Bu sayfa, olayın tarihini ve bölgesini resmî kaynaklarıyla birlikte izlenebilir kılıyor.",
+        "2021 yangınlarını inceleyen özgün çalışma, Manavgat için yangın öncesi ve sonrası Sentinel-2 görüntülerinden NDVI ve NBR değişimlerini araştırıyor. Farklı araştırmaların kullandığı sınırlar, tarihler ve yöntemler değişebileceği için sonuçlar tek bir alan toplamında birleştirilmiyor.",
+        "Platformun Manavgat analizi, kaynakta belirtilen araştırma bölgesinin içindeki sınırlı bir pencerede 25 Temmuz ve 14 Ağustos 2021 Sentinel-2 gözlemlerini karşılaştırıyor. İstatistikler ortak geçerli kara piksellerine aittir; pencere resmî yangın çevresi değildir ve bütün yangının hasarını temsil etmez."
+      ],
+      "analysis": {
+        "status": "available",
+        "summaryUrl": "/data/manavgat/summary.json"
+      },
+      "sources": [
+        {
+          "title": "Manavgat yangını · 30 Temmuz 2021 resmî bülteni",
+          "url": "https://mersin.afad.gov.tr/ulke-genelinde-devam-eden-orman-yanginlari-hk-2",
+          "publisher": "AFAD"
+        },
+        {
+          "title": "2021 Türkiye yangınlarının Sentinel-2 ile incelenmesi · Yılmaz ve diğerleri (2023)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9838501/",
+          "publisher": "Earth Science Informatics"
+        },
+        {
+          "title": "Manavgat yangın bölgesinin coğrafi kapsamı · Ekberzade ve diğerleri (2025)",
+          "url": "https://www.nature.com/articles/s44304-025-00120-4",
+          "publisher": "npj Natural Hazards"
+        }
+      ],
+      "coordinateNote": "Ekberzade ve diğerlerinin inceleme bölgesi için verdiği 31.26–31.73°E, 36.86–37.07°N aralıklarının orta noktasıdır; yaklaşık araştırma bölgesi işaretidir, tutuşma noktası veya resmî yangın sınırı değildir."
+    },
+    {
+      "id": "izmir-yamanlar-2024",
+      "slug": "izmir-yamanlar-2024",
+      "title": "Yamanlar · 2024 yangını",
+      "location": "Yamanlar ormanları · Karşıyaka",
+      "province": "İzmir",
+      "year": 2024,
+      "date": "2024-08-15",
+      "category": "fire",
+      "coordinates": [
+        27.16,
+        38.55
+      ],
+      "summary": "İzmir'in kuzeyindeki Yamanlar yangını ve ardından başlatılan rehabilitasyon çalışmaları, OGM'nin resmî kayıtlarında yer alıyor.",
+      "story": [
+        "İzmir Orman Bölge Müdürlüğünün 26 Eylül 2024 tarihli kaydı, Karşıyaka Yamanlar'da 15 Ağustos'ta çıkan yangını ve sonrasındaki saha çalışmalarını belgeliyor. Olay, ormanlarla yerleşim, tarım ve mera alanlarının bir arada bulunduğu bir çevrede yaşandı.",
+        "OGM'nin aynı yıl yayımladığı ikinci kayıt, yangından etkilenen orman alanlarında ağaçlandırma, doğal gençleştirme, erozyon ve sel kontrolü çalışmalarının programlandığını anlatıyor. Bu çalışmaların uzun vadeli etkisi, uygun mevsimlerdeki gözlemler ve saha bilgisiyle izlenmeli.",
+        "2024 yangınının öncesi ve sonrasını karşılaştıran olay analizi henüz üretilmedi. Bu kaynak kaydı rehabilitasyon başarısına ilişkin bir ölçüm değildir. Son uydu gözlemlerindeki değişim adayları, bu tarihsel kayıttan ayrı gösterilir."
+      ],
+      "analysis": {
+        "status": "pending"
+      },
+      "sources": [
+        {
+          "title": "Yamanlar yangını sonrası saha incelemesi · 26 Eylül 2024",
+          "url": "https://www.ogm.gov.tr/izmirobm/haberler/i%CC%87zmir-valisi-dr-sayin-suleyman-elban-karsiyaka-yamanlar%E2%80%99da-cikan-orman-yanginin-ardindan-baslatilan-agaclandirma-calismal",
+          "publisher": "OGM · İzmir Orman Bölge Müdürlüğü"
+        },
+        {
+          "title": "Yamanlar ormanlarının rehabilitasyonu · 18 Ekim 2024",
+          "url": "https://www.ogm.gov.tr/tr/haberler/yamanlar%E2%80%99da-yangindan-zarar-goren-orman-alanlari-agaclandiriliyor",
+          "publisher": "Orman Genel Müdürlüğü"
+        },
+        {
+          "title": "İzmir İl Afet Risk Azaltma Planı · Yamanlar Kule konumu",
+          "url": "https://www.buca.bel.tr/uploads/announces/Izmir-IRAP_compressed%20%281%29-s%C4%B1k%C4%B1s%CC%A7t%C4%B1r%C4%B1ld%C4%B1.pdf",
+          "publisher": "AFAD · İzmir Valiliği / Buca Belediyesi arşivi"
+        }
+      ],
+      "coordinateNote": "İzmir İRAP'taki Yamanlar Kule referansının 38°33′08″N, 27°09′28″E koordinatından yuvarlanan yaklaşık işarettir; yangının tutuşma noktası veya çevresi değildir."
+    },
+    {
+      "id": "tuz-golu-2021",
+      "slug": "tuz-golu-2021",
+      "title": "Tuz Gölü · 2021 kuraklığı",
+      "location": "Tuz Gölü havzası",
+      "province": "Konya / Ankara / Aksaray",
+      "year": 2021,
+      "date": "2021",
+      "category": "water",
+      "coordinates": [
+        33.38,
+        38.78
+      ],
+      "summary": "2021'de Tuz Gölü'ndeki su azalması, NASA'nın Landsat gözlemi ve gölün uzun dönemli değişimini inceleyen araştırmayla belgeleniyor.",
+      "story": [
+        "NASA Earth Observatory'nin 2021 tarihli incelemesi, 9 Ağustos Landsat 8 görüntüsü üzerinden Tuz Gölü'ndeki su, tuz ve bataklık yüzeylerini gösteriyor. Kaynak, aynı zamanda gölün uzun yıllara yayılan mevsimsel değişimini ele alan araştırmayı açıklıyor.",
+        "Sığ ve tuzlu bir gölde yaz mevsimindeki çekilme ile uzun dönemli su kaybını ayırmak gerekiyor. Bu nedenle farklı mevsimlerde çekilmiş tekil görüntülerden doğrudan kalıcı kayıp miktarı veya tek bir neden çıkarılamaz.",
+        "Bu olay için platformda henüz su alanı hesabı veya zaman serisi üretilmedi. Sayfa kaynaklarla belgelenen 2021 dönemini tanıtıyor; gölün bugünkü durumuna ilişkin bir ölçüm sunmuyor."
+      ],
+      "analysis": {
+        "status": "pending"
+      },
+      "sources": [
+        {
+          "title": "Disappearing Lake Tuz · 16 Aralık 2021",
+          "url": "https://science.nasa.gov/earth/earth-observatory/disappearing-lake-tuz-149211/",
+          "publisher": "NASA Earth Observatory"
+        },
+        {
+          "title": "Tuz Gölü habitat izleme raporu · konum referansı",
+          "url": "https://webdosya.csb.gov.tr/db/destek/icerikler/tuz_golu_hab-tat_izleme_f-nal_raporu_22.12.2010-20191127153615.pdf",
+          "publisher": "Özel Çevre Koruma Kurumu Başkanlığı"
+        }
+      ],
+      "coordinateNote": "2010 habitat izleme raporundaki Tuz Gölü örnekleme istasyonu 38°47′N, 33°23′E konumundan yuvarlanan göl referansıdır; 2021 su yüzeyinin merkezi veya kıyı sınırı değildir. Tarih alanı yalnızca yılı belirtir."
+    },
+    {
+      "id": "van-ercek-2021",
+      "slug": "van-ercek-2021",
+      "title": "Erçek Gölü · 2021 kıyı çekilmesi",
+      "location": "Erçek Gölü ve kıyıları",
+      "province": "Van",
+      "year": 2021,
+      "date": "2021",
+      "category": "water",
+      "coordinates": [
+        43.58,
+        38.68
+      ],
+      "summary": "2021 kuraklığında Erçek Gölü'ndeki su seviyesi düşüşü, kıyıda yapılan saha araştırmasında ve resmî görüşme tutanağında kayda geçti.",
+      "story": [
+        "Van'ın doğusundaki Erçek Gölü çevresinde yürütülen özgün saha ve anket araştırması, 2021 kuraklığındaki su seviyesi düşüşünün kıyıdaki doğal tekne barınma yerini etkilediğini bildiriyor.",
+        "Van İl Tarım ve Orman Müdürlüğü yetkilisinin 29 Aralık 2023 tarihli TBMM çalışma ziyareti görüşmesinde aktardığı gözlemler de aynı dönemde Erçek Gölü'ndeki çekilmeyi kayda geçiriyor. Bu kaynaklar kıyı değişimine ilişkin bağlam sağlıyor; gölün bütününün tamamen kuruduğu anlamına gelmiyor.",
+        "Platform bu vaka için henüz uydu tabanlı su alanı hesabı üretmedi. Gözlenen değişimin büyüklüğünü veya nedenlerini değerlendirmek için mevsimi dikkate alan görüntüler ve su seviyesi verileri birlikte incelenmeli."
+      ],
+      "analysis": {
+        "status": "pending"
+      },
+      "sources": [
+        {
+          "title": "Van'daki kıyı yapıları ve mevcut durumu · Demir (2023)",
+          "url": "https://dergipark.org.tr/tr/download/article-file/2829383",
+          "publisher": "Ahi Ziraat Dergisi"
+        },
+        {
+          "title": "Van çalışma ziyareti tutanakları · 29 Aralık 2023",
+          "url": "https://www.tbmm.gov.tr/Tutanaklar/TutanakGoster/3213",
+          "publisher": "Türkiye Büyük Millet Meclisi"
+        },
+        {
+          "title": "Erçek Gölünün Paleolimnolojik İncelemesi · Küçük ve Şen (2023)",
+          "url": "https://acikerisim.karatay.edu.tr/yayinaea/icar-congre-ozet-kitabi_6633581957d1e.pdf",
+          "publisher": "12. Uluslararası Akademik Araştırmalar Kongresi · üniversite açık arşivi"
+        }
+      ],
+      "coordinateNote": "Küçük ve Şen'in özgün araştırma özetinde Erçek Gölü için verilen 38°40′33″N, 43°34′44″E konumundan yuvarlanan yaklaşık göl işaretidir; kıyı veya kayıp alan sınırı değildir. Tarih alanı yalnızca yılı belirtir."
+    }
+  ]
+}

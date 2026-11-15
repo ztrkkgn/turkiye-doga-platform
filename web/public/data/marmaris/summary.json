@@ -4,6 +4,7 @@
   "name": "Marmaris · İçmeler çevresi",
   "province": "Muğla",
   "status": "preliminary",
+  "publicSlug": "marmaris",
   "description": "2021 Marmaris yangını bağlamında, İçmeler çevresinde özgün araştırmanın yaklaşık 36.77°N, 28.21°E merkezini kapsayacak şekilde seçilen karma arazi örtülü araştırma kesiti. Resmî yangın çevresi değildir; bütün Marmaris’i temsil etmez.",
   "bbox": [
     28.15,
@@ -12,7 +13,7 @@
     36.86
   ],
   "areaKm2": 201.93,
-  "generatedAt": "2026-11-06T20:41:00.284680+00:00",
+  "generatedAt": "2026-11-13T17:49:57.438198+00:00",
   "methodVersion": "0.1.0",
   "configSha256": "6fcaae674c274fab041f0e828d51adfd55f71970259f6c81d729e9e305bae200",
   "grid": {
@@ -134,8 +135,8 @@
     }
   ],
   "limitations": [
-    "Çalışma penceresi resmî yangın sınırı değildir; karma arazi örtüsü içerir ve bütün Marmaris’i temsil etmez.",
-    "İlk çıktı iki tekil gözleme dayanır; medyan kompozit ve 2022–2026 toparlanma serisi henüz üretilmedi.",
+    "Çalışma penceresi resmî yangın sınırı değildir; karma arazi örtüsü içerir ve bütün bölgeyi temsil etmez.",
+    "İlk çıktı iki tekil gözleme dayanır; medyan kompozit ve yıllık toparlanma serisi henüz üretilmedi.",
     "NDVI bitki örtüsünün spektral göstergesidir; ağaç sayısı, hayatta kalma oranı veya biyolojik çeşitlilik değildir.",
     "dNBR sürekli değişimi gösterir; yerel saha kalibrasyonu olmadan hasar sınıfı veya yanan alan toplamı verilmez.",
     "SCL maskesi ve 60 m tampon tüm dumanı, ince bulutları ve topografik gölgeyi gideremeyebilir.",
@@ -180,7 +181,7 @@
   "assetSha256": {
     "after-ndvi.png": "43d2a86ad36a674c496c8b58230c2eba2b7f8c10f5c3a8b9fa61f81826073c1d",
     "after-rgb.png": "28b67c5a6169494f395b5dc8616a9d3bc1260704c98554abe8e7c38bcad0b887",
-    "provenance.json": "d00e39b90bfcce095905b17f7a42fadeb377ca42d25095ecbe0bdc8be40fd6a7",
+    "provenance.json": "a03e158af922b3d4a8c807b56f0ea0c64b576b2b2f6a6bfd6322ac78ff8fb59c",
     "before-nbr.png": "9bdce6770ef9112af74bcd4245ef97f28ff3dd2df913a1b006ee3e03bacda940",
     "aoi.geojson": "86dc14311c1c70a280f9c79586d158e0ff8adf0aecde23172fc30346349ee64b",
     "ndvi_delta.png": "18564d01f236decff4fd1ad03a78c20270061570b06ecb9d5588e49398c0a388",

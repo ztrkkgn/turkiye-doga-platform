@@ -1,0 +1,48 @@
+{
+  "id": "antalya-manavgat-2021",
+  "publicSlug": "manavgat",
+  "name": "Manavgat · Salur–Ulukapı çevresi",
+  "province": "Antalya",
+  "bbox": [
+    31.4,
+    36.86,
+    31.55,
+    36.98
+  ],
+  "crs": "EPSG:32636",
+  "resolutionM": 20,
+  "tile": "36SUF",
+  "description": "2021 Manavgat yangını için yayımlanmış 31.26–31.73°E ve 36.86–37.07°N araştırma alanının güneyindeki küçük çalışma kesiti. Resmî yangın sınırı değildir ve bütün Manavgat’ı temsil etmez.",
+  "periods": [
+    {
+      "id": "before",
+      "label": "Yangın öncesi",
+      "start": "2021-07-20",
+      "end": "2021-07-27",
+      "target": "2021-07-25"
+    },
+    {
+      "id": "after",
+      "label": "Yangın sonrası",
+      "start": "2021-08-10",
+      "end": "2021-08-20",
+      "target": "2021-08-14"
+    }
+  ],
+  "maxSceneCloudCover": 30,
+  "minValidFraction": 0.5,
+  "sources": [
+    {
+      "title": "Ekberzade ve diğerleri (2025) · Manavgat yangını özgün araştırması",
+      "url": "https://www.nature.com/articles/s44304-025-00120-4"
+    },
+    {
+      "title": "Earth Search · Sentinel-2 Collection 1",
+      "url": "https://github.com/Element84/earth-search/blob/main/docs/collections/sentinel-2-l2a.md"
+    },
+    {
+      "title": "Copernicus Data Space STAC",
+      "url": "https://documentation.dataspace.copernicus.eu/APIs/STAC.html"
+    }
+  ]
+}

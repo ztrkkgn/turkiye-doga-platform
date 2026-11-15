@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "mode": "regional",
+  "workers": 2,
+  "freshnessMaxAgeDays": 21,
+  "minValidFraction": 0.5,
+  "detector": {
+    "modified_z_threshold": 3.5,
+    "min_area_ha": 1.0,
+    "max_candidates": 50,
+    "mad_tolerance": 1e-06
+  },
+  "regions": [
+    {
+      "slug": "marmaris",
+      "eventId": "mugla-marmaris-2021",
+      "title": "Marmaris · İçmeler güncel izlemesi",
+      "province": "Muğla",
+      "coordinates": [
+        28.22,
+        36.81
+      ],
+      "bbox": [
+        28.16,
+        36.76,
+        28.28,
+        36.86
+      ],
+      "crs": "EPSG:32635",
+      "tile": "35SPA",
+      "sources": [
+        {
+          "title": "İçmeler yangın sahasının coğrafi referansı · Zengin ve Acar (2025)",
+          "url": "https://doi.org/10.1007/s41207-025-00850-x"
+        }
+      ]
+    },
+    {
+      "slug": "manavgat",
+      "eventId": "antalya-manavgat-2021",
+      "title": "Manavgat · güncel bölge izlemesi",
+      "province": "Antalya",
+      "coordinates": [
+        31.46,
+        36.91
+      ],
+      "bbox": [
+        31.4,
+        36.86,
+        31.52,
+        36.96
+      ],
+      "crs": "EPSG:32636",
+      "tile": "36SUF",
+      "sources": [
+        {
+          "title": "Manavgat araştırma alanı · Ekberzade ve diğerleri (2025)",
+          "url": "https://www.nature.com/articles/s44304-025-00120-4"
+        }
+      ]
+    },
+    {
+      "slug": "bordubet",
+      "eventId": "mugla-bordubet-2022",
+      "title": "Bördübet · güncel bölge izlemesi",
+      "province": "Muğla",
+      "coordinates": [
+        28.1,
+        36.86
+      ],
+      "bbox": [
+        28.04,
+        36.81,
+        28.16,
+        36.91
+      ],
+      "crs": "EPSG:32635",
+      "tile": "35SNA",
+      "sources": [
+        {
+          "title": "Bördübet yangını ve bölgesi · Gürbüz (2023), Şekil 1",
+          "url": "https://www.harita.gov.tr/uploads/files/articles/uzaktan-algilama-ile-yangin-siddeti-belirlenmesinde-farkli-indekslerin-karsilastirilmasi-1673.pdf"
+        },
+        {
+          "title": "Bördübet · OGM olay kaydı",
+          "url": "https://www.ogm.gov.tr/muglaobm/haber-sitesi/Sayfalar/bordubet-kullerinden-doguyor.aspx"
+        }
+      ]
+    },
+    {
+      "slug": "yamanlar",
+      "eventId": "izmir-yamanlar-2024",
+      "title": "Yamanlar · güncel bölge izlemesi",
+      "province": "İzmir",
+      "coordinates": [
+        27.16,
+        38.55
+      ],
+      "bbox": [
+        27.1,
+        38.5,
+        27.22,
+        38.6
+      ],
+      "crs": "EPSG:32635",
+      "tile": "35SNC",
+      "sources": [
+        {
+          "title": "İzmir İRAP · Yamanlar Kule coğrafi referansı",
+          "url": "https://izmir.afad.gov.tr/kurumlar/izmir.afad/E-KUTUPHANE/Il-Planlari/IRAP_Izmir--2024.pdf"
+        }
+      ]
+    }
+  ]
+}

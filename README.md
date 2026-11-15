@@ -1,135 +1,187 @@
 # Türkiye Doğa İzleme
 
-Türkiye'deki bitki örtüsü değişimini açık Sentinel-2 verileriyle anlaşılır ve denetlenebilir biçimde izlemek için geliştirilen bağımsız, ücretsiz açık kaynak proje.
+Türkiye'nin değişen doğasını açık uydu verileri ve doğrulanabilir kaynaklarla izlemek için geliştirilen, bağımsız ve ücretsiz açık kaynak platform. Türkiye haritasından önemli olaylara ulaşılır; gerçek analiz bulunan bölgelerde uydu görüntüleri, bitki örtüsü indisleri ve kaynak kayıtları incelenebilir.
 
-## İlk geliştirme kapsamı
+## Mevcut kapsam
 
-Önce Marmaris 2021 için gerçek veri erişimi, ortak 20 m grid üzerinde NDVI/NBR/dNBR hesabı ve kaynak kayıtları doğrulanır. Küçük çalışma kesiti resmî yangın sınırı değildir. Türkiye geneli ve 2022–2026 toparlanma serisi henüz analiz edilmemiştir. Sonuçlar ön değerlendirmedir; saha doğrulaması veya hasar envanteri değildir.
+Ana harita Türkiye'nin tamamını gösterir. **Ülke genelinde sürekli piksel taraması yapılmaz:** güncel uydu işlemesi dört seçilmiş çalışma penceresiyle sınırlıdır.
 
-## Mimari
+| Olay sayfası | Tarihsel uydu analizi | Güncel bölgesel izleme |
+| --- | --- | --- |
+| Marmaris / İçmeler · 2021 | 28 Temmuz–17 Ağustos 2021, gerçek Sentinel-2 | Var |
+| Manavgat / Salur–Ulukapı · 2021 | 25 Temmuz–14 Ağustos 2021, gerçek Sentinel-2 | Var |
+| Bördübet · 2022 | Kaynaklarla belgelenmiş olay; 2022 görüntü çifti henüz yayımlanmadı | Var |
+| İzmir / Yamanlar · 2024 | Kaynaklarla belgelenmiş olay; tarihsel analiz bekliyor | Var |
+| Tuz Gölü · 2021 | Kaynaklarla belgelenmiş kuraklık dönemi | Düzenli taramada değil |
+| Erçek Gölü · 2021 | Kaynaklarla belgelenmiş kıyı çekilmesi | Düzenli taramada değil |
 
-- `analysis/`: Python, Rasterio, NumPy ve STAC; hesaplamalar kullanıcı ziyareti sırasında yapılmaz.
-- `data/regions/`: sürümlenmiş alan ve tarih yapılandırmaları.
-- `web/`: Next.js, TypeScript, Tailwind ve MapLibre; önceden üretilmiş küçük çıktıları gösterir.
-- `docs/`: yöntem, kaynaklar ve aşama kayıtları.
+Her olayın ayrı `/bolge/<slug>/` sayfası vardır. Kaynaklı bir olay kaydı, platform tarafından uydu analizi yapılmış olması anlamına gelmez. Çalışma pencereleri resmî yangın veya göl kıyısı sınırı değildir. Bördübet'in tarihsel veri eksikliği ile aynı alandaki güncel gözlemler ayrı gösterilir.
 
-İlk sürüm için Supabase gerekmez. JSON sözleşmesi daha sonra PostgreSQL/PostGIS sağlayıcısına taşınabilir. Ham uydu dosyaları Git'e eklenmez. Anahtar gerektirmeyen açık arşiv tercih edilir; Copernicus katalog erişimi ayrıca sınanır.
+**13 Kasım 2026 tarihli yerel izleme kaydı:** dört alanda gerçek gözlem çiftlerinden toplam **55 incelenmemiş spektral değişim adayı** üretildi. Bu sayı doğrulanmış tahribat veya iyileşme sayısı değildir ve sonraki çalıştırmalarda değişebilir.
 
-## Yerel kurulum
+| Çalışma alanı | Referans çekimi | Son kullanılan çekim | İncelenmemiş aday |
+| --- | --- | --- | ---: |
+| Marmaris / İçmeler | 22 Ekim 2026 | 30 Ekim 2026 | 9 |
+| Manavgat | 19 Ekim 2026 | 8 Kasım 2026 | 22 |
+| Bördübet | 22 Ekim 2026 | 12 Kasım 2026 | 20 |
+| Yamanlar | 23 Ekim 2026 | 7 Kasım 2026 | 4 |
 
-Python 3.11+ ve Node.js 22 LTS+ önerilir.
+Son veri kontrolü, analiz üretimi ve uydu çekimi farklı zamanlardır; arayüz bu ayrımı korur. Çekimi **21 günden eski** kayıtlar güncel işaret katmanına alınmaz. Kaynak veriye erişilemiyor veya kalite yetersizse bu durum açıkça gösterilir.
+
+## Mimari ve açık veri
+
+- **Analiz:** Python 3.11, Rasterio, NumPy, SciPy ve PySTAC Client. Bantlar önceden işlenir; kullanıcı sayfayı açtığında uydu analizi çalışmaz.
+- **Web:** Next.js, TypeScript, Tailwind CSS ve MapLibre GL JS; statik dışa aktarım ve önceden hazırlanmış küçük JSON, GeoJSON ve PNG çıktıları.
+- **Veri:** Earth Search üzerinden anahtarsız, açık Sentinel-2 **Collection 1 L2A** COG erişimi. Copernicus Data Space katalog erişimi ayrıca sınanabilir.
+- **Depolama:** sürümlenmiş dosyalar; başlangıçta veritabanı veya Supabase gerekmez. Ham GeoTIFF ve yerel önbellek Git dışında tutulur.
+- **Otomasyon:** test/build CI'ı ve seçilmiş alanlar için günlük katalog kontrolü hazırlayan GitHub Actions workflow'ları.
+
+Ticari AI API'si, ücretli uydu API'si, API anahtarı veya GPU zorunlu değildir. Eski Earth Search koleksiyonunda bulunan radyometrik metadata çelişkisi nedeniyle analiz yalnızca C1 koleksiyonunu kabul eder. Ürün kimliği, bant URL'leri, scale/offset, grid ve kaynak/çıktı SHA256 kayıtları provenance dosyalarında tutulur.
+
+## Hızlı yerel kurulum
+
+Python **3.11** ve CI ile aynı **Node.js 22** sürümü önerilir. Depoda üretilmiş gerçek çıktılar bulunduğundan ilk web incelemesi için uydu analizini tekrar çalıştırmak gerekmez.
 
 ```sh
+git clone https://github.com/ztrkkgn/turkiye-doga-platform.git
+cd turkiye-doga-platform
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r analysis/requirements.txt
-python -m pytest analysis/tests
-doga probe --config data/regions/mugla-marmaris-2021.json
-doga run --config data/regions/mugla-marmaris-2021.json
+cp .env.example web/.env.local
 cd web
 npm ci
 npm run dev
 ```
 
-İnternet yalnız bağımlılık kurulumu, katalog sorgusu ve gerçek piksel okuması için gerekir. API anahtarı gerekmez. İlk analiz birkaç dakika sürebilir. `requirements-lock.txt` Python paketlerini, `web/package-lock.json` web paketlerini sabitler. `npm ci` için Node.js 22 kullanın. İlk geliştirmede Python 3.11.6 ve Node.js 23.5.0 ortamında doğrulama yapıldı.
+[localhost:3000](http://localhost:3000/) adresini açın. Geliştirme sunucusunun çalıştığı terminal açık kalmalıdır. Harita altlığı ve uzak izleme kaydı internet ister; kaydedilmiş analiz çıktıları yerel olarak sunulur. Python paketleri `analysis/requirements-lock.txt`, web paketleri `web/package-lock.json` ile sabitlenir.
 
-Üretilmiş gerçek veri de repoya eklenmiştir; analizi tekrar çalıştırmadan `web/` içinden `npm ci` ve `npm run dev` ile incelenebilir. Dosya izleme sınırına takılan ortamlarda aşağıdaki statik önizlemeyi kullanın.
-
-## İlk gerçek gözlem
-
-İçmeler çevresindeki çalışma penceresi `[28.15,36.74,28.32,36.86]` (boylam/enlem) ve `EPSG:32635` üzerinde 20 m ortak grid kullanılır. Referans olay ve pencere gerekçesi [bilimsel kaynaklarda](docs/scientific-sources.md) açıklanır. Dikdörtgen resmî yangın sınırı değildir.
-
-- Önce: **28 Temmuz 2021**, `S2A_T35SPA_20210728T084602_L2A`.
-- Sonra: **17 Ağustos 2021**, `S2A_T35SPA_20210817T085325_L2A`.
-- Ortak geçerli piksellerde ortalama ΔNDVI yaklaşık **−0.142**, dNBR yaklaşık **0.193**.
-- Ortak geçerli çalışma penceresi payı yaklaşık **%57.9**. Deniz ve diğer dışlanan pikseller de paydanın içindedir; bu sayı doğruluk veya yangın hasar yüzdesi değildir.
-
-Bu sonuçlar platform tarafından gerçek bantlardan hesaplanmıştır. Ölçümlerin saha verileriyle bağımsız doğruluk değerlendirmesi yapılmadı. Yıllık iyileşme eğilimi çıkarılamaz.
-
-## Tekrar üretim
-
-`doga run`, repodaki `data/processed/.../selection.json` içindeki tam STAC kayıtlarını kullanır. Aynı ürünler, bant URL'leri ve radyometrik katsayılar yeniden okunur. Yapılandırma değişirse otomatik olarak eski seçimle devam etmez.
+Statik önizleme için `web/` içinde:
 
 ```sh
-# Proje kökünde, etkin Python ortamıyla:
-doga probe --config data/regions/mugla-marmaris-2021.json
-doga run --config data/regions/mugla-marmaris-2021.json
-python tools/validate_outputs.py
-
-# Bilinçli olarak yeni ürün araması yapmak için:
-doga run --config data/regions/mugla-marmaris-2021.json --refresh
+npm run build -- --webpack
+npm run serve
 ```
 
-`--refresh` iki tekil tarih penceresinde yeniden ürün seçer; yıllık güncelleme veya zamanlanmış izleme değildir. İlk sürüm yalnız `before` / `after` çifti destekler. Kalite alt sınırı sağlanamazsa yeni web çıktısı yayımlanmaz; mevcut geçerli çıktı korunur.
+Bu sunucu yalnız `127.0.0.1:3000` adresini dinler; internette yayın yapmaz. `web/out/` yeniden üretilebilir ve Git dışında tutulur.
 
-Çıktılar:
+## Tarihsel analizleri tekrar üretme
 
-| Konum | İçerik |
+Proje kökünde, etkin Python ortamıyla:
+
+```sh
+doga probe --config data/regions/mugla-marmaris-2021.json
+doga run --config data/regions/mugla-marmaris-2021.json
+doga run --config data/regions/antalya-manavgat-2021.json
+python tools/validate_outputs.py
+```
+
+`doga run`, kaydedilmiş tam STAC ürün seçimiyle aynı ürünleri yeniden okur. Yapılandırma ile kayıt uyuşmazsa sessizce devam etmez. Bilinçli yeni ürün seçimi için `--refresh` kullanılabilir; bu seçenek tek başına periyodik izleme başlatmaz. Tam çift ve ortak geçerli kapsama kalite kontrollerini geçmeden yeni sonuç önceki geçerli çıktının yerine konmaz.
+
+Marmaris penceresi `[28.15,36.74,28.32,36.86]`, Manavgat penceresi `[31.40,36.86,31.55,36.98]` şeklindedir; sıra **batı, güney, doğu, kuzey** boylam/enlem değerleridir. İki bölge de kendi UTM diliminde 20 m ortak grid kullanır. Pencere gerekçeleri ve gerçek gözlem kimlikleri [bilimsel kaynaklar](docs/scientific-sources.md) ve [Manavgat analiz kaydında](docs/manavgat-analysis.md) açıklanır.
+
+## Güncel uydu izlemesini çalıştırma
+
+```sh
+# Proje kökünde:
+doga monitor --config data/monitoring/config.json
+python tools/validate_outputs.py --version-monitor-assets
+
+# Arama dönemini belirli bir güne sabitlemek için:
+doga monitor --config data/monitoring/config.json --as-of 2026-11-13
+python tools/validate_outputs.py --version-monitor-assets
+```
+
+`--as-of` arama pencerelerinin gününü sabitler; sonradan değişen katalog kayıtlarını dondurmaz. Seçilen gerçek ürünler ayrıca kaydedilir.
+
+İzleme, son **0–14 gün** içinden uygun bir gözlem ile önceki **15–42 gün** içinden uygun bir referans gözlemi seçer. Önce katalog ve yerel SCL kapsaması kontrol edilir. Kullanılabilir ürün çifti ile ilgili kod/ayar parmak izi değişmediyse spektral bantlar yeniden işlenmez. İlk sürüm iki **tekil gözlem** kullanır; medyan kompozit veya yıllık toparlanma serisi üretildiği iddia edilmez.
+
+NDVI farkındaki değiştirilmiş Z puanı `|M| > 3.5`, aynı yönde gerçek NDVI farkı ve en az 1 ha dört komşulu piksel desteği, yalnızca **incelenecek aday** üretir. Bölge başına en fazla 50 aday yayımlanır. MAD sıfır veya sayısal toleransın altındaysa aday puanlanmaz. Bu ayarlar saha kalibrasyonlu hasar eşikleri değildir; [yöntem incelemesi](docs/monitoring-method-review.md) sınırlamaları açıklar.
+
+`--version-monitor-assets`, izleme görüntü adlarını çekim çifti ve kaynak kimliğiyle sürümler, JSON bağlantılarını günceller ve tüm yayımlanacak veriyi doğrular. İzleme sonrası commit öncesinde çalıştırılmalıdır; farklı tarihlere ait görüntü ve ölçümlerin önbellekte karışma riskini azaltır.
+
+## Günlük kontrol ve çalışma zamanında veri okuma
+
+[monitor.yml](.github/workflows/monitor.yml) her gün **03:17 UTC / 06:17 İstanbul** için hazırlanmıştır; `workflow_dispatch` ile elle de başlatılabilir. Her denemede kontrol zamanını kaydeder; uygun yeni ürün çifti varsa analizi yeniler. Çıktı doğrulama, test ve web build adımlarından sonra değişen küçük veri dosyalarını `main` dalına gönderir.
+
+**Bu sürümde workflow dosyası hazırlanmıştır; yeni günlük zamanlamanın GitHub üzerinde yayımlandığı ve başarıyla çalıştığı henüz doğrulanmamıştır.** Depoya gönderim, Actions'ın etkin olması ve veri güncelleme işinin yazma izni gerekir. Yerelde tamamlanan izleme, zamanlanmış işin gerçekten çalıştığını kanıtlamaz.
+
+GitHub zamanlaması hizmet garantisi değildir: işler gecikebilir veya yoğunlukta düşebilir; public repolarda 60 gün etkinlik olmadığında schedule devre dışı kalabilir. [Resmî zamanlama koşulları](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule) geçerlidir. Günlük kontrol, her gün yeni veya bulutsuz uydu görüntüsü bulunacağı anlamına gelmez.
+
+Web, açıldığında güncel izleme durumunu ve aday GeoJSON kaydını varsayılan olarak aşağıdaki **açık GitHub dosya kökünden** okur:
+
+```text
+https://raw.githubusercontent.com/ztrkkgn/turkiye-doga-platform/main/web/public
+```
+
+Uzak durum ve aday kayıtları birlikte doğrulanır. Uzak çift alınamaz veya doğrulamadan geçmezse uygulama, bu web sürümünde bulunan **yerel durum ve aday çiftine birlikte** döner; farklı kaynakların kayıtlarını karıştırmaz. Yerel çıktı tüm görüntüleriyle depoda bulunur. Seçilen uzak bölgenin ek analiz kaydı sonradan yüklenemezse arayüz hata gösterir; erişilemeyen veri yeni sonuç gibi sunulmaz. Görüntü URL'leri, seçilen veri kaynağına göre çözülür ve güncellik sayfa açılırken tekrar değerlendirilir.
+
+Bu yapı veri kayıtlarının çalışma zamanında okunmasını sağlar. Yeni dosyalar henüz public depoya gönderilmemişse uzak kaynakta bulunmayabilir; kaydedilmiş yerel sürüm kullanılabilir. Kaynağı değiştirmek için isteğe bağlı `NEXT_PUBLIC_MONITORING_BASE_URL` değeri kullanılabilir; HTTPS üzerinden erişilen, aynı `/data/...` yapısını ve tarayıcı erişimini destekleyen **public dosya kökü** olmalıdır.
+
+## Ortam değişkenleri
+
+`.env.example` dosyasını `web/.env.local` olarak kopyalayın. İki değer de tarayıcıya açık yapılandırmadır; sır içeremez.
+
+| Değişken | Amaç |
 | --- | --- |
-| `web/public/data/marmaris/` | Gerçek RGB, NDVI, NBR, dNBR ve ΔNDVI PNG'leri; AOI GeoJSON; JSON ölçüm ve provenance kaydı |
-| `data/processed/mugla-marmaris-2021/` | Katalog erişim raporu, sürümlü özet ve sabit ürün seçimi |
-| `data/cache/mugla-marmaris-2021/` | Yerel 20 m indis/fark GeoTIFF'leri; Git dışında |
+| `NEXT_PUBLIC_SITE_URL` | Next.js metadata ve kalıcı site bağlantıları; yerelde `http://localhost:3000` |
+| `NEXT_PUBLIC_MONITORING_BASE_URL` | İsteğe bağlı public HTTPS izleme dosya kökü; verilmezse yukarıdaki GitHub raw kökü |
 
-NDVI `(B08−B04)/(B08+B04)`, NBR `(B8A−B12)/(B8A+B12)`, dNBR `önce−sonra` ve ΔNDVI `sonra−önce` hesaplanır. Sentinel-2 Collection 1 L2A, Earth Search üzerinden okunur; Copernicus Data Space katalog erişimi ayrıca test edilir. Eski Earth Search koleksiyonunda saptanan ofset çelişkisi nedeniyle yalnız `sentinel-2-c1-l2a` analiz edilir. Ayrıntılar [analiz kılavuzunda](analysis/README.md).
+`NEXT_PUBLIC_` değerleri build sırasında web çıktısına girer. Kaynak adresini değiştirirseniz web'i yeniden derleyin; kaynağın sunduğu veri kayıtları ise çalışma zamanında okunur. Yerel geliştirme için uydu hesabı veya erişim anahtarı gerekmez.
 
-## Web ve doğrulama
+## Test ve çıktı doğrulama
+
+Proje kökünde:
 
 ```sh
 python -m pytest analysis/tests -q
 python tools/validate_outputs.py
 cd web
+npm ci
 npm test
 npm run typecheck
 npm run build -- --webpack
-npm run serve
 ```
 
-Statik önizleme: `http://localhost:3000`. Üç sayfa `/`, `/bolge/mugla-marmaris-2021/` ve `/metodoloji/` adreslerindedir. Harita altlığı internet ister; analiz görselleri yerel çıktılardır. `web/out/` yeniden üretilebilir ve Git dışında tutulur. CI aynı kontrolleri yapar; büyük uydu indirme/analizi CI'da çalıştırılmaz. Yerel test sonuçları [geliştirme raporunda](docs/development-report.md) kayıtlıdır; GitHub üzerinde workflow henüz çalıştırılmadı.
+[CI](.github/workflows/ci.yml) test, veri sözleşmesi ve build kontrollerini çalıştırır. Günlük iş ayrıca bu kontrollerden önce gerçek veri erişimi yapar; olağan CI büyük uydu analizlerini yeniden üretmez. Bir komutun burada listelenmesi o komutun GitHub üzerinde çalıştırıldığını göstermez.
 
-## GitHub deposu
+## Dosya düzeni
 
-Kaynak kodu ve gerçek pilot çıktıları [ztrkkgn/turkiye-doga-platform](https://github.com/ztrkkgn/turkiye-doga-platform) deposunda yönetilir.
+| Konum | İçerik |
+| --- | --- |
+| `analysis/src/doga/` | Katalog erişimi, grid/maskeler, indisler, tarihsel analiz ve güncel izleme |
+| `analysis/tests/` | Sayısal, raster, kalite ve yayın kapısı testleri; sentetik veriler yalnız testlerde |
+| `data/regions/` | İki tarihsel pilotun yapılandırmaları |
+| `data/monitoring/` | Seçili güncel alanlar, çalışma ayarları ve üretilen dönem yapılandırmaları |
+| `data/processed/` | Sürüm, kaynak kayıtları ve sabit ürün seçimleri |
+| `data/cache/` | Yerel GeoTIFF ve okuma önbelleği; Git dışında |
+| `web/public/data/marmaris/`, `web/public/data/manavgat/` | Gerçek tarihsel RGB/indis/fark PNG'leri, GeoJSON, özet ve provenance |
+| `web/public/data/monitor-*/` | Güncel gerçek görüntü çiftleri ve bölgesel adaylar |
+| `web/public/data/monitoring/` | Toplu durum ve aday GeoJSON kaydı |
+| `web/lib/events-catalog.json` | Altı kaynaklı olayın başlık, konum ve analiz durumları |
 
-```sh
-git clone https://github.com/ztrkkgn/turkiye-doga-platform.git
-cd turkiye-doga-platform
-```
+## Vercel'e yayın
 
-Yeni değişiklikleri göndermek için kendi GitHub kimliğinizle oturum açın ve proje kökünden `git push origin main` kullanın. GitHub CLI tercih ederseniz `gh auth login` ile GitHub'ın kendi ekranında giriş yapabilirsiniz. Anahtarları sohbete veya kaynak dosyalarına koymayın. ZIP arşivi Git geçmişini içermez; Git ile devam etmek için depoyu klonlamak tercih edilir.
+GitHub deposunu Vercel'e içe aktarırken Root Directory `web`, Framework Next.js, Build Command `npm run build -- --webpack` ve statik çıktı `out` olarak yapılandırın. Gerekirse iki public ortam değişkenini build ayarlarına ekleyin. Üretilen web sürümü bir API sunucusu veya veritabanı gerektirmez.
 
-## Yerel önizleme
+**Vercel hesabı ve alan adı bu geliştirmede bağlanmadı; Vercel yayını yapılmadı.** GitHub'a kod/veri gönderimi, bir web sitesinin otomatik olarak Vercel'de yayımlandığı anlamına gelmez.
 
-```sh
-cd web
-npm ci
-npm run build -- --webpack
-npm run serve
-```
+## Maliyet, kaynaklar ve bilimsel sınırlar
 
-Sayfayı [localhost:3000](http://localhost:3000/) adresinden açın. Önizleme sunucusunun çalıştığı terminal açık kalmalıdır; sunucu durursa bu adres erişilemez olur. `npm run serve` yalnız kendi bilgisayarınızın yerel bağlantısını dinler. Bu komut siteyi internette yayımlamaz. Geliştirme sırasında otomatik yenileme için `npm run dev` kullanılabilir.
+Açık C1 STAC/COG erişimi anahtar gerektirmez. [GitHub'ın güncel koşullarında](https://docs.github.com/en/billing/concepts/product-billing/github-actions) public repolardaki standart GitHub-hosted runner kullanımı ücretsizdir. Larger runner'lar ücretlidir; artifact/cache depolama ve private repo hakları ayrı değerlendirilir. Proje küçük alanlar, standart Linux runner ve küçük hazırlanmış çıktılarla çalışır; sınırsız kota veya kesintisiz servis sözü vermez.
 
-## Vercel yayını
+NDVI `(B08−B04)/(B08+B04)`, NBR `(B8A−B12)/(B8A+B12)`, dNBR `önce−sonra` ve ΔNDVI `sonra−önce` hesaplanır. Analiz SCL 4/5 ile sınırlıdır; gerçek renk görüntüleri daha geniş görsel bağlam içerebilir. NDVI artışı ağaç sayısı, hayatta kalma oranı, biyolojik çeşitlilik veya ormanın bütünüyle iyileşmesi değildir. Spektral değişim tek başına nedenini veya bir faaliyetin yasallığını göstermez. Mevsim, tarım, nem, duman ve maskelenen pikseller sonucu etkileyebilir; ilk otomatik tarama saha verisiyle doğrulanmadı.
 
-GitHub deposunu Vercel'e içe aktarın. Root Directory `web`, Framework Next.js, Build Command `npm run build -- --webpack`, statik çıktı `out` olacak şekilde yapılandırın. Bu sürüm API sunucusu veya veritabanı istemez. Analiz yeniden çalıştırıldıktan sonra doğrulanmış küçük çıktıları commit edip frontend'i yeniden derleyin.
+Yöntem ve kaynak kayıtları:
 
-Vercel hesabı ve gerçek alan adı bu geliştirmede bağlanmadı; yayın yapılmadı. Anahtar zorunlu değildir. `.env.example` yalnız güvenli ve isteğe bağlı site URL'sini içerir. Son kullanıcıdan uydu anahtarı istenmez.
+- [Analiz kılavuzu](analysis/README.md) ve [bilimsel kaynaklar](docs/scientific-sources.md)
+- [Altı olayın kaynakları ve yaklaşık konumları](docs/events-sources.md)
+- [Manavgat tarihsel analizi](docs/manavgat-analysis.md)
+- [Bördübet tarihsel veri eksikliği ve güncel izleme ayrımı](docs/bordubet-analysis.md)
+- [Güncel izleme yöntemi, sınırlamalar ve zamanlama](docs/monitoring-method-review.md)
 
-İsteğe bağlı genel site URL'si için proje kökünde `cp .env.example web/.env.local` kullanıp `NEXT_PUBLIC_SITE_URL` değerini ayarlayın. Bu değer Next.js metadata tabanı içindir; bir sır değildir. Varsayılanı yerel geliştirme adresidir.
-
-## Maliyet ve işletim
-
-Analiz yerel CPU'da çalışır; GPU, ticari AI API'si veya ücretli uydu verisi gerekmez. Veritabanı ve sürekli worker maliyeti yoktur. [Vercel Hobby](https://vercel.com/docs/plans/hobby) kişisel, ticari olmayan kullanım koşullarına ve kota sınırlarına tabidir; sınırsız trafik vaat edilmez. Açık depolardaki standart GitHub runner'ları [Actions koşullarına](https://docs.github.com/en/billing/concepts/product-billing/github-actions) göre ücretsizdir; büyük analizler bunun dışında yerel olarak yapılır.
-
-OSM altlığı [karo kullanım politikasına](https://operations.osmfoundation.org/policies/tiles/) tabidir. Görünür atıf korunur; toplu indirme/offline paketleme yapılmaz. İlk düşük trafikli pilot için kullanılır; trafik büyürse uygun bir karo sağlayıcısı seçilir. Earth Search açık arşivi hizmet garantisi olan özel bir altyapı değildir. Servis kesilirse mevcut işlenmiş sonuçlar incelenebilir.
-
-## Katkı
-
-[CONTRIBUTING.md](CONTRIBUTING.md) kurulum, test ve bilimsel değişiklik kurallarını açıklar. Üyelik, ödeme, bildirim, kullanıcı arazisi seçimi ve yeni pilotlar bu ilk adımda geliştirilmedi. Sonraki öncelik aynı mevsim medyan kompozitleri ve sabit ortak maskede 2022–2026 toparlanma serisidir.
-
-## Bilimsel yorum
-
-NDVI ağaç sayısı veya biyolojik çeşitlilik değildir. İndeks artışı ormanın tamamen iyileştiğini kanıtlamaz. Uydu değişimi tek başına yasa dışı kesim kanıtı değildir. Duman, bulut, gölge, mevsim ve karışık pikseller sonucu etkiler. Güvenilir yerel kalibrasyon olmadan dNBR hasar sınıfları veya yanan alan toplamları yayımlanmaz.
+OSM altlığının görünür atfı ve [karo kullanım politikası](https://operations.osmfoundation.org/policies/tiles/) korunur. Earth Search hizmet garantili özel altyapı değildir. [Katkı rehberi](CONTRIBUTING.md) bilimsel değişiklik, test ve veri güvenliği kurallarını açıklar.
 
 ## Lisans
 
-Kod MIT lisansı altındadır. Sentinel verisi, harita altlıkları ve üçüncü taraf içerikleri kendi lisans ve atıf koşullarına tabidir. Copernicus Sentinel verisi değiştirilerek işlenir; bu proje ESA veya Copernicus'un resmî ürünü değildir.
+Kod **MIT** lisanslıdır. Copernicus Sentinel verileri, harita altlıkları ve üçüncü taraf içerikleri kendi lisans/atıf koşullarına tabidir. Proje ESA veya Copernicus'un resmî ürünü değildir. Anahtarlar, parolalar, ham uydu dosyaları ve `.env.local` dosyaları kaynak koduna eklenmez.

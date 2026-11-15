@@ -1,0 +1,40 @@
+{
+  "id": "monitor-marmaris",
+  "publicSlug": "monitor-marmaris",
+  "name": "Marmaris · İçmeler güncel izlemesi",
+  "province": "Muğla",
+  "bbox": [
+    28.16,
+    36.76,
+    28.28,
+    36.86
+  ],
+  "crs": "EPSG:32635",
+  "tile": "35SPA",
+  "resolutionM": 20,
+  "description": "Seçili bölgede güncel spektral değişim taraması; tarihsel olayın yeni etkisi veya doğrulanmış hasar olarak yorumlanamaz.",
+  "maxSceneCloudCover": 100,
+  "minValidFraction": 0.5,
+  "sources": [
+    {
+      "title": "İçmeler yangın sahasının coğrafi referansı · Zengin ve Acar (2025)",
+      "url": "https://doi.org/10.1007/s41207-025-00850-x"
+    }
+  ],
+  "periods": [
+    {
+      "id": "before",
+      "label": "Referans gözlem",
+      "start": "2026-10-02",
+      "end": "2026-10-29",
+      "target": "2026-10-29"
+    },
+    {
+      "id": "after",
+      "label": "Güncel gözlem",
+      "start": "2026-10-30",
+      "end": "2026-11-13",
+      "target": "2026-11-13"
+    }
+  ]
+}

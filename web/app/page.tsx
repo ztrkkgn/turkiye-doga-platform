@@ -1,2 +1,2 @@
-import { PilotViewer } from '@/components/pilot-viewer';
-export default function Home() { return <PilotViewer/> }
+import { TurkeyExplorer } from '@/components/turkey-explorer';
+export default function Home() { return <TurkeyExplorer/> }

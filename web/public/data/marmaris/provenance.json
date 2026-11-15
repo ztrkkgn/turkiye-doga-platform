@@ -1969,10 +1969,13 @@
   },
   "sourceSha256": {
     "__init__.py": "e92b187bf57095ab554e27459bfe06600fdf38ce56fa2f0f9f399373e4c1ed26",
-    "catalog.py": "acd23b30f023d76ce3d39e7fdf58963897e2a3634e4888fc2c391ac45873c594",
-    "cli.py": "ee4237ad2fc46219a9ff8daa8317692d6505fea7a2c6d499e4f5b055860bc872",
+    "catalog.py": "64e6400a5ff693afd8f818a338c79fefce1a3c3a61f7363931f2ecfe9791e210",
+    "cli.py": "b1f2e1967ce6b1d86c78c8ac58e6734dfc3da009ccc14d4f28c5f19de2d38a00",
+    "config.py": "62020a9c91248e2386e6eb636bf5970dd55d4ec31000e627ca204154a8bf6251",
+    "detection.py": "548d31e1734f0323e14caf1343fe109940d77e40738861f6aed207bffaf7994f",
     "indices.py": "764e98a42c029b978fafa84f51add7ffa546fd1a6238274ac6f75e2ea4066cc2",
-    "pipeline.py": "5c0057f90d8a92d34efd4384fd81a9bddd8c96f5d6eea4b79bf476ecf3c2f370",
+    "monitor.py": "e7bff689f119de1ab45a1c4563455e2776d9aef83b4c937e2778f0834378879c",
+    "pipeline.py": "1da5d0aad61ba06009d50556f1d02588a05b7860eeb00eb35bdfd6fdaa774f5a",
     "raster.py": "1c437d8b344e5e818f5486bfa5f8614e6d1d70df81be3c45f14a8f03c01e7214"
   },
   "indexFormulas": {
@@ -2011,5 +2014,5 @@
     4,
     5
   ],
-  "generatedAt": "2026-11-06T20:41:00.284680+00:00"
+  "generatedAt": "2026-11-13T17:49:57.438198+00:00"
 }

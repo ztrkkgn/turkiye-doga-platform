@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "id": "monitor-yamanlar",
+  "name": "Yamanlar · güncel bölge izlemesi",
+  "province": "İzmir",
+  "status": "preliminary",
+  "publicSlug": "monitor-yamanlar",
+  "description": "Seçili bölgede güncel spektral değişim taraması; tarihsel olayın yeni etkisi veya doğrulanmış hasar olarak yorumlanamaz.",
+  "bbox": [
+    27.1,
+    38.5,
+    27.22,
+    38.6
+  ],
+  "areaKm2": 116.0048,
+  "generatedAt": "2026-11-13T17:49:30.054475+00:00",
+  "methodVersion": "0.1.0",
+  "configSha256": "8a98bf36f3aac0ea636ac8802de1e903202d3c19c6282593c5ecd53e3375543c",
+  "grid": {
+    "crs": "EPSG:32635",
+    "resolutionM": 20,
+    "width": 525,
+    "height": 557,
+    "transform": [
+      20.0,
+      0.0,
+      508700.0,
+      0.0,
+      -20.0,
+      4272420.0
+    ],
+    "displayCrs": "EPSG:3857"
+  },
+  "periods": [
+    {
+      "id": "before",
+      "label": "Referans gözlem",
+      "start": "2026-10-02",
+      "end": "2026-10-29",
+      "target": "2026-10-29",
+      "status": "available",
+      "observation": {
+        "datetime": "2026-10-23T09:09:42.227000Z",
+        "itemId": "S2C_T35SNC_20261023T090118_L2A",
+        "productId": "S2C_MSIL2A_20261023T090021_N0513_R007_T35SNC_20261023T123911.SAFE",
+        "cloudCover": 0.022694,
+        "baseline": "05.13",
+        "boaOffsetApplied": null,
+        "validFraction": 0.9944416093127181,
+        "validPixelCount": 288400,
+        "ndviMean": 0.5727134346961975,
+        "nbrMean": 0.4029020667076111,
+        "rgbUrl": "/data/monitor-yamanlar/20261023-20261107-36fe70f0236b__before-rgb.png",
+        "ndviUrl": "/data/monitor-yamanlar/20261023-20261107-36fe70f0236b__before-ndvi.png",
+        "nbrUrl": "/data/monitor-yamanlar/20261023-20261107-36fe70f0236b__before-nbr.png",
+        "stacUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2C_T35SNC_20261023T090118_L2A"
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "id": "after",
+      "label": "Güncel gözlem",
+      "start": "2026-10-30",
+      "end": "2026-11-13",
+      "target": "2026-11-13",
+      "status": "available",
+      "observation": {
+        "datetime": "2026-11-07T09:09:43.378000Z",
+        "itemId": "S2B_T35SNC_20261107T090613_L2A",
+        "productId": "S2B_MSIL2A_20261107T090059_N0513_R007_T35SNC_20261107T130652.SAFE",
+        "cloudCover": 3.940143,
+        "baseline": "05.13",
+        "boaOffsetApplied": null,
+        "validFraction": 0.736310911272637,
+        "validPixelCount": 213539,
+        "ndviMean": 0.6225172877311707,
+        "nbrMean": 0.4016929566860199,
+        "rgbUrl": "/data/monitor-yamanlar/20261023-20261107-36fe70f0236b__after-rgb.png",
+        "ndviUrl": "/data/monitor-yamanlar/20261023-20261107-36fe70f0236b__after-ndvi.png",
+        "nbrUrl": "/data/monitor-yamanlar/20261023-20261107-36fe70f0236b__after-nbr.png",
+        "stacUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2B_T35SNC_20261107T090613_L2A"
+      },
+      "rejectedCandidates": []
+    }
+  ],
+  "comparisons": {
+    "fire": {
+      "before": "before",
+      "after": "after",
+      "pixelCount": 213419,
+      "commonValidFraction": 0.7358971352909535,
+      "commonAreaKm2": 85.3676,
+      "ndviDeltaMean": 0.08773978054523468,
+      "dnbrMean": -0.03364675119519234,
+      "dnbrMedian": -0.030532360076904297,
+      "beforeNdviCommonMean": 0.5346962809562683,
+      "afterNdviCommonMean": 0.6224361062049866,
+      "dnbrUrl": "/data/monitor-yamanlar/20261023-20261107-36fe70f0236b__dnbr.png",
+      "ndviDeltaUrl": "/data/monitor-yamanlar/20261023-20261107-36fe70f0236b__ndvi_delta.png",
+      "displayRange": [
+        -0.5,
+        1.0
+      ],
+      "displayClippingOnly": true
+    }
+  },
+  "sources": [
+    {
+      "title": "İzmir İRAP · Yamanlar Kule coğrafi referansı",
+      "url": "https://izmir.afad.gov.tr/kurumlar/izmir.afad/E-KUTUPHANE/Il-Planlari/IRAP_Izmir--2024.pdf"
+    }
+  ],
+  "limitations": [
+    "Çalışma penceresi resmî yangın sınırı değildir; karma arazi örtüsü içerir ve bütün bölgeyi temsil etmez.",
+    "İlk çıktı iki tekil gözleme dayanır; medyan kompozit ve yıllık toparlanma serisi henüz üretilmedi.",
+    "NDVI bitki örtüsünün spektral göstergesidir; ağaç sayısı, hayatta kalma oranı veya biyolojik çeşitlilik değildir.",
+    "dNBR sürekli değişimi gösterir; yerel saha kalibrasyonu olmadan hasar sınıfı veya yanan alan toplamı verilmez.",
+    "SCL maskesi ve 60 m tampon tüm dumanı, ince bulutları ve topografik gölgeyi gideremeyebilir.",
+    "Tarihler yakın mevsimlerden seçildi; kuraklık, fenoloji ve atmosfer değişimleri yangın etkisinden tam ayrılamaz.",
+    "Değişim tek başına nedenini veya herhangi bir faaliyetin yasallığını kanıtlamaz. Bağımsız piksel düzeyinde saha doğrulaması yapılmadı.",
+    "Yalnızca iki tarihte de geçerli ortak kara pikselleri fark hesabına katılır; maskelenen alanlarda yorum yapılmaz.",
+    "SCL 2 karanlık piksel ve SCL 7 belirsiz sınıf dışlanır; koyu yanık yüzeylerin bir kısmı da dışlanabilir. Sonuç, kabul edilen piksellerle sınırlıdır.",
+    "İndeks bantlarında negatif yüzey yansıtımı bulunan pikseller hesaplamadan çıkarılır."
+  ],
+  "assets": {
+    "aoiUrl": "/data/monitor-yamanlar/aoi.geojson",
+    "imageCoordinates": [
+      [
+        27.1,
+        38.6
+      ],
+      [
+        27.22,
+        38.6
+      ],
+      [
+        27.22,
+        38.5
+      ],
+      [
+        27.1,
+        38.5
+      ]
+    ],
+    "provenanceUrl": "/data/monitor-yamanlar/provenance.json"
+  },
+  "quality": {
+    "minValidFraction": 0.5,
+    "acceptedSclClasses": [
+      4,
+      5
+    ],
+    "cloudBufferM": 60,
+    "observationType": "single-scene",
+    "fieldValidated": false
+  },
+  "assetSha256": {
+    "20261023-20261107-36fe70f0236b__after-ndvi.png": "9288474fe4d7a23fe36578e8aa754ef161e6dddfb8348c25c504b65538446481",
+    "20261023-20261107-36fe70f0236b__after-rgb.png": "342abbeaf9801204d1f95e2f66e43b841aec00ce92817675f0885d964112ffd3",
+    "provenance.json": "5e8d1a7201b49ae12224c1ca7c047c5408ba73d24a045d9ed9cd53174205638d",
+    "20261023-20261107-36fe70f0236b__before-nbr.png": "3e1d496341aca49dc5314522e2ceeaf05e7808dc89c457b74f2a861a738a4853",
+    "aoi.geojson": "5033a14e968d72de5f12ce909b462fe72869994ebcfe798bcf79db9824e6ffba",
+    "20261023-20261107-36fe70f0236b__ndvi_delta.png": "c1b606bd0c3abbaa7452431ad54e8c59dc1ce72ab773b3674333939e1b31e835",
+    "20261023-20261107-36fe70f0236b__before-ndvi.png": "13b3914a1c86ccda80c70acf57a936139a6db8c9b04b1739ac5334c3d077e07b",
+    "20261023-20261107-36fe70f0236b__before-rgb.png": "389be14d98db85e0e7a995b65728c0a37c0b0105ae470b8398f2137581b304c7",
+    "20261023-20261107-36fe70f0236b__dnbr.png": "e1a08e4b1ffb571b78a717f77eed9787dba6b5de87c934adfbbcb95bbdbbc68c",
+    "20261023-20261107-36fe70f0236b__after-nbr.png": "8f87d57db720ec30f3cb64b768b324bca3bc1200705d13596a1b59e388c4ad89"
+  },
+  "imageFilePrefix": "20261023-20261107-36fe70f0236b__"
+}

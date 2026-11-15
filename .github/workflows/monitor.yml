@@ -1,0 +1,66 @@
+name: Refresh regional observations
+
+on:
+  schedule:
+    # Daily catalog check at 06:17 Europe/Istanbul (UTC+3).
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: regional-sentinel-monitoring
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: analysis/requirements-lock.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Install analysis environment
+        run: python -m pip install -r analysis/requirements.txt
+      - name: Check catalogs and process new usable observations
+        run: doga monitor --config data/monitoring/config.json
+      - name: Version images and validate all published products
+        run: python tools/validate_outputs.py --version-monitor-assets
+      - name: Verify analysis
+        run: python -m pytest analysis/tests -q
+      - name: Verify and build frontend with the new records
+        working-directory: web
+        run: |
+          npm ci
+          npm test
+          npm run typecheck
+          npm run build -- --webpack
+      - name: Publish validated observation records
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          paths = ['web/public/data/monitoring', 'data/monitoring']
+          for pattern in ['web/public/data/monitor-*', 'data/processed/monitor-*']:
+              paths.extend(str(path) for path in Path('.').glob(pattern) if path.is_dir())
+          subprocess.run(['git', 'add', '--', *paths], check=True)
+          PY
+          if git diff --cached --quiet; then
+            echo 'No observation records changed.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'data: refresh regional Sentinel-2 observations'
+          git push origin HEAD:main

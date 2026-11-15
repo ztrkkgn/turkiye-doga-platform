@@ -1,0 +1,40 @@
+{
+  "id": "monitor-yamanlar",
+  "publicSlug": "monitor-yamanlar",
+  "name": "Yamanlar · güncel bölge izlemesi",
+  "province": "İzmir",
+  "bbox": [
+    27.1,
+    38.5,
+    27.22,
+    38.6
+  ],
+  "crs": "EPSG:32635",
+  "tile": "35SNC",
+  "resolutionM": 20,
+  "description": "Seçili bölgede güncel spektral değişim taraması; tarihsel olayın yeni etkisi veya doğrulanmış hasar olarak yorumlanamaz.",
+  "maxSceneCloudCover": 100,
+  "minValidFraction": 0.5,
+  "sources": [
+    {
+      "title": "İzmir İRAP · Yamanlar Kule coğrafi referansı",
+      "url": "https://izmir.afad.gov.tr/kurumlar/izmir.afad/E-KUTUPHANE/Il-Planlari/IRAP_Izmir--2024.pdf"
+    }
+  ],
+  "periods": [
+    {
+      "id": "before",
+      "label": "Referans gözlem",
+      "start": "2026-10-02",
+      "end": "2026-10-29",
+      "target": "2026-10-29"
+    },
+    {
+      "id": "after",
+      "label": "Güncel gözlem",
+      "start": "2026-10-30",
+      "end": "2026-11-13",
+      "target": "2026-11-13"
+    }
+  ]
+}

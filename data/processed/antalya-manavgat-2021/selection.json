@@ -1,0 +1,1959 @@
+{
+  "configSha256": "1c54992f450475b67c2616145d29a1f988327476e098e963254320857e17ecaa",
+  "items": {
+    "before": {
+      "type": "Feature",
+      "stac_version": "1.1.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/grid/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/mgrs/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/processing/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+        "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/sentinel-2/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/storage/v2.0.0/schema.json",
+        "https://stac-extensions.github.io/view/v1.0.0/schema.json"
+      ],
+      "id": "S2A_T36SUF_20210725T084120_L2A",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              30.75163159567052,
+              37.025266990733755
+            ],
+            [
+              30.780093647447718,
+              36.03617691222183
+            ],
+            [
+              31.998536821786956,
+              36.052549930385496
+            ],
+            [
+              31.985686338020095,
+              37.042238132699175
+            ],
+            [
+              30.75163159567052,
+              37.025266990733755
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        30.751632,
+        36.036177,
+        31.998537,
+        37.042238
+      ],
+      "properties": {
+        "created": "2024-01-17T04:11:02.149Z",
+        "platform": "sentinel-2a",
+        "constellation": "sentinel-2",
+        "instruments": [
+          "msi"
+        ],
+        "eo:cloud_cover": 14.24835,
+        "proj:centroid": {
+          "lat": 36.54011,
+          "lon": 31.37901
+        },
+        "mgrs:utm_zone": 36,
+        "mgrs:latitude_band": "S",
+        "mgrs:grid_square": "UF",
+        "grid:code": "MGRS-36SUF",
+        "view:azimuth": 180.39825496901722,
+        "view:incidence_angle": 2.774170855777521,
+        "view:sun_azimuth": 132.797527126887,
+        "view:sun_elevation": 67.00862373542171,
+        "s2:tile_id": "S2A_OPER_MSI_L2A_TL_S2RP_20230220T083524_A031807_T36SUF_N05.00",
+        "s2:degraded_msi_data_percentage": 0.059,
+        "s2:nodata_pixel_percentage": 0,
+        "s2:saturated_defective_pixel_percentage": 0,
+        "s2:dark_features_percentage": 0.582606,
+        "s2:cloud_shadow_percentage": 0.728677,
+        "s2:vegetation_percentage": 8.244833,
+        "s2:not_vegetated_percentage": 10.314021,
+        "s2:water_percentage": 65.042406,
+        "s2:unclassified_percentage": 0.839108,
+        "s2:medium_proba_clouds_percentage": 3.620781,
+        "s2:high_proba_clouds_percentage": 5.4612,
+        "s2:thin_cirrus_percentage": 5.16637,
+        "s2:snow_ice_percentage": 0,
+        "s2:product_type": "S2MSI2A",
+        "s2:processing_baseline": "05.00",
+        "s2:product_uri": "S2A_MSIL2A_20210725T083601_N0500_R064_T36SUF_20230220T083524.SAFE",
+        "s2:generation_time": "2023-02-20T08:35:24.000000Z",
+        "s2:datatake_id": "GS2A_20210725T083601_031807_N05.00",
+        "s2:datatake_type": "INS-NOBS",
+        "s2:datastrip_id": "S2A_OPER_MSI_L2A_DS_S2RP_20230220T083524_S20210725T084120_N05.00",
+        "s2:reflectance_conversion_factor": 0.968683043661804,
+        "datetime": "2021-07-25T08:50:11.013000Z",
+        "earthsearch:payload_id": "roda-sentinel-2-c1-l2a/workflow-sentinel-2-c1-l2a-to-stac/5477664965309c9c88a12352e47ebd19",
+        "processing:software": {
+          "sentinel-2-c1-l2a-to-stac": "v2023.12.01"
+        },
+        "updated": "2024-01-17T04:11:02.149Z",
+        "storage:schemes": {
+          "aws-us-west-2": {
+            "type": "aws-s3",
+            "platform": "https://{bucket}.s3.{region}.amazonaws.com",
+            "region": "us-west-2",
+            "requester_pays": false,
+            "bucket": "e84-earth-search-sentinel-data"
+          }
+        },
+        "proj:code": "EPSG:32636"
+      },
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T36SUF_20210725T084120_L2A",
+          "type": "application/geo+json"
+        },
+        {
+          "rel": "canonical",
+          "href": "s3://e84-earth-search-sentinel-data/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/S2A_T36SUF_20210725T084120_L2A.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "via",
+          "href": "s3://sentinel-s2-l2a/tiles/36/S/UF/2021/7/25/1/metadata.xml",
+          "type": "application/xml",
+          "title": "Granule Metadata in Sinergize RODA Archive"
+        },
+        {
+          "rel": "parent",
+          "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a",
+          "type": "application/json"
+        },
+        {
+          "rel": "collection",
+          "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a",
+          "type": "application/json"
+        },
+        {
+          "rel": "root",
+          "href": "https://earth-search.aws.element84.com/v1",
+          "type": "application/json",
+          "title": "Earth Search by Element 84"
+        },
+        {
+          "rel": "thumbnail",
+          "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T36SUF_20210725T084120_L2A/thumbnail"
+        }
+      ],
+      "assets": {
+        "red": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/B04.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Red - 10m",
+          "eo:bands": [
+            {
+              "name": "B04",
+              "common_name": "red",
+              "center_wavelength": 0.665,
+              "full_width_half_max": 0.038
+            }
+          ],
+          "gsd": 10,
+          "proj:shape": [
+            10980,
+            10980
+          ],
+          "proj:transform": [
+            10,
+            0,
+            300000,
+            0,
+            -10,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220b7f70cb230659b57588e186bdde9ef907f343188ac4567b2276e0d3ee55069a7",
+          "file:size": 224536394,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "green": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/B03.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Green - 10m",
+          "eo:bands": [
+            {
+              "name": "B03",
+              "common_name": "green",
+              "center_wavelength": 0.56,
+              "full_width_half_max": 0.045
+            }
+          ],
+          "gsd": 10,
+          "proj:shape": [
+            10980,
+            10980
+          ],
+          "proj:transform": [
+            10,
+            0,
+            300000,
+            0,
+            -10,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "12201c7712c4b956c98fe652e654018e0c20273ce8f7a994b34f9ebd477f8393ef57",
+          "file:size": 225098838,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "blue": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/B02.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Blue - 10m",
+          "eo:bands": [
+            {
+              "name": "B02",
+              "common_name": "blue",
+              "center_wavelength": 0.49,
+              "full_width_half_max": 0.098
+            }
+          ],
+          "gsd": 10,
+          "proj:shape": [
+            10980,
+            10980
+          ],
+          "proj:transform": [
+            10,
+            0,
+            300000,
+            0,
+            -10,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220e8a798942950ec63722b54a6ba5294e07ff813cc8109603e13d807f8f98cb3b1",
+          "file:size": 227940116,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "visual": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/TCI.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "True color image",
+          "eo:bands": [
+            {
+              "name": "B04",
+              "common_name": "red",
+              "center_wavelength": 0.665,
+              "full_width_half_max": 0.038
+            },
+            {
+              "name": "B03",
+              "common_name": "green",
+              "center_wavelength": 0.56,
+              "full_width_half_max": 0.045
+            },
+            {
+              "name": "B02",
+              "common_name": "blue",
+              "center_wavelength": 0.49,
+              "full_width_half_max": 0.098
+            }
+          ],
+          "gsd": 10,
+          "proj:shape": [
+            10980,
+            10980
+          ],
+          "proj:transform": [
+            10,
+            0,
+            300000,
+            0,
+            -10,
+            4100040
+          ],
+          "file:checksum": "122056e4e0af1e04ee187676f3b1de8edcec2a3e1041483d2c82c645216523815397",
+          "file:size": 320093092,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "visual"
+          ]
+        },
+        "nir": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/B08.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "NIR 1 - 10m",
+          "eo:bands": [
+            {
+              "name": "B08",
+              "common_name": "nir",
+              "center_wavelength": 0.842,
+              "full_width_half_max": 0.145
+            }
+          ],
+          "gsd": 10,
+          "proj:shape": [
+            10980,
+            10980
+          ],
+          "proj:transform": [
+            10,
+            0,
+            300000,
+            0,
+            -10,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "12204720bcc479af5a02e6b719f4a01439662c074ad23ade55164dfe401222c871ca",
+          "file:size": 219222045,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "swir22": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/B12.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "SWIR 2.2μm - 20m",
+          "eo:bands": [
+            {
+              "name": "B12",
+              "common_name": "swir22",
+              "center_wavelength": 2.19,
+              "full_width_half_max": 0.242
+            }
+          ],
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "12201ee7c00897cfe1e580893cd9c8a2b6f1d9270b7cf927b0d58794bc51d4a08fa6",
+          "file:size": 52320672,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "rededge2": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/B06.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Red Edge 2 - 20m",
+          "eo:bands": [
+            {
+              "name": "B06",
+              "common_name": "rededge",
+              "center_wavelength": 0.74,
+              "full_width_half_max": 0.018
+            }
+          ],
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "12209e2cbd314aeeefb8e4e001eb6f4f4501d14038a96054876a4025af95835dab47",
+          "file:size": 56275992,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "rededge3": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/B07.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Red Edge 3 - 20m",
+          "eo:bands": [
+            {
+              "name": "B07",
+              "common_name": "rededge",
+              "center_wavelength": 0.783,
+              "full_width_half_max": 0.028
+            }
+          ],
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220323ef52200c1a1eb07a650e1eebb7ea2b39de25729c5f03a2a29534a45e55749",
+          "file:size": 56249729,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "rededge1": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/B05.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Red Edge 1 - 20m",
+          "eo:bands": [
+            {
+              "name": "B05",
+              "common_name": "rededge",
+              "center_wavelength": 0.704,
+              "full_width_half_max": 0.019
+            }
+          ],
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220009849408f12de0d3959cf2006041c94f67c61fc4aeacdf4c7af0d9fd7b23a2d",
+          "file:size": 56548606,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "swir16": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/B11.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "SWIR 1.6μm - 20m",
+          "eo:bands": [
+            {
+              "name": "B11",
+              "common_name": "swir16",
+              "center_wavelength": 1.61,
+              "full_width_half_max": 0.143
+            }
+          ],
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220edc5bb7a15533b4916025512f818e45e5bfa7f51b998d2a36f6051beb4cc8509",
+          "file:size": 53046730,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "wvp": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/WVP.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Water Vapour (WVP)",
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "unit": "cm",
+              "scale": 0.001,
+              "offset": 0
+            }
+          ],
+          "file:checksum": "122087f32aae8bd1d31535e79e867cba13cd91cfb554bfd1b4e1a6c38eaf1a4228b7",
+          "file:size": 10619966,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data"
+          ]
+        },
+        "nir08": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/B8A.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "NIR 2 - 20m",
+          "eo:bands": [
+            {
+              "name": "B8A",
+              "common_name": "nir08",
+              "center_wavelength": 0.865,
+              "full_width_half_max": 0.033
+            }
+          ],
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "12204b8f50d0eb6a6c603723a5f99f622ec83b7c01f749a677d9546f9e3c6591e0d5",
+          "file:size": 56043602,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "scl": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/SCL.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Scene classification map (SCL)",
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint8",
+              "spatial_resolution": 20
+            }
+          ],
+          "file:checksum": "12201a2b44f17f1ff7e19e60851696dfea164772eb731282e94c497d1b4d7409084e",
+          "file:size": 2039666,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data"
+          ]
+        },
+        "aot": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/AOT.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Aerosol optical thickness (AOT)",
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.001,
+              "offset": 0
+            }
+          ],
+          "file:checksum": "12204363dfa7a6326e35c38ad30d3a4573efaac7425c5832a0b4b3824af291d8fb4d",
+          "file:size": 1530100,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data"
+          ]
+        },
+        "coastal": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/B01.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Coastal - 60m",
+          "eo:bands": [
+            {
+              "name": "B01",
+              "common_name": "coastal",
+              "center_wavelength": 0.443,
+              "full_width_half_max": 0.027
+            }
+          ],
+          "gsd": 60,
+          "proj:shape": [
+            1830,
+            1830
+          ],
+          "proj:transform": [
+            60,
+            0,
+            300000,
+            0,
+            -60,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 60,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220f9e18e0eeaf373e084a6b4cfef1b696795dc660e3cfa97c4c40d6d2a02c76e72",
+          "file:size": 6079282,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "nir09": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/B09.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "NIR 3 - 60m",
+          "eo:bands": [
+            {
+              "name": "B09",
+              "common_name": "nir09",
+              "center_wavelength": 0.945,
+              "full_width_half_max": 0.026
+            }
+          ],
+          "gsd": 60,
+          "proj:shape": [
+            1830,
+            1830
+          ],
+          "proj:transform": [
+            60,
+            0,
+            300000,
+            0,
+            -60,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 60,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220a14a9c5fed7b01e5d21471a6c6c2908245ea28057922caa293c4392809391670",
+          "file:size": 6062919,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "cloud": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/CLD_20m.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Cloud Probabilities",
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint8",
+              "spatial_resolution": 20
+            }
+          ],
+          "file:checksum": "1220823f3cc566276c26de68ec08684203b612b6528c3de6a3f66dbc3acbfdf6e7f6",
+          "file:size": 2736834,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "cloud"
+          ]
+        },
+        "snow": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/SNW_20m.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Snow Probabilities",
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint8",
+              "spatial_resolution": 20
+            }
+          ],
+          "file:checksum": "1220b7a3df44adb6b78a69e7de16732538c686be0a47886bde07f4e80ebab0b79293",
+          "file:size": 91827,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "snow-ice"
+          ]
+        },
+        "preview": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/L2A_PVI.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "True color preview",
+          "eo:bands": [
+            {
+              "name": "B04",
+              "common_name": "red",
+              "center_wavelength": 0.665,
+              "full_width_half_max": 0.038
+            },
+            {
+              "name": "B03",
+              "common_name": "green",
+              "center_wavelength": 0.56,
+              "full_width_half_max": 0.045
+            },
+            {
+              "name": "B02",
+              "common_name": "blue",
+              "center_wavelength": 0.49,
+              "full_width_half_max": 0.098
+            }
+          ],
+          "file:checksum": "12207421543fcfcf4d352901a36cce9723257d7ae962866ffc43c4152abf25778fb4",
+          "file:size": 189409,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "overview"
+          ]
+        },
+        "granule_metadata": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/metadata.xml",
+          "type": "application/xml",
+          "file:checksum": "1220d6dff89120e831f068143dff7c0342d378d342b4be70d7b3633f226b1f68af2c",
+          "file:size": 548160,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "metadata"
+          ]
+        },
+        "tileinfo_metadata": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/tileInfo.json",
+          "type": "application/json",
+          "file:checksum": "12208758402ec0c86dec2b843179d3dc87d952d3359bcb7b0a51938034fe87b93945",
+          "file:size": 1491,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "metadata"
+          ]
+        },
+        "product_metadata": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/product_metadata.xml",
+          "type": "application/xml",
+          "file:checksum": "122078dfb8db66fcd295f4a664bac13ddc11774501445deec0e9f989c4cec78b2262",
+          "file:size": 55275,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "metadata"
+          ]
+        },
+        "thumbnail": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/7/S2A_T36SUF_20210725T084120_L2A/L2A_PVI.jpg",
+          "type": "image/jpeg",
+          "title": "Thumbnail of preview image",
+          "file:checksum": "122025a3e06ab844f7684fff8972a6c263206c981d55894a90dfb36825657188418d",
+          "file:size": 35521,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "thumbnail"
+          ]
+        }
+      },
+      "collection": "sentinel-2-c1-l2a"
+    },
+    "after": {
+      "type": "Feature",
+      "stac_version": "1.1.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/grid/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/mgrs/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/processing/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+        "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/sentinel-2/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/storage/v2.0.0/schema.json",
+        "https://stac-extensions.github.io/view/v1.0.0/schema.json"
+      ],
+      "id": "S2A_T36SUF_20210814T084312_L2A",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              30.75163159567052,
+              37.025266990733755
+            ],
+            [
+              30.780093647447718,
+              36.03617691222183
+            ],
+            [
+              31.998536821786956,
+              36.052549930385496
+            ],
+            [
+              31.985686338020095,
+              37.042238132699175
+            ],
+            [
+              30.75163159567052,
+              37.025266990733755
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        30.751632,
+        36.036177,
+        31.998537,
+        37.042238
+      ],
+      "properties": {
+        "created": "2024-01-14T18:32:46.778Z",
+        "platform": "sentinel-2a",
+        "constellation": "sentinel-2",
+        "instruments": [
+          "msi"
+        ],
+        "eo:cloud_cover": 0.036088,
+        "proj:centroid": {
+          "lat": 36.54011,
+          "lon": 31.37901
+        },
+        "mgrs:utm_zone": 36,
+        "mgrs:latitude_band": "S",
+        "mgrs:grid_square": "UF",
+        "grid:code": "MGRS-36SUF",
+        "view:azimuth": 180.4664521216214,
+        "view:incidence_angle": 2.7711955291304937,
+        "view:sun_azimuth": 140.900414641423,
+        "view:sun_elevation": 62.8971285260165,
+        "s2:tile_id": "S2A_OPER_MSI_L2A_TL_S2RP_20230219T121241_A032093_T36SUF_N05.00",
+        "s2:degraded_msi_data_percentage": 0,
+        "s2:nodata_pixel_percentage": 0,
+        "s2:saturated_defective_pixel_percentage": 0,
+        "s2:dark_features_percentage": 0.833043,
+        "s2:cloud_shadow_percentage": 0,
+        "s2:vegetation_percentage": 11.021741,
+        "s2:not_vegetated_percentage": 17.001364,
+        "s2:water_percentage": 71.025485,
+        "s2:unclassified_percentage": 0.082282,
+        "s2:medium_proba_clouds_percentage": 0.019738,
+        "s2:high_proba_clouds_percentage": 0.016108,
+        "s2:thin_cirrus_percentage": 0.000242,
+        "s2:snow_ice_percentage": 0,
+        "s2:product_type": "S2MSI2A",
+        "s2:processing_baseline": "05.00",
+        "s2:product_uri": "S2A_MSIL2A_20210814T083601_N0500_R064_T36SUF_20230219T121241.SAFE",
+        "s2:generation_time": "2023-02-19T12:12:41.000000Z",
+        "s2:datatake_id": "GS2A_20210814T083601_032093_N05.00",
+        "s2:datatake_type": "INS-NOBS",
+        "s2:datastrip_id": "S2A_OPER_MSI_L2A_DS_S2RP_20230219T121241_S20210814T084312_N05.00",
+        "s2:reflectance_conversion_factor": 0.973559105914448,
+        "datetime": "2021-08-14T08:50:10.125000Z",
+        "earthsearch:payload_id": "roda-sentinel-2-c1-l2a/workflow-sentinel-2-c1-l2a-to-stac/0263466a1a19472b734c97832ae82bc0",
+        "processing:software": {
+          "sentinel-2-c1-l2a-to-stac": "v2023.12.01"
+        },
+        "updated": "2024-01-14T18:32:46.778Z",
+        "storage:schemes": {
+          "aws-us-west-2": {
+            "type": "aws-s3",
+            "platform": "https://{bucket}.s3.{region}.amazonaws.com",
+            "region": "us-west-2",
+            "requester_pays": false,
+            "bucket": "e84-earth-search-sentinel-data"
+          }
+        },
+        "proj:code": "EPSG:32636"
+      },
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T36SUF_20210814T084312_L2A",
+          "type": "application/geo+json"
+        },
+        {
+          "rel": "canonical",
+          "href": "s3://e84-earth-search-sentinel-data/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/S2A_T36SUF_20210814T084312_L2A.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "via",
+          "href": "s3://sentinel-s2-l2a/tiles/36/S/UF/2021/8/14/1/metadata.xml",
+          "type": "application/xml",
+          "title": "Granule Metadata in Sinergize RODA Archive"
+        },
+        {
+          "rel": "parent",
+          "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a",
+          "type": "application/json"
+        },
+        {
+          "rel": "collection",
+          "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a",
+          "type": "application/json"
+        },
+        {
+          "rel": "root",
+          "href": "https://earth-search.aws.element84.com/v1",
+          "type": "application/json",
+          "title": "Earth Search by Element 84"
+        },
+        {
+          "rel": "thumbnail",
+          "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T36SUF_20210814T084312_L2A/thumbnail"
+        }
+      ],
+      "assets": {
+        "red": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/B04.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Red - 10m",
+          "eo:bands": [
+            {
+              "name": "B04",
+              "common_name": "red",
+              "center_wavelength": 0.665,
+              "full_width_half_max": 0.038
+            }
+          ],
+          "gsd": 10,
+          "proj:shape": [
+            10980,
+            10980
+          ],
+          "proj:transform": [
+            10,
+            0,
+            300000,
+            0,
+            -10,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220080525a585e6d5499dee75733d8797e696b47dc103298a9754514038775cf8b2",
+          "file:size": 213858554,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "green": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/B03.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Green - 10m",
+          "eo:bands": [
+            {
+              "name": "B03",
+              "common_name": "green",
+              "center_wavelength": 0.56,
+              "full_width_half_max": 0.045
+            }
+          ],
+          "gsd": 10,
+          "proj:shape": [
+            10980,
+            10980
+          ],
+          "proj:transform": [
+            10,
+            0,
+            300000,
+            0,
+            -10,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220a2cd3bd20c898c8662372ee1b31af87aa4ea33cb545e7abb1dd13da89b080f4d",
+          "file:size": 214537258,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "blue": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/B02.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Blue - 10m",
+          "eo:bands": [
+            {
+              "name": "B02",
+              "common_name": "blue",
+              "center_wavelength": 0.49,
+              "full_width_half_max": 0.098
+            }
+          ],
+          "gsd": 10,
+          "proj:shape": [
+            10980,
+            10980
+          ],
+          "proj:transform": [
+            10,
+            0,
+            300000,
+            0,
+            -10,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "12202e57f0d16b10e5eb0c8d2f46215ce4f7175b7d0c99d7d9586a6728034d7a5eed",
+          "file:size": 216811548,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "visual": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/TCI.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "True color image",
+          "eo:bands": [
+            {
+              "name": "B04",
+              "common_name": "red",
+              "center_wavelength": 0.665,
+              "full_width_half_max": 0.038
+            },
+            {
+              "name": "B03",
+              "common_name": "green",
+              "center_wavelength": 0.56,
+              "full_width_half_max": 0.045
+            },
+            {
+              "name": "B02",
+              "common_name": "blue",
+              "center_wavelength": 0.49,
+              "full_width_half_max": 0.098
+            }
+          ],
+          "gsd": 10,
+          "proj:shape": [
+            10980,
+            10980
+          ],
+          "proj:transform": [
+            10,
+            0,
+            300000,
+            0,
+            -10,
+            4100040
+          ],
+          "file:checksum": "1220602c16949af924fc03e09b77f46ceb57522f677e8e2f3582a92fb5095b16f1f0",
+          "file:size": 320647826,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "visual"
+          ]
+        },
+        "nir": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/B08.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "NIR 1 - 10m",
+          "eo:bands": [
+            {
+              "name": "B08",
+              "common_name": "nir",
+              "center_wavelength": 0.842,
+              "full_width_half_max": 0.145
+            }
+          ],
+          "gsd": 10,
+          "proj:shape": [
+            10980,
+            10980
+          ],
+          "proj:transform": [
+            10,
+            0,
+            300000,
+            0,
+            -10,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220bba837c5eaad764293a01fcc81e8523c6c138d24c832dadb8d76522feb3fc333",
+          "file:size": 208067031,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "swir22": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/B12.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "SWIR 2.2μm - 20m",
+          "eo:bands": [
+            {
+              "name": "B12",
+              "common_name": "swir22",
+              "center_wavelength": 2.19,
+              "full_width_half_max": 0.242
+            }
+          ],
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220ba99135c45e622df3426038eeb89fb68c45c440ea92402c7b908a8bd40f6e9c4",
+          "file:size": 45080828,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "rededge2": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/B06.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Red Edge 2 - 20m",
+          "eo:bands": [
+            {
+              "name": "B06",
+              "common_name": "rededge",
+              "center_wavelength": 0.74,
+              "full_width_half_max": 0.018
+            }
+          ],
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "122055f10aa4629ed0e2b774d4ae786b364e9c8608303302d64faabfa5f9c350564b",
+          "file:size": 49674626,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "rededge3": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/B07.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Red Edge 3 - 20m",
+          "eo:bands": [
+            {
+              "name": "B07",
+              "common_name": "rededge",
+              "center_wavelength": 0.783,
+              "full_width_half_max": 0.028
+            }
+          ],
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220cdcad7baaeba82f9ebe9748092cadac9ef668b67a143407ea6bff06e2265602c",
+          "file:size": 49802918,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "rededge1": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/B05.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Red Edge 1 - 20m",
+          "eo:bands": [
+            {
+              "name": "B05",
+              "common_name": "rededge",
+              "center_wavelength": 0.704,
+              "full_width_half_max": 0.019
+            }
+          ],
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "122014b848539c41725ef49be21ea340cd44261e235dc8a93aee43c171829aef2de9",
+          "file:size": 49794837,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "swir16": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/B11.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "SWIR 1.6μm - 20m",
+          "eo:bands": [
+            {
+              "name": "B11",
+              "common_name": "swir16",
+              "center_wavelength": 1.61,
+              "full_width_half_max": 0.143
+            }
+          ],
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220e946f8caeb23158a62aec28c94d830edcdef773c97301a6666ac3a31b8984d22",
+          "file:size": 45336779,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "wvp": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/WVP.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Water Vapour (WVP)",
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "unit": "cm",
+              "scale": 0.001,
+              "offset": 0
+            }
+          ],
+          "file:checksum": "1220119f9b7854f2c830caf9b38dfcc9c3e9a5a7b7af5a1e1d5c0830e6a77eb51a7c",
+          "file:size": 15013817,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data"
+          ]
+        },
+        "nir08": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/B8A.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "NIR 2 - 20m",
+          "eo:bands": [
+            {
+              "name": "B8A",
+              "common_name": "nir08",
+              "center_wavelength": 0.865,
+              "full_width_half_max": 0.033
+            }
+          ],
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220a636320ed9d270063d2e2a131fbb9e8a35366751daf7021d3a402abcca68f8f2",
+          "file:size": 49506449,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "scl": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/SCL.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Scene classification map (SCL)",
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint8",
+              "spatial_resolution": 20
+            }
+          ],
+          "file:checksum": "122005c5b4d7971931bdb37f7e993b9709243ee19befb250b78c5e1a51ec1b671b23",
+          "file:size": 1321566,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data"
+          ]
+        },
+        "aot": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/AOT.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Aerosol optical thickness (AOT)",
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.001,
+              "offset": 0
+            }
+          ],
+          "file:checksum": "122017897392754606bbaf5e6cc0ec9e7f69c4658704aa7322310ca8f9d6e3a95e44",
+          "file:size": 1403861,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data"
+          ]
+        },
+        "coastal": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/B01.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Coastal - 60m",
+          "eo:bands": [
+            {
+              "name": "B01",
+              "common_name": "coastal",
+              "center_wavelength": 0.443,
+              "full_width_half_max": 0.027
+            }
+          ],
+          "gsd": 60,
+          "proj:shape": [
+            1830,
+            1830
+          ],
+          "proj:transform": [
+            60,
+            0,
+            300000,
+            0,
+            -60,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 60,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "1220c8c65b6c1daef98e6d1c472525a70ee313212a20d67673b73a8d500996bc1a16",
+          "file:size": 4775671,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "nir09": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/B09.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "NIR 3 - 60m",
+          "eo:bands": [
+            {
+              "name": "B09",
+              "common_name": "nir09",
+              "center_wavelength": 0.945,
+              "full_width_half_max": 0.026
+            }
+          ],
+          "gsd": 60,
+          "proj:shape": [
+            1830,
+            1830
+          ],
+          "proj:transform": [
+            60,
+            0,
+            300000,
+            0,
+            -60,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 60,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ],
+          "file:checksum": "12205a33a8b3c6bc4b37059cbd8da08c6d1774adbd9d1d7787ccd8329c314b612275",
+          "file:size": 4895282,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        "cloud": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/CLD_20m.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Cloud Probabilities",
+          "gsd": 20,
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint8",
+              "spatial_resolution": 20
+            }
+          ],
+          "file:checksum": "1220a92b5d991afb2447a075486b306111e8672f46415e16e0abc16d0b98349c5676",
+          "file:size": 310049,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "cloud"
+          ]
+        },
+        "snow": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/SNW_20m.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Snow Probabilities",
+          "proj:shape": [
+            5490,
+            5490
+          ],
+          "proj:transform": [
+            20,
+            0,
+            300000,
+            0,
+            -20,
+            4100040
+          ],
+          "raster:bands": [
+            {
+              "nodata": 0,
+              "data_type": "uint8",
+              "spatial_resolution": 20
+            }
+          ],
+          "file:checksum": "12208c8d29511f50cc3be830c87639aede11f5298c9794328b3512824e543f560583",
+          "file:size": 53931,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "data",
+            "snow-ice"
+          ]
+        },
+        "preview": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/L2A_PVI.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "True color preview",
+          "eo:bands": [
+            {
+              "name": "B04",
+              "common_name": "red",
+              "center_wavelength": 0.665,
+              "full_width_half_max": 0.038
+            },
+            {
+              "name": "B03",
+              "common_name": "green",
+              "center_wavelength": 0.56,
+              "full_width_half_max": 0.045
+            },
+            {
+              "name": "B02",
+              "common_name": "blue",
+              "center_wavelength": 0.49,
+              "full_width_half_max": 0.098
+            }
+          ],
+          "file:checksum": "12209a16470f4ccb08fcbb32aec8232691746b86127dd2bab7bf4e1d92012e36aebf",
+          "file:size": 147291,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "overview"
+          ]
+        },
+        "granule_metadata": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/metadata.xml",
+          "type": "application/xml",
+          "file:checksum": "1220a5dff7e09a59410457b09532897eb0eb4c71e8faf2c818f254b05402481f20d5",
+          "file:size": 548283,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "metadata"
+          ]
+        },
+        "tileinfo_metadata": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/tileInfo.json",
+          "type": "application/json",
+          "file:checksum": "12201d4bb6f92e75000a7dd9da0dcbe983283a64c98eb684b33404635d401ad4d592",
+          "file:size": 1491,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "metadata"
+          ]
+        },
+        "product_metadata": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/product_metadata.xml",
+          "type": "application/xml",
+          "file:checksum": "122029ad48589d24bab38bd8358f96287c354543a4d3ccfde833d3c8dc93839beeea",
+          "file:size": 55041,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "metadata"
+          ]
+        },
+        "thumbnail": {
+          "href": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/36/S/UF/2021/8/S2A_T36SUF_20210814T084312_L2A/L2A_PVI.jpg",
+          "type": "image/jpeg",
+          "title": "Thumbnail of preview image",
+          "file:checksum": "12208067fd0e804d008fd840ffa3324eb8321001eb291e5bc24fd4b89f26eafbbc59",
+          "file:size": 21907,
+          "storage:refs": [
+            "aws-us-west-2"
+          ],
+          "roles": [
+            "thumbnail"
+          ]
+        }
+      },
+      "collection": "sentinel-2-c1-l2a"
+    }
+  }
+}

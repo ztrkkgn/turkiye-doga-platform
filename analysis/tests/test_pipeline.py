@@ -128,3 +128,43 @@ def test_old_pinned_collection_is_rejected_before_any_pixel_read(configured_run,
         pipeline.run(config_path, root)
     assert marker.read_bytes() == original
     assert cached.read_bytes() == pinned_bytes
+
+
+def test_second_region_is_published_without_replacing_first_region(configured_run, monkeypatch):
+    config_path, root, first_marker = configured_run
+    config = json.loads(config_path.read_text())
+    config['publicSlug'] = 'second-pilot'
+    config_path.write_text(json.dumps(config))
+    original = first_marker.read_bytes()
+    monkeypatch.setattr(pipeline, 'read_scene', lambda item, grid: scene([True] * 10))
+    summary = pipeline.run(config_path, root)
+    assert first_marker.read_bytes() == original
+    second = root / 'web/public/data/second-pilot/summary.json'
+    assert second.exists()
+    assert json.loads(second.read_text())['id'] == config['id']
+    assert summary['publicSlug'] == 'second-pilot'
+    for period in summary['periods']:
+        for key in ['rgbUrl', 'ndviUrl', 'nbrUrl']:
+            assert period['observation'][key].startswith('/data/second-pilot/')
+    assert summary['comparisons']['fire']['dnbrUrl'] == '/data/second-pilot/dnbr.png'
+    assert summary['assets']['aoiUrl'] == '/data/second-pilot/aoi.geojson'
+    assert summary['assets']['provenanceUrl'] == '/data/second-pilot/provenance.json'
+    assert not (root / 'web/public/data/.second-pilot-incoming').exists()
+    assert not (root / 'web/public/data/.second-pilot-previous').exists()
+
+
+@pytest.mark.parametrize('field,value', [
+    ('publicSlug', '../other'), ('publicSlug', '/tmp/other'),
+    ('publicSlug', ''), ('publicSlug', 'Other'), ('publicSlug', 'a/b'),
+    ('publicSlug', 'a%2fb'), ('publicSlug', None), ('id', '../cache-escape')
+])
+def test_unsafe_region_paths_fail_before_reading_or_writing(configured_run, monkeypatch, field, value):
+    config_path, root, marker = configured_run
+    config = json.loads(config_path.read_text())
+    config[field] = value
+    config_path.write_text(json.dumps(config))
+    original = marker.read_bytes()
+    monkeypatch.setattr(pipeline, 'make_grid', lambda _: pytest.fail('Unsafe path reached raster work'))
+    with pytest.raises(ValueError):
+        pipeline.run(config_path, root)
+    assert marker.read_bytes() == original

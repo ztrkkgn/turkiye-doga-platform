@@ -1,6 +1,6 @@
 # Marmaris Sentinel-2 analiz motoru
 
-Proje kökünden Python 3.11+ sanal ortamında `python -m pip install -r analysis/requirements.txt` ile kurulur. Python bağımlılıkları `requirements-lock.txt` içinde sabittir. Büyük kaynak GeoTIFF indirmek yerine Rasterio HTTP range okumasıyla COG dosyasının yalnız çalışma alanı okunur. İlk sürüm tek süreçte ve iki gözlemle sınırlıdır; eşzamanlı analiz çalıştırmayın.
+Proje kökünden Python 3.11+ sanal ortamında `python -m pip install -r analysis/requirements.txt` ile kurulur. Python bağımlılıkları `requirements-lock.txt` içinde sabittir. Büyük kaynak GeoTIFF indirmek yerine Rasterio HTTP range okumasıyla COG dosyasının yalnız çalışma alanı okunur. Her analiz aynı bölgenin iki gözlemiyle sınırlıdır; aynı bölgeyi eşzamanlı çalıştırmayın. Güncel izleme en fazla iki farklı bölgeyi paralel işler.
 
 ## Komutlar
 
@@ -33,3 +33,50 @@ dNBR harita renk ölçeği `−0.5 … 1` gösterim aralığıdır; yalnız renk
 Özet ve provenance; gerçek çekim zamanını, özgün ESA ürününü, STAC kimliğini, baseline'ı, bütün bant URL'lerini, sağlayıcının dosya checksum'larını, scale/offset bilgilerini, grid dönüşümünü, geçerli piksel sayısını, yazılım sürümlerini ve analiz kaynak dosyası SHA256'larını tutar. Web varlıklarının SHA256'ları ayrıca kaydedilir. `validate_outputs.py` bunları çevrimdışı kontrol eder. Sağlayıcının bütün büyük dosyaları indirilip checksum'ları yeniden hesaplanmadı; kaynak checksum'ları upstream metadata kaydıdır.
 
 Mevcut ilk çift medyan kompozit değildir. SCL koyu yanık pikselleri belirsiz/karanlık diye sınıflayabilir; bunların dışlanması özellikle ağır etkilenen yüzeylerde yanlılık yaratabilir. Yangın sınırı, sınıflanmış hasar ve yanan hektar toplamı üretilmez. Olay bağlamı dış kaynakla doğrulanmıştır; piksel düzeyinde bağımsız saha doğrulaması yoktur. Yıllık iyileşme çıkarımı henüz yapılamaz.
+
+## Birden fazla bölge
+
+`data/regions/` içindeki her konfigürasyon kendi kalıcı `id`, bbox, CRS ve
+Sentinel karesini tanımlar. `publicSlug` web çıktı dizinini seçer; yalnız
+küçük Latin harfleri, rakamlar ve aradaki tireler kabul edilir. Eski Marmaris
+konfigürasyonu `publicSlug` içermediğinde geriye uyumlu `/data/marmaris/`
+korunur. Manavgat `/data/manavgat/` altına yazılır. Her bölgenin geçici
+hazırlama, yedek, cache ve provenance konumu ayrıdır.
+
+```sh
+doga run --config data/regions/antalya-manavgat-2021.json
+python tools/validate_outputs.py --region manavgat
+python tools/validate_outputs.py  # Tüm işlenmiş tarihsel ve güncel bölgeler
+```
+
+## Ücretsiz güncel bölge izlemesi
+
+```sh
+doga monitor --config data/monitoring/config.json
+python tools/validate_outputs.py --version-monitor-assets
+```
+
+İzleme seçili Marmaris, Manavgat, Bördübet ve Yamanlar pencereleri içindir.
+Türkiye geneli tarama değildir. Son 0–14 takvim gününün kullanılabilir son
+gözlemi, 15–42 gün önceki kullanılabilir son referans gözlemle karşılaştırılır.
+Önce yalnız katalog ve önbellekli SCL kapsamı kontrol edilir. Kullanılabilir
+aynı çekim çifti değişmemişse yansıtım bantları tekrar işlenmez ve analiz
+üretim tarihi yenilenmez. Kontrol zamanı ayrıca `checkedAt` olarak saklanır.
+
+NDVI farkında NIST değiştirilmiş Z puanı `0.6745*(fark−medyan)/MAD` kullanılır.
+`|M|>3.5` ve gerçek farkın aynı yönde olması, en az 1 ha dört-komşu bağlı
+destekle yalnız inceleme adayı üretir. Sıfır/yetersiz MAD ile puan üretilmez.
+Bunlar doğrulanmış hasar, yangın veya ekolojik iyileşme sınıfları değildir.
+Mevsim, toprak nemi, tarım ve atmosfer etkileri sınırlamalar arasındadır.
+21 günden eski kullanılabilir görüntü güncel katmandan çıkarılır.
+
+`web/public/data/monitoring/status.json` kontrol/çekim zamanlarını ve her
+bölgenin ayrı durumunu; `changes.geojson` incelenmemiş aday noktalarını içerir.
+Her noktanın alanı bağlı piksellerin alanıdır, zarar görmüş hektar değildir.
+Hata yeni bölgesel rasterı yayımlamaz; önceki geçerli dosyalar korunur.
+
+Yayın öncesi `--version-monitor-assets`, PNG dosyalarına gerçek çekim çifti
+ve kaynak sürümüyle bağlı isimler verir, URL/hash kayıtlarını günceller ve
+tüm çıktıları doğrular. Böylece bir tarayıcı eski JSON ile yeni görüntüyü
+yanlış tarihte gösteremez; eski URL'nin dosyası bulunamazsa eksik görüntü
+olarak kalır. Bu adım hesaplama veya yeni gözlem uydurmaz.

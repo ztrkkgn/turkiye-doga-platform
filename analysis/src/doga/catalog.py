@@ -54,7 +54,7 @@ def probe(config, destination):
                 response = session.get(endpoint + '/search', params={
                     'collections': 'sentinel-2-l2a' if endpoint == COPERNICUS else COLLECTION,
                     'bbox': ','.join(map(str, config['bbox'])),
-                    'datetime': '2021-07-20T00:00:00Z/2021-08-20T23:59:59Z', 'limit': 5}, timeout=45)
+                    'datetime': f"{min(p['start'] for p in config['periods'])}T00:00:00Z/{max(p['end'] for p in config['periods'])}T23:59:59Z", 'limit': 5}, timeout=45)
                 response.raise_for_status()
                 data = response.json()
                 report['catalogs'].append({'endpoint': endpoint, 'httpStatus': response.status_code,

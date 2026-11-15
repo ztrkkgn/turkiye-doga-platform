@@ -1,0 +1,525 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.113044771771165,
+          36.88957781750609
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-188",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.2796914875507355,
+        "areaHa": 3.68,
+        "pixelCount": 92,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -5.656043089932007
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.092372724129355,
+          36.89654811117717
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-124",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.2631724774837494,
+        "areaHa": 2.68,
+        "pixelCount": 67,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -5.367994160294315
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.10515022182019,
+          36.81914343076803
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-380",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.35920774936676025,
+        "areaHa": 2.64,
+        "pixelCount": 66,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -7.042601607180692
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.102481453463874,
+          36.88999390856872
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-187",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.28382956981658936,
+        "areaHa": 2.08,
+        "pixelCount": 52,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -5.728200571681723
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.066912440564685,
+          36.88392173320943
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-198",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.29563799500465393,
+        "areaHa": 1.8,
+        "pixelCount": 45,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -5.9341090505999965
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.084350989933352,
+          36.89813539263056
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-98",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.42672640085220337,
+        "areaHa": 1.6400000000000001,
+        "pixelCount": 41,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -8.219952744573067
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.089389423293163,
+          36.843520618106645
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-328",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.258344829082489,
+        "areaHa": 1.6400000000000001,
+        "pixelCount": 41,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -5.2838124236762525
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.074704161449706,
+          36.88324613239973
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-203",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.3272927403450012,
+        "areaHa": 1.48,
+        "pixelCount": 37,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -6.486086165225263
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.064863544054084,
+          36.889281504988176
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-increase-23",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.32211363315582275,
+        "areaHa": 1.44,
+        "pixelCount": 36,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.24538863743562184,
+        "thresholdSigned": 0.24538863743562184,
+        "modifiedZ": 4.837886035787892
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.057063530536492,
+          36.85124114801249
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-increase-45",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.40320324897766113,
+        "areaHa": 1.44,
+        "pixelCount": 36,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.24538863743562184,
+        "thresholdSigned": 0.24538863743562184,
+        "modifiedZ": 6.251879788893811
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.074278649960938,
+          36.895838036142315
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-147",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.35006004571914673,
+        "areaHa": 1.16,
+        "pixelCount": 29,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -6.883089249378816
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.07255679142728,
+          36.88230749669262
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-205",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.3138045370578766,
+        "areaHa": 1.16,
+        "pixelCount": 29,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -6.2508866887532015
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.11595123542018,
+          36.81979490220408
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-382",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.3032808005809784,
+        "areaHa": 1.12,
+        "pixelCount": 28,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -6.067379867480787
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.071084459235696,
+          36.81431584263999
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-387",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.28049302101135254,
+        "areaHa": 1.08,
+        "pixelCount": 27,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -5.670019766165225
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.134181274739657,
+          36.863161797238185
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-increase-39",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.29427531361579895,
+        "areaHa": 1.08,
+        "pixelCount": 27,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.24538863743562184,
+        "thresholdSigned": 0.24538863743562184,
+        "modifiedZ": 4.35245754377179
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.13187008519701,
+          36.86309035113494
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-increase-40",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.33362117409706116,
+        "areaHa": 1.08,
+        "pixelCount": 27,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.24538863743562184,
+        "thresholdSigned": 0.24538863743562184,
+        "modifiedZ": 5.038547869483984
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.040829069274032,
+          36.85922563838762
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-277",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.22144530713558197,
+        "areaHa": 1.04,
+        "pixelCount": 26,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -4.640379932392087
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.07325569011393,
+          36.856038834066375
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-298",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.25134938955307007,
+        "areaHa": 1.04,
+        "pixelCount": 26,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -5.161830000963076
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.106039724443324,
+          36.82095040203229
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-decrease-375",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.26107436418533325,
+        "areaHa": 1.04,
+        "pixelCount": 26,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.15604687775392018,
+        "thresholdSigned": -0.15604687775392018,
+        "modifiedZ": -5.331408475836431
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.092000619180187,
+          36.850820145515144
+        ]
+      },
+      "properties": {
+        "id": "monitor-bordubet-increase-47",
+        "regionId": "monitor-bordubet",
+        "eventId": "mugla-bordubet-2022",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.33460304141044617,
+        "areaHa": 1.04,
+        "pixelCount": 26,
+        "beforeDate": "2026-10-22T09:00:24.081000Z",
+        "afterDate": "2026-11-12T09:10:08.520000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.24538863743562184,
+        "thresholdSigned": 0.24538863743562184,
+        "modifiedZ": 5.055669102991312
+      }
+    }
+  ]
+}

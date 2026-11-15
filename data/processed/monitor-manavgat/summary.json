@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "id": "monitor-manavgat",
+  "name": "Manavgat · güncel bölge izlemesi",
+  "province": "Antalya",
+  "status": "preliminary",
+  "publicSlug": "monitor-manavgat",
+  "description": "Seçili bölgede güncel spektral değişim taraması; tarihsel olayın yeni etkisi veya doğrulanmış hasar olarak yorumlanamaz.",
+  "bbox": [
+    31.4,
+    36.86,
+    31.52,
+    36.96
+  ],
+  "areaKm2": 118.636,
+  "generatedAt": "2026-11-13T17:48:11.239800+00:00",
+  "methodVersion": "0.1.0",
+  "configSha256": "75b9e63dc8836da61c2966901f2f9f73584fe38961f258d8e06886625ef9e6cb",
+  "grid": {
+    "crs": "EPSG:32636",
+    "resolutionM": 20,
+    "width": 545,
+    "height": 564,
+    "transform": [
+      20.0,
+      0.0,
+      357360.0,
+      0.0,
+      -20.0,
+      4091640.0
+    ],
+    "displayCrs": "EPSG:3857"
+  },
+  "periods": [
+    {
+      "id": "before",
+      "label": "Referans gözlem",
+      "start": "2026-10-02",
+      "end": "2026-10-29",
+      "target": "2026-10-29",
+      "status": "available",
+      "observation": {
+        "datetime": "2026-10-19T08:50:17.317000Z",
+        "itemId": "S2A_T36SUF_20261019T084736_L2A",
+        "productId": "S2A_MSIL2A_20261019T084451_N0513_R064_T36SUF_20261019T132600.SAFE",
+        "cloudCover": 1.412464,
+        "baseline": "05.13",
+        "boaOffsetApplied": null,
+        "validFraction": 0.9782292053002462,
+        "validPixelCount": 290133,
+        "ndviMean": 0.5708121657371521,
+        "nbrMean": 0.32762572169303894,
+        "rgbUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__before-rgb.png",
+        "ndviUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__before-ndvi.png",
+        "nbrUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__before-nbr.png",
+        "stacUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T36SUF_20261019T084736_L2A"
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "id": "after",
+      "label": "Güncel gözlem",
+      "start": "2026-10-30",
+      "end": "2026-11-13",
+      "target": "2026-11-13",
+      "status": "available",
+      "observation": {
+        "datetime": "2026-11-08T08:50:13.192000Z",
+        "itemId": "S2A_T36SUF_20261108T084725_L2A",
+        "productId": "S2A_MSIL2A_20261108T084451_N0513_R064_T36SUF_20261108T133055.SAFE",
+        "cloudCover": 0.006231,
+        "baseline": "05.13",
+        "boaOffsetApplied": null,
+        "validFraction": 0.9725479618328332,
+        "validPixelCount": 288448,
+        "ndviMean": 0.6074444055557251,
+        "nbrMean": 0.3534203767776489,
+        "rgbUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__after-rgb.png",
+        "ndviUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__after-ndvi.png",
+        "nbrUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__after-nbr.png",
+        "stacUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T36SUF_20261108T084725_L2A"
+      },
+      "rejectedCandidates": []
+    }
+  ],
+  "comparisons": {
+    "fire": {
+      "before": "before",
+      "after": "after",
+      "pixelCount": 287789,
+      "commonValidFraction": 0.9703260393135305,
+      "commonAreaKm2": 115.1156,
+      "ndviDeltaMean": 0.038705974817276,
+      "dnbrMean": -0.027269890531897545,
+      "dnbrMedian": -0.02897283434867859,
+      "beforeNdviCommonMean": 0.5715539455413818,
+      "afterNdviCommonMean": 0.6102599501609802,
+      "dnbrUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__dnbr.png",
+      "ndviDeltaUrl": "/data/monitor-manavgat/20261019-20261108-2041420a5a9d__ndvi_delta.png",
+      "displayRange": [
+        -0.5,
+        1.0
+      ],
+      "displayClippingOnly": true
+    }
+  },
+  "sources": [
+    {
+      "title": "Manavgat araştırma alanı · Ekberzade ve diğerleri (2025)",
+      "url": "https://www.nature.com/articles/s44304-025-00120-4"
+    }
+  ],
+  "limitations": [
+    "Çalışma penceresi resmî yangın sınırı değildir; karma arazi örtüsü içerir ve bütün bölgeyi temsil etmez.",
+    "İlk çıktı iki tekil gözleme dayanır; medyan kompozit ve yıllık toparlanma serisi henüz üretilmedi.",
+    "NDVI bitki örtüsünün spektral göstergesidir; ağaç sayısı, hayatta kalma oranı veya biyolojik çeşitlilik değildir.",
+    "dNBR sürekli değişimi gösterir; yerel saha kalibrasyonu olmadan hasar sınıfı veya yanan alan toplamı verilmez.",
+    "SCL maskesi ve 60 m tampon tüm dumanı, ince bulutları ve topografik gölgeyi gideremeyebilir.",
+    "Tarihler yakın mevsimlerden seçildi; kuraklık, fenoloji ve atmosfer değişimleri yangın etkisinden tam ayrılamaz.",
+    "Değişim tek başına nedenini veya herhangi bir faaliyetin yasallığını kanıtlamaz. Bağımsız piksel düzeyinde saha doğrulaması yapılmadı.",
+    "Yalnızca iki tarihte de geçerli ortak kara pikselleri fark hesabına katılır; maskelenen alanlarda yorum yapılmaz.",
+    "SCL 2 karanlık piksel ve SCL 7 belirsiz sınıf dışlanır; koyu yanık yüzeylerin bir kısmı da dışlanabilir. Sonuç, kabul edilen piksellerle sınırlıdır.",
+    "İndeks bantlarında negatif yüzey yansıtımı bulunan pikseller hesaplamadan çıkarılır."
+  ],
+  "assets": {
+    "aoiUrl": "/data/monitor-manavgat/aoi.geojson",
+    "imageCoordinates": [
+      [
+        31.4,
+        36.96
+      ],
+      [
+        31.52,
+        36.96
+      ],
+      [
+        31.52,
+        36.86
+      ],
+      [
+        31.4,
+        36.86
+      ]
+    ],
+    "provenanceUrl": "/data/monitor-manavgat/provenance.json"
+  },
+  "quality": {
+    "minValidFraction": 0.5,
+    "acceptedSclClasses": [
+      4,
+      5
+    ],
+    "cloudBufferM": 60,
+    "observationType": "single-scene",
+    "fieldValidated": false
+  },
+  "assetSha256": {
+    "20261019-20261108-2041420a5a9d__after-ndvi.png": "99599b98896182aa023d2b21afbeafd3d992597f71d2b95a628e3f3f6ae7fb79",
+    "20261019-20261108-2041420a5a9d__after-rgb.png": "4703e6204ffa33e37bee72e09147247d2eea0693262b6870f1a3c777dcc2b023",
+    "provenance.json": "5ed4831b93a3ca75d9baec7649e332b7189d91c3910feefa8f8a1d3b33f6408e",
+    "20261019-20261108-2041420a5a9d__before-nbr.png": "630299cd243481658b01a6fbec5f4c1cdf18c6e9cf745b3046d0aef7db1761f6",
+    "aoi.geojson": "23cdf6e87c1301958d01882b00e2d454bcf84f0ad40e12cbfabfb0e285821c4f",
+    "20261019-20261108-2041420a5a9d__ndvi_delta.png": "300647ded0746e36bc93661e2dc44faa678da18912744a4228f12f14f4ded720",
+    "20261019-20261108-2041420a5a9d__before-ndvi.png": "a4689931972f123d089c6dd95abf0ec4bbdf36b5874d53309db8475570b96b44",
+    "20261019-20261108-2041420a5a9d__before-rgb.png": "18abcb35a09f8c8713820ea9167c5c9ab7b97f76a88e2c6bd146bdf71bc8543a",
+    "20261019-20261108-2041420a5a9d__dnbr.png": "d95e157829586904f1d664dc6d022a619d325e845fde02afe2d47051b15ed779",
+    "20261019-20261108-2041420a5a9d__after-nbr.png": "eb061709ff52ec16047ba1176255f5a799719df9e5c46e15b194fe8c2ee898c3"
+  },
+  "imageFilePrefix": "20261019-20261108-2041420a5a9d__"
+}

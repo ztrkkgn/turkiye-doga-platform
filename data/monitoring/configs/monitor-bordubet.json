@@ -1,0 +1,44 @@
+{
+  "id": "monitor-bordubet",
+  "publicSlug": "monitor-bordubet",
+  "name": "Bördübet · güncel bölge izlemesi",
+  "province": "Muğla",
+  "bbox": [
+    28.04,
+    36.81,
+    28.16,
+    36.91
+  ],
+  "crs": "EPSG:32635",
+  "tile": "35SNA",
+  "resolutionM": 20,
+  "description": "Seçili bölgede güncel spektral değişim taraması; tarihsel olayın yeni etkisi veya doğrulanmış hasar olarak yorumlanamaz.",
+  "maxSceneCloudCover": 100,
+  "minValidFraction": 0.5,
+  "sources": [
+    {
+      "title": "Bördübet yangını ve bölgesi · Gürbüz (2023), Şekil 1",
+      "url": "https://www.harita.gov.tr/uploads/files/articles/uzaktan-algilama-ile-yangin-siddeti-belirlenmesinde-farkli-indekslerin-karsilastirilmasi-1673.pdf"
+    },
+    {
+      "title": "Bördübet · OGM olay kaydı",
+      "url": "https://www.ogm.gov.tr/muglaobm/haber-sitesi/Sayfalar/bordubet-kullerinden-doguyor.aspx"
+    }
+  ],
+  "periods": [
+    {
+      "id": "before",
+      "label": "Referans gözlem",
+      "start": "2026-10-02",
+      "end": "2026-10-29",
+      "target": "2026-10-29"
+    },
+    {
+      "id": "after",
+      "label": "Güncel gözlem",
+      "start": "2026-10-30",
+      "end": "2026-11-13",
+      "target": "2026-11-13"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.200326418150606,
+          38.55915355757795
+        ]
+      },
+      "properties": {
+        "id": "monitor-yamanlar-decrease-54",
+        "regionId": "monitor-yamanlar",
+        "eventId": "izmir-yamanlar-2024",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.2628526985645294,
+        "areaHa": 1.28,
+        "pixelCount": 32,
+        "beforeDate": "2026-10-23T09:09:42.227000Z",
+        "afterDate": "2026-11-07T09:09:43.378000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.18031324679273603,
+        "thresholdSigned": -0.18031324679273603,
+        "modifiedZ": -4.602686546438275
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18994564131494,
+          38.5270496528398
+        ]
+      },
+      "properties": {
+        "id": "monitor-yamanlar-decrease-167",
+        "regionId": "monitor-yamanlar",
+        "eventId": "izmir-yamanlar-2024",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.29423031210899353,
+        "areaHa": 1.2,
+        "pixelCount": 30,
+        "beforeDate": "2026-10-23T09:09:42.227000Z",
+        "afterDate": "2026-11-07T09:09:43.378000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.18031324679273603,
+        "thresholdSigned": -0.18031324679273603,
+        "modifiedZ": -5.0218760560861195
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.208900505598447,
+          38.563619333326315
+        ]
+      },
+      "properties": {
+        "id": "monitor-yamanlar-decrease-39",
+        "regionId": "monitor-yamanlar",
+        "eventId": "izmir-yamanlar-2024",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.2448272854089737,
+        "areaHa": 1.16,
+        "pixelCount": 29,
+        "beforeDate": "2026-10-23T09:09:42.227000Z",
+        "afterDate": "2026-11-07T09:09:43.378000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.18031324679273603,
+        "thresholdSigned": -0.18031324679273603,
+        "modifiedZ": -4.36187587767375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.107522264754955,
+          38.54956349468409
+        ]
+      },
+      "properties": {
+        "id": "monitor-yamanlar-increase-78",
+        "regionId": "monitor-yamanlar",
+        "eventId": "izmir-yamanlar-2024",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.3669665455818176,
+        "areaHa": 1.12,
+        "pixelCount": 28,
+        "beforeDate": "2026-10-23T09:09:42.227000Z",
+        "afterDate": "2026-11-07T09:09:43.378000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.3436581068696403,
+        "thresholdSigned": 0.3436581068696403,
+        "modifiedZ": 3.811389296084254
+      }
+    }
+  ]
+}
