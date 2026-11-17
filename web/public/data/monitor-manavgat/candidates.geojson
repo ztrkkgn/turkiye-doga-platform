@@ -6,25 +6,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.406505101583804,
-          36.95008824732896
+          31.406278538326504,
+          36.94989456404086
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-decrease-80",
+        "id": "monitor-manavgat-decrease-51",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "decrease",
         "metric": "NDVI",
-        "delta": -0.08200936764478683,
-        "areaHa": 3.08,
-        "pixelCount": 77,
+        "delta": -0.12621121108531952,
+        "areaHa": 3.72,
+        "pixelCount": 93,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.047624830429955176,
-        "thresholdSigned": -0.047624830429955176,
-        "modifiedZ": -4.910441404982718
+        "threshold": 0.07222209184853742,
+        "thresholdSigned": -0.07222209184853742,
+        "modifiedZ": -5.278661736278004
       }
     },
     {
@@ -32,25 +32,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.5166134397095,
-          36.883118517896996
+          31.51693705604619,
+          36.882912009308164
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-increase-811",
+        "id": "monitor-manavgat-increase-798",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "increase",
         "metric": "NDVI",
-        "delta": 0.15392383933067322,
-        "areaHa": 2.64,
-        "pixelCount": 66,
+        "delta": 0.1757744401693344,
+        "areaHa": 2.88,
+        "pixelCount": 72,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 4.76745426798877
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 4.670200745362681
       }
     },
     {
@@ -58,25 +58,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.513845620232875,
-          36.873751957144826
+          31.513862536857925,
+          36.87367974469235
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-increase-959",
+        "id": "monitor-manavgat-increase-932",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "increase",
         "metric": "NDVI",
-        "delta": 0.19942447543144226,
-        "areaHa": 2.4,
-        "pixelCount": 60,
+        "delta": 0.23760588467121124,
+        "areaHa": 2.68,
+        "pixelCount": 67,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 6.633874069093261
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 6.707226464414591
       }
     },
     {
@@ -84,25 +84,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.516814048282317,
-          36.945882457244984
+          31.51651147003701,
+          36.946477359815404
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-decrease-155",
+        "id": "monitor-manavgat-decrease-94",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "decrease",
         "metric": "NDVI",
-        "delta": -0.07326459139585495,
-        "areaHa": 1.84,
-        "pixelCount": 46,
+        "delta": -0.1055130735039711,
+        "areaHa": 2.04,
+        "pixelCount": 51,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.047624830429955176,
-        "thresholdSigned": -0.047624830429955176,
-        "modifiedZ": -4.551733814366005
+        "threshold": 0.07222209184853742,
+        "thresholdSigned": -0.07222209184853742,
+        "modifiedZ": -4.596765349587543
       }
     },
     {
@@ -110,25 +110,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.51460371687371,
-          36.93172295360848
+          31.518802022556464,
+          36.88292075197256
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-increase-234",
+        "id": "monitor-manavgat-increase-799",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "increase",
         "metric": "NDVI",
-        "delta": 0.17748232185840607,
-        "areaHa": 1.84,
-        "pixelCount": 46,
+        "delta": 0.19877268373966217,
+        "areaHa": 1.8,
+        "pixelCount": 45,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 5.733814786034178
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 5.427873706478054
       }
     },
     {
@@ -136,25 +136,77 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.402178594805154,
-          36.92612480553591
+          31.437211878165034,
+          36.86301894933544
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-decrease-299",
+        "id": "monitor-manavgat-increase-1147",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
-        "direction": "decrease",
+        "direction": "increase",
         "metric": "NDVI",
-        "delta": -0.2129921168088913,
+        "delta": 0.20700278878211975,
+        "areaHa": 1.8,
+        "pixelCount": 45,
+        "beforeDate": "2026-10-19T08:50:17.317000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 5.6990130236498535
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.504640588070753,
+          36.924013598734014
+        ]
+      },
+      "properties": {
+        "id": "monitor-manavgat-increase-376",
+        "regionId": "monitor-manavgat",
+        "eventId": "antalya-manavgat-2021",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.15767937898635864,
+        "areaHa": 1.76,
+        "pixelCount": 44,
+        "beforeDate": "2026-10-19T08:50:17.317000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 4.074062238256953
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.43407229918621,
+          36.868711438190225
+        ]
+      },
+      "properties": {
+        "id": "monitor-manavgat-increase-1003",
+        "regionId": "monitor-manavgat",
+        "eventId": "antalya-manavgat-2021",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.23324903845787048,
         "areaHa": 1.72,
         "pixelCount": 43,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.047624830429955176,
-        "thresholdSigned": -0.047624830429955176,
-        "modifiedZ": -10.283306876611926
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 6.563690956518448
       }
     },
     {
@@ -162,51 +214,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.50461552099223,
-          36.923990651346784
+          31.510015204612916,
+          36.87726141681547
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-increase-377",
-        "regionId": "monitor-manavgat",
-        "eventId": "antalya-manavgat-2021",
-        "direction": "increase",
-        "metric": "NDVI",
-        "delta": 0.1430829018354416,
-        "areaHa": 1.68,
-        "pixelCount": 42,
-        "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
-        "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 4.322762893590722
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.40715358027249,
-          36.94796592336756
-        ]
-      },
-      "properties": {
-        "id": "monitor-manavgat-decrease-108",
+        "id": "monitor-manavgat-decrease-385",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "decrease",
         "metric": "NDVI",
-        "delta": -0.26466482877731323,
-        "areaHa": 1.52,
-        "pixelCount": 38,
+        "delta": -0.14609913527965546,
+        "areaHa": 1.6,
+        "pixelCount": 40,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.047624830429955176,
-        "thresholdSigned": -0.047624830429955176,
-        "modifiedZ": -12.402903019862364
+        "threshold": 0.07222209184853742,
+        "thresholdSigned": -0.07222209184853742,
+        "modifiedZ": -5.933865789956346
       }
     },
     {
@@ -214,25 +240,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.434041377533255,
-          36.86876652493409
+          31.40918092479173,
+          36.95650401157951
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-increase-1029",
+        "id": "monitor-manavgat-increase-24",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "increase",
         "metric": "NDVI",
-        "delta": 0.1911359429359436,
-        "areaHa": 1.52,
-        "pixelCount": 38,
+        "delta": 0.1996983140707016,
+        "areaHa": 1.6,
+        "pixelCount": 40,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 6.293881433881833
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 5.4583684297673445
       }
     },
     {
@@ -240,25 +266,51 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.487429872822638,
-          36.958197248476026
+          31.406442733152517,
+          36.94831802077236
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-increase-13",
+        "id": "monitor-manavgat-decrease-67",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
-        "direction": "increase",
+        "direction": "decrease",
         "metric": "NDVI",
-        "delta": 0.13642647862434387,
+        "delta": -0.36373811960220337,
+        "areaHa": 1.56,
+        "pixelCount": 39,
+        "beforeDate": "2026-10-19T08:50:17.317000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.07222209184853742,
+        "thresholdSigned": -0.07222209184853742,
+        "modifiedZ": -13.103942635240275
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.519518538027924,
+          36.879646670412356
+        ]
+      },
+      "properties": {
+        "id": "monitor-manavgat-decrease-374",
+        "regionId": "monitor-manavgat",
+        "eventId": "antalya-manavgat-2021",
+        "direction": "decrease",
+        "metric": "NDVI",
+        "delta": -0.14407755434513092,
         "areaHa": 1.44,
         "pixelCount": 36,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 4.049718796839856
+        "threshold": 0.07222209184853742,
+        "thresholdSigned": -0.07222209184853742,
+        "modifiedZ": -5.867265172908712
       }
     },
     {
@@ -266,25 +318,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.475422523962706,
-          36.879359444321686
+          31.432986772897717,
+          36.876248464737195
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-increase-850",
+        "id": "monitor-manavgat-increase-867",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "increase",
         "metric": "NDVI",
-        "delta": 0.14391152560710907,
+        "delta": 0.23198872804641724,
         "areaHa": 1.44,
         "pixelCount": 36,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 4.356752744011295
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 6.522170258711668
       }
     },
     {
@@ -292,25 +344,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.518617684274325,
-          36.88316144959772
+          31.471078349362152,
+          36.866514160005565
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-increase-812",
+        "id": "monitor-manavgat-increase-1066",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "increase",
         "metric": "NDVI",
-        "delta": 0.17495164275169373,
-        "areaHa": 1.28,
-        "pixelCount": 32,
+        "delta": 0.21821743249893188,
+        "areaHa": 1.44,
+        "pixelCount": 36,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 5.630007235200192
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 6.068477425867673
       }
     },
     {
@@ -318,25 +370,103 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.502168991261147,
-          36.921266875846975
+          31.475456059612682,
+          36.879294060225554
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-increase-411",
+        "id": "monitor-manavgat-increase-824",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "increase",
         "metric": "NDVI",
-        "delta": 0.14863671362400055,
+        "delta": 0.16759976744651794,
+        "areaHa": 1.4000000000000001,
+        "pixelCount": 35,
+        "beforeDate": "2026-10-19T08:50:17.317000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 4.400887635902594
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.409273844052127,
+          36.9535777163118
+        ]
+      },
+      "properties": {
+        "id": "monitor-manavgat-increase-62",
+        "regionId": "monitor-manavgat",
+        "eventId": "antalya-manavgat-2021",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.2005307376384735,
+        "areaHa": 1.36,
+        "pixelCount": 34,
+        "beforeDate": "2026-10-19T08:50:17.317000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 5.485792473154279
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.511413445246202,
+          36.87529072597536
+        ]
+      },
+      "properties": {
+        "id": "monitor-manavgat-increase-907",
+        "regionId": "monitor-manavgat",
+        "eventId": "antalya-manavgat-2021",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.19486819207668304,
+        "areaHa": 1.32,
+        "pixelCount": 33,
+        "beforeDate": "2026-10-19T08:50:17.317000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 5.299240937158379
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.514607071050744,
+          36.93133214132039
+        ]
+      },
+      "properties": {
+        "id": "monitor-manavgat-increase-267",
+        "regionId": "monitor-manavgat",
+        "eventId": "antalya-manavgat-2021",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.2213980108499527,
         "areaHa": 1.2,
         "pixelCount": 30,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 4.550578264585036
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 6.1732610024876955
       }
     },
     {
@@ -344,25 +474,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.42004210718169,
-          36.87532690180273
+          31.41997678908477,
+          36.875229887605705
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-increase-908",
+        "id": "monitor-manavgat-increase-883",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "increase",
         "metric": "NDVI",
-        "delta": 0.16481222212314606,
+        "delta": 0.18624931573867798,
         "areaHa": 1.2,
         "pixelCount": 30,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 5.214091831491608
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 5.015293620202014
       }
     },
     {
@@ -370,25 +500,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.43724730266892,
-          36.8631155612292
+          31.432074405142952,
+          36.87105757509758
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-increase-1181",
+        "id": "monitor-manavgat-increase-952",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "increase",
         "metric": "NDVI",
-        "delta": 0.17210102081298828,
+        "delta": 0.22998403012752533,
         "areaHa": 1.2,
         "pixelCount": 30,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 5.51307574395511
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 6.456125849550424
       }
     },
     {
@@ -396,129 +526,77 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.400557125054117,
-          36.94947155335088
+          31.431575020031627,
+          36.86524679890855
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-decrease-87",
+        "id": "monitor-manavgat-increase-1090",
+        "regionId": "monitor-manavgat",
+        "eventId": "antalya-manavgat-2021",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.18881987035274506,
+        "areaHa": 1.16,
+        "pixelCount": 29,
+        "beforeDate": "2026-10-19T08:50:17.317000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 5.099980075504272
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.5021595166073,
+          36.92123198928671
+        ]
+      },
+      "properties": {
+        "id": "monitor-manavgat-increase-418",
+        "regionId": "monitor-manavgat",
+        "eventId": "antalya-manavgat-2021",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.16462363302707672,
+        "areaHa": 1.12,
+        "pixelCount": 28,
+        "beforeDate": "2026-10-19T08:50:17.317000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 4.302839427509641
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.51016710996139,
+          36.87610609392873
+        ]
+      },
+      "properties": {
+        "id": "monitor-manavgat-decrease-394",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "decrease",
         "metric": "NDVI",
-        "delta": -0.11532864719629288,
-        "areaHa": 1.12,
-        "pixelCount": 28,
-        "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
-        "reviewStatus": "unreviewed",
-        "threshold": 0.047624830429955176,
-        "thresholdSigned": -0.047624830429955176,
-        "modifiedZ": -6.2771863220370925
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.50164016575986,
-          36.923594748930334
-        ]
-      },
-      "properties": {
-        "id": "monitor-manavgat-increase-385",
-        "regionId": "monitor-manavgat",
-        "eventId": "antalya-manavgat-2021",
-        "direction": "increase",
-        "metric": "NDVI",
-        "delta": 0.13834382593631744,
-        "areaHa": 1.12,
-        "pixelCount": 28,
-        "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
-        "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 4.128367697060428
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.462840259154635,
-          36.916714229582794
-        ]
-      },
-      "properties": {
-        "id": "monitor-manavgat-decrease-409",
-        "regionId": "monitor-manavgat",
-        "eventId": "antalya-manavgat-2021",
-        "direction": "decrease",
-        "metric": "NDVI",
-        "delta": -0.1417769193649292,
-        "areaHa": 1.08,
-        "pixelCount": 27,
-        "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
-        "reviewStatus": "unreviewed",
-        "threshold": 0.047624830429955176,
-        "thresholdSigned": -0.047624830429955176,
-        "modifiedZ": -7.362084976447538
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.43204326970099,
-          36.87107652694709
-        ]
-      },
-      "properties": {
-        "id": "monitor-manavgat-increase-987",
-        "regionId": "monitor-manavgat",
-        "eventId": "antalya-manavgat-2021",
-        "direction": "increase",
-        "metric": "NDVI",
-        "delta": 0.17675256729125977,
-        "areaHa": 1.08,
-        "pixelCount": 27,
-        "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
-        "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 5.70388051498241
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.43307722038215,
-          36.876209982036194
-        ]
-      },
-      "properties": {
-        "id": "monitor-manavgat-increase-898",
-        "regionId": "monitor-manavgat",
-        "eventId": "antalya-manavgat-2021",
-        "direction": "increase",
-        "metric": "NDVI",
-        "delta": 0.21115411818027496,
+        "delta": -0.2185516357421875,
         "areaHa": 1.04,
         "pixelCount": 26,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 7.115019814788299
+        "threshold": 0.07222209184853742,
+        "thresholdSigned": -0.07222209184853742,
+        "modifiedZ": -8.320800270313152
       }
     },
     {
@@ -526,51 +604,77 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.471158145233677,
-          36.86652751313874
+          31.51459587457095,
+          36.88127941583442
         ]
       },
       "properties": {
-        "id": "monitor-manavgat-increase-1094",
+        "id": "monitor-manavgat-increase-807",
         "regionId": "monitor-manavgat",
         "eventId": "antalya-manavgat-2021",
         "direction": "increase",
         "metric": "NDVI",
-        "delta": 0.18977966904640198,
-        "areaHa": 1.04,
-        "pixelCount": 26,
-        "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
-        "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 6.238247564554043
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.512975331150628,
-          36.87643498199359
-        ]
-      },
-      "properties": {
-        "id": "monitor-manavgat-increase-915",
-        "regionId": "monitor-manavgat",
-        "eventId": "antalya-manavgat-2021",
-        "direction": "increase",
-        "metric": "NDVI",
-        "delta": 0.21276909112930298,
+        "delta": 0.1966429203748703,
         "areaHa": 1.0,
         "pixelCount": 25,
         "beforeDate": "2026-10-19T08:50:17.317000Z",
-        "afterDate": "2026-11-08T08:50:13.192000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
         "reviewStatus": "unreviewed",
-        "threshold": 0.12302512330333774,
-        "thresholdSigned": 0.12302512330333774,
-        "modifiedZ": 7.181265426907622
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 5.357709038896273
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.435920429515363,
+          36.869287500299166
+        ]
+      },
+      "properties": {
+        "id": "monitor-manavgat-increase-993",
+        "regionId": "monitor-manavgat",
+        "eventId": "antalya-manavgat-2021",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.21934722363948822,
+        "areaHa": 1.0,
+        "pixelCount": 25,
+        "beforeDate": "2026-10-19T08:50:17.317000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 6.105698189979052
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.43740677866593,
+          36.86505259683333
+        ]
+      },
+      "properties": {
+        "id": "monitor-manavgat-increase-1102",
+        "regionId": "monitor-manavgat",
+        "eventId": "antalya-manavgat-2021",
+        "direction": "increase",
+        "metric": "NDVI",
+        "delta": 0.2378295511007309,
+        "areaHa": 1.0,
+        "pixelCount": 25,
+        "beforeDate": "2026-10-19T08:50:17.317000Z",
+        "afterDate": "2026-11-16T08:50:05.822000Z",
+        "reviewStatus": "unreviewed",
+        "threshold": 0.14025441616265485,
+        "thresholdSigned": 0.14025441616265485,
+        "modifiedZ": 6.714595114348141
       }
     }
   ]
