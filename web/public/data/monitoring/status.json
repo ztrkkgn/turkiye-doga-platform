@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-17T11:50:59.601370+00:00",
+  "checkedAt": "2026-11-18T11:40:29.491298+00:00",
   "generatedAt": "2026-11-17T11:51:08.661463+00:00",
   "mode": "regional",
   "freshnessMaxAgeDays": 21,
@@ -107,7 +107,7 @@
         36.91
       ],
       "candidateCount": 20,
-      "latestSceneAt": "2026-11-14T09:10:16.585000Z",
+      "latestSceneAt": "2026-11-17T09:10:12.372000Z",
       "status": "available",
       "latestObservationAt": "2026-11-12T09:10:08.520000Z",
       "referenceObservationAt": "2026-10-22T09:00:24.081000Z",
@@ -142,7 +142,7 @@
         38.6
       ],
       "candidateCount": 1,
-      "latestSceneAt": "2026-11-14T09:09:48.136000Z",
+      "latestSceneAt": "2026-11-17T09:09:43.927000Z",
       "status": "available",
       "latestObservationAt": "2026-11-14T09:09:48.136000Z",
       "referenceObservationAt": "2026-10-23T09:09:42.227000Z",
